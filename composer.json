@@ -1,0 +1,34 @@
+{
+  "description": "Things, tools, solutions, design patterns that I use on my daily basis. This is just my programming diary",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Przemek"
+    }
+  ],
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": {
+      "*": "dist"
+    },
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "ValueObject\\": "value-object/src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ValueObject\\Tests\\": "value-object/tests/"
+    }
+  },
+  "require": {
+    "vimeo/psalm": "^3.0@dev",
+    "squizlabs/php_codesniffer": "3.*@dev"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9",
+    "roave/security-advisories": "dev-master"
+  }
+}
