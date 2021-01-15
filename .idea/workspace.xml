@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="efa90b29-8112-4c57-9ef3-5bb21ff5847e" name="Default Changelist" comment="pattern(persistence): add persistence with example test cases">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/persistence/src/Application/Entity/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/src/Application/Entity/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/persistence/src/Application/Exception/InvalidChangeRequestCode.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/src/Application/UseCase/CustomerChangeEmail/Exception/InvalidChangeRequestCode.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/persistence/src/Application/UseCase/CustomerChangeEmail/CustomerChangeEmailUseCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/src/Application/UseCase/CustomerChangeEmail/CustomerChangeEmailUseCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/persistence/src/Application/UseCase/CustomerImport/CustomerImportUseCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/src/Application/UseCase/CustomerImport/CustomerImportUseCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/persistence/src/Application/UseCase/CustomerImport/CustomerToImport.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/src/Application/UseCase/CustomerImport/CustomerToImport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/persistence/src/Application/UseCase/CustomerRegister/CustomerRegisterCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/src/Application/UseCase/CustomerRegister/CustomerRegisterCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/persistence/src/Application/ValueObject/CustomerFullName.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/src/Application/ValueObject/CustomerFullName.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/persistence/src/Application/ValueObject/CustomerId.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/src/Application/ValueObject/CustomerId.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/persistence/tests/UseCase/CustomerChangeEmail/CustomerChangeEmailTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/tests/UseCase/CustomerChangeEmail/CustomerChangeEmailTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/value-object/src/Currency.php" beforeDir="false" afterPath="$PROJECT_DIR$/value-object/src/Currency.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/value-object/src/Exception/CurrencyMismatchException.php" beforeDir="false" afterPath="$PROJECT_DIR$/value-object/src/Exception/CurrencyMismatchException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/value-object/src/Exception/InvalidArgumentException.php" beforeDir="false" afterPath="$PROJECT_DIR$/value-object/src/Exception/InvalidArgumentException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/value-object/src/Exception/InvalidCurrencyException.php" beforeDir="false" afterPath="$PROJECT_DIR$/value-object/src/Exception/InvalidCurrencyException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/value-object/src/Money.php" beforeDir="false" afterPath="$PROJECT_DIR$/value-object/src/Money.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/value-object/src/NumberRoundMode.php" beforeDir="false" afterPath="$PROJECT_DIR$/value-object/src/NumberRoundMode.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/value-object/tests/CurrencyTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/value-object/tests/CurrencyTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/value-object/tests/MoneyTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/value-object/tests/MoneyTest.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable path="composer" />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="composer.json" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="Default">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/openlss/lib-array2xml" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/path-util" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/glob" />
+      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/felixfbecker/language-server-protocol" />
+      <path value="$PROJECT_DIR$/vendor/felixfbecker/advanced-json-rpc" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/amphp/amp" />
+      <path value="$PROJECT_DIR$/vendor/amphp/byte-stream" />
+      <path value="$PROJECT_DIR$/vendor/vimeo/psalm" />
+      <path value="$PROJECT_DIR$/vendor/netresearch/jsonmapper" />
+      <path value="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/pimple/pimple" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1lxHuqGnlhAQk181VQEWyMApqrW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path" value="$PROJECT_DIR$/../../../../Program Files/nodejs/node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="run.code.analysis.last.selected.profile" value="aDefault" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\persistence\src\Application\UseCase\CustomerChangeEmail\Exception" />
+      <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\persistence\src\Infrastructure\Persistence" />
+      <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\ValueObject\tests" />
+      <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\ValueObject\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHPUnit.tests">
+    <configuration name="CurrencyTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="ValueObject\Tests\CurrencyTest" file="$PROJECT_DIR$/value-object/tests/CurrencyTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CustomerChangeEmailTest.testHandleWithInvalidChangeRequestEmail" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Persistence\Tests\UseCase\CustomerChangeEmail\CustomerChangeEmailTest" file="$PROJECT_DIR$/persistence/tests/UseCase/CustomerChangeEmail/CustomerChangeEmailTest.php" method="testHandleWithInvalidChangeRequestEmail" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MoneyTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="ValueObject\Tests\MoneyTest" file="$PROJECT_DIR$/value-object/tests/MoneyTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MoneyTest.testVeryBigAmount" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="ValueObject\Tests\MoneyTest" file="$PROJECT_DIR$/value-object/tests/MoneyTest.php" method="testVeryBigAmount" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner directory="$PROJECT_DIR$/persistence/tests" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="PHPUnit.CurrencyTest" />
+      <item itemvalue="PHPUnit.MoneyTest" />
+      <item itemvalue="PHPUnit.MoneyTest.testVeryBigAmount" />
+      <item itemvalue="PHPUnit.tests" />
+      <item itemvalue="PHPUnit.CustomerChangeEmailTest.testHandleWithInvalidChangeRequestEmail" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.tests" />
+        <item itemvalue="PHPUnit.CustomerChangeEmailTest.testHandleWithInvalidChangeRequestEmail" />
+        <item itemvalue="PHPUnit.MoneyTest" />
+        <item itemvalue="PHPUnit.CurrencyTest" />
+        <item itemvalue="PHPUnit.MoneyTest.testVeryBigAmount" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="efa90b29-8112-4c57-9ef3-5bb21ff5847e" name="Default Changelist" comment="" />
+      <created>1608532048434</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608532048434</updated>
+      <workItem from="1608532049539" duration="23821000" />
+      <workItem from="1611123471710" duration="6564000" />
+    </task>
+    <task id="LOCAL-00001" summary="pattern(persistence): add persistence with example test cases">
+      <created>1611347580870</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1611347580870</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="pattern(persistence): add persistence with example test cases" />
+    <option name="LAST_COMMIT_MESSAGE" value="pattern(persistence): add persistence with example test cases" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="395" y="91" key="#Inspections" timestamp="1610693400549">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="395" y="91" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1610693400549" />
+    <state x="361" y="71" width="814" height="728" key="#Intentions" timestamp="1611347549548">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" width="814" height="728" key="#Intentions/0.0.1536.824@0.0.1536.824" timestamp="1611347549548" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608532575936">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1608532575936" />
+    <state x="574" y="94" key="#com.intellij.ide.util.MemberChooser" timestamp="1608533071025">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="94" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1608533071025" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1611378122830">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1611378122830" />
+    <state x="586" y="170" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1608535790634">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="586" y="170" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0/0.0.1536.824@0.0.1536.824" timestamp="1608535790634" />
+    <state x="528" y="282" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1608532407842">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="528" y="282" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1608532407842" />
+    <state x="47" y="0" width="1095" height="824" key="CommitChangelistDialog2" timestamp="1611347579948">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="47" y="0" width="1095" height="824" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1611347579948" />
+    <state x="545" y="325" key="ComposerInitDialogKey" timestamp="1608532657553">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="545" y="325" key="ComposerInitDialogKey/0.0.1536.824@0.0.1536.824" timestamp="1608532657553" />
+    <state width="1493" height="281" key="GridCell.Tab.0.bottom" timestamp="1611378062887">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="281" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611378062887" />
+    <state width="1493" height="281" key="GridCell.Tab.0.center" timestamp="1611378062887">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="281" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1611378062887" />
+    <state width="1493" height="281" key="GridCell.Tab.0.left" timestamp="1611378062886">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="281" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1611378062886" />
+    <state width="1493" height="281" key="GridCell.Tab.0.right" timestamp="1611378062887">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="281" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1611378062887" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1608714485306">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608714485306" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1608714485306">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1608714485306" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1608714485306">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1608714485306" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1608714485306">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1608714485306" />
+    <state x="147" y="65" key="MergeDialog" timestamp="1610693121673">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1610693121673" />
+    <state x="407" y="174" key="MultipleFileMergeDialog" timestamp="1610693123186">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="407" y="174" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1610693123186" />
+    <state x="501" y="135" key="NewPhpClassDialog" timestamp="1611376988518">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="501" y="135" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1611376988518" />
+    <state x="584" y="346" key="ReplaceDuplicatesPrompt" timestamp="1608535793305">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="584" y="346" key="ReplaceDuplicatesPrompt/0.0.1536.824@0.0.1536.824" timestamp="1608535793305" />
+    <state x="508" y="115" key="RollbackChangesDialog" timestamp="1611347905957">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="508" y="115" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1611347905957" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1610693790375">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1610693790375" />
+    <state x="490" y="154" width="540" height="524" key="StructurePopup" timestamp="1608716532685">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="490" y="154" width="540" height="524" key="StructurePopup/0.0.1536.824@0.0.1536.824" timestamp="1608716532685" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1611344957156">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1611344957156" />
+    <state x="404" y="27" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1611378121674">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="404" y="27" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1611378121674" />
+    <state x="476" y="220" key="com.jetbrains.php.test.PhpNewTestDialog" timestamp="1608700921664">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="476" y="220" key="com.jetbrains.php.test.PhpNewTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1608700921664" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1610871782304">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1610871782304" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1611347217849">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1611347217849" />
+  </component>
+</project>

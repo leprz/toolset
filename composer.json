@@ -15,19 +15,22 @@
   },
   "autoload": {
     "psr-4": {
-      "ValueObject\\": "value-object/src/"
+      "ValueObject\\": "value-object/src/",
+      "Persistence\\": "persistence/src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "ValueObject\\Tests\\": "value-object/tests/"
+      "ValueObject\\Tests\\": "value-object/tests/",
+      "Persistence\\Tests\\": "persistence/tests/"
     }
   },
   "require": {
-    "vimeo/psalm": "^3.0@dev",
-    "squizlabs/php_codesniffer": "3.*@dev"
+    "pimple/pimple": "^3.0"
   },
   "require-dev": {
+    "vimeo/psalm": "^3.0@dev",
+    "squizlabs/php_codesniffer": "3.*@dev",
     "phpunit/phpunit": "^9",
     "roave/security-advisories": "dev-master"
   }
