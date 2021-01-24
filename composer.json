@@ -17,6 +17,7 @@
     "psr-4": {
       "ValueObject\\": "value-object/src/",
       "Persistence\\": "persistence/src/",
+      "FilesystemStorage\\": "filesystem-storage/src/",
       "SharedKernel\\": "shared-kernel/src/"
     }
   },
@@ -24,11 +25,13 @@
     "psr-4": {
       "ValueObject\\Tests\\": "value-object/tests/",
       "Persistence\\Tests\\": "persistence/tests/",
+      "FilesystemStorage\\Tests\\": "filesystem-storage/tests/",
       "SharedKernel\\Tests\\": "shared-kernel/tests/"
     }
   },
   "require": {
-    "pimple/pimple": "^3.0"
+    "pimple/pimple": "^3.0",
+    "ext-json": "*"
   },
   "require-dev": {
     "vimeo/psalm": "^3.0@dev",
