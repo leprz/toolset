@@ -17,6 +17,7 @@ class UserAvatarAssetPathTest extends TestCase
      * @var \FilesystemStorage\Application\FilesystemStorage\UserAvatarFilesystemStorageInterface|\PHPUnit\Framework\MockObject\MockObject
      */
     private MockObject $storageMock;
+
     public function testCreateRelativePathForFileName(): void
     {
         self::assertEquals('/avatars/test.jpg', UserAvatarAssetPath::createRelativePathForFilename('test.jpg'));
@@ -33,6 +34,11 @@ class UserAvatarAssetPathTest extends TestCase
         );
     }
 
+    private function assertPathEqualsTo(string $expected, UserAvatarAssetPath $assetPath): void
+    {
+        self::assertEquals($expected, (string)$assetPath);
+    }
+
     public function testWrongBasePath(): void
     {
         $this->assertAvatarPathIsInvalid();
@@ -42,11 +48,6 @@ class UserAvatarAssetPathTest extends TestCase
     public function assertAvatarPathIsInvalid(): void
     {
         $this->expectException(InvalidArgumentException::class);
-    }
-
-    private function assertPathEqualsTo(string $expected, UserAvatarAssetPath $assetPath): void
-    {
-        self::assertEquals($expected, (string) $assetPath);
     }
 
     protected function setUp(): void

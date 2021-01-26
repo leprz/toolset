@@ -10,6 +10,7 @@ use JsonException;
 class Json
 {
     private string $json;
+
     private function __construct(string $json)
     {
         $this->json = $json;

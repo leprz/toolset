@@ -22,6 +22,16 @@ final class UserAvatarAssetPath extends AssetPath
         return new self($relativePath, $storage);
     }
 
+    /**
+     * @param string $filename
+     * @return \FilesystemStorage\Application\ValueObject\RelativePath
+     * @throws \FilesystemStorage\Application\Exception\InvalidArgumentException
+     */
+    public static function createRelativePathForFilename(string $filename): RelativePath
+    {
+        return static::baseDirectory()->append($filename);
+    }
+
     /** @noinspection PhpUnhandledExceptionInspection */
     protected static function baseDirectory(): RelativePath
     {

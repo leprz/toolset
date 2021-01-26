@@ -13,9 +13,9 @@ class TenantConfigJsonMapper
     public function toJson(TenantConfig $config): Json
     {
         return Json::fromArray([
-                'name' => $config->getName(),
-                'capacity' => $config->getCapacity()
-            ]);
+            'name' => $config->getName(),
+            'capacity' => $config->getCapacity()
+        ]);
     }
 
     /**

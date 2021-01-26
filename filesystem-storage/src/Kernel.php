@@ -25,29 +25,29 @@ class Kernel
         });
     }
 
-    public function getResourcesDir(): LocalResourcePath
-    {
-        return $this->resourcesPath;
-    }
-
     /**
      * @param \FilesystemStorage\Infrastructure\FilesystemStorage\LocalResourcePath $resourcesPath
      * @throws \FilesystemStorage\Application\Exception\InvalidArgumentException
      */
     protected function setResourcesDir(LocalResourcePath $resourcesPath): void
     {
-        if (!is_dir((string) $resourcesPath)) {
+        if (!is_dir((string)$resourcesPath)) {
             throw new InvalidArgumentException(
-                sprintf('Resource path [%s] must be existing directory.', (string) $resourcesPath)
+                sprintf('Resource path [%s] must be existing directory.', (string)$resourcesPath)
             );
         }
 
-        if (!realpath((string) $resourcesPath)) {
+        if (!realpath((string)$resourcesPath)) {
             throw new InvalidArgumentException(
-                sprintf('Resource path [%s] does not exists.', (string) $resourcesPath)
+                sprintf('Resource path [%s] does not exists.', (string)$resourcesPath)
             );
         }
 
         $this->resourcesPath = $resourcesPath;
+    }
+
+    public function getResourcesDir(): LocalResourcePath
+    {
+        return $this->resourcesPath;
     }
 }

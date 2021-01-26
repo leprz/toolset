@@ -28,7 +28,7 @@ class TenantConfigLocalFilesystemStorage implements TenantConfigFilesystemStorag
 
     private function setConfigPath(LocalResourcePath $resourcesPath): void
     {
-        $this->configPath  = $resourcesPath . DIRECTORY_SEPARATOR . self::CONFIG_FILE_NAME;
+        $this->configPath = (string)$resourcesPath->append(self::CONFIG_FILE_NAME);
     }
 
     public function load(): TenantConfig
@@ -52,11 +52,6 @@ class TenantConfigLocalFilesystemStorage implements TenantConfigFilesystemStorag
         }
     }
 
-    public function exists(): bool
-    {
-        return file_exists($this->configPath);
-    }
-
     public function remove(): void
     {
         if (
@@ -65,5 +60,10 @@ class TenantConfigLocalFilesystemStorage implements TenantConfigFilesystemStorag
         ) {
             throw FileRemoveException::fromPath($this->configPath);
         }
+    }
+
+    public function exists(): bool
+    {
+        return file_exists($this->configPath);
     }
 }

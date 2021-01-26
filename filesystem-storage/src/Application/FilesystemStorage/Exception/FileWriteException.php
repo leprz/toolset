@@ -8,6 +8,10 @@ use Exception;
 
 class FileWriteException extends Exception
 {
+    /**
+     * @param string $destinationFilePath
+     * @return static
+     */
     public static function fromPath(string $destinationFilePath): self
     {
         return new self(sprintf('Can not write to path [%s]', $destinationFilePath));

@@ -10,8 +10,13 @@ use FilesystemStorage\Application\ValueObject\Url;
 
 interface UserAvatarFilesystemStorageInterface extends AssetExistsInterface
 {
+    /**
+     * @param \FilesystemStorage\Application\FilesystemStorage\AssetPath\UserAvatarAssetPath $path
+     * @return \FilesystemStorage\Application\ValueObject\Url
+     */
     public function url(UserAvatarAssetPath $path): Url;
-/**
+
+    /**
      * Return file contents
      *
      * @param \FilesystemStorage\Application\FilesystemStorage\AssetPath\UserAvatarAssetPath $path
@@ -19,7 +24,8 @@ interface UserAvatarFilesystemStorageInterface extends AssetExistsInterface
      * @throws \FilesystemStorage\Application\FilesystemStorage\Exception\FileReadException
      */
     public function load(UserAvatarAssetPath $path): string;
-/**
+
+    /**
      * @param string $filename
      * @param string $contents
      * @return \FilesystemStorage\Application\FilesystemStorage\AssetPath\UserAvatarAssetPath
@@ -28,7 +34,8 @@ interface UserAvatarFilesystemStorageInterface extends AssetExistsInterface
      * @throws \FilesystemStorage\Application\FilesystemStorage\Exception\FileWriteException
      */
     public function save(string $filename, string $contents): UserAvatarAssetPath;
-/**
+
+    /**
      * @param \FilesystemStorage\Application\FilesystemStorage\AssetPath\UserAvatarAssetPath $path
      * @throws \FilesystemStorage\Application\FilesystemStorage\Exception\FileRemoveException
      */

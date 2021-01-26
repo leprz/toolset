@@ -16,6 +16,8 @@ class LocalResourcePath extends LocalPath
     /**
      * @param \FilesystemStorage\Application\ValueObject\RelativePath $path
      * @return $this
+     * @noinspection PhpUnhandledExceptionInspection
+     * @noinspection PhpDocMissingThrowsInspection
      */
     public function appendRelativePath(RelativePath $path): self
     {

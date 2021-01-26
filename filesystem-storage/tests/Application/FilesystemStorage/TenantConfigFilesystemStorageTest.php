@@ -6,17 +6,23 @@ namespace FilesystemStorage\Tests\Application\FilesystemStorage;
 
 use FilesystemStorage\Application\Config\TenantConfig;
 use FilesystemStorage\Application\FilesystemStorage\TenantConfigFilesystemStorageInterface;
-use FilesystemStorage\Infrastructure\FilesystemStorage\TenantConfig\TenantConfigLocalFilesystemStorage;
 use FilesystemStorage\Infrastructure\FilesystemStorage\TenantConfig\TenantConfigJsonMapper;
+use FilesystemStorage\Infrastructure\FilesystemStorage\TenantConfig\TenantConfigLocalFilesystemStorage;
 use FilesystemStorage\Tests\KernelTestCase;
 
 class TenantConfigFilesystemStorageTest extends KernelTestCase
 {
     private TenantConfigFilesystemStorageInterface $storage;
+
     public function testSave(): void
     {
         $this->storage->save(new TenantConfig('testName', 2000));
         $this->assertTenantConfigExists();
+    }
+
+    private function assertTenantConfigExists(): void
+    {
+        self::assertTrue($this->storage->exists());
     }
 
     /**
@@ -39,11 +45,6 @@ class TenantConfigFilesystemStorageTest extends KernelTestCase
     private function assertTenantConfigHasBeenRemoved(): void
     {
         self::assertFalse($this->storage->exists());
-    }
-
-    private function assertTenantConfigExists(): void
-    {
-        self::assertTrue($this->storage->exists());
     }
 
     protected function setUp(): void

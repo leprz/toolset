@@ -5,14 +5,19 @@ declare(strict_types=1);
 namespace FilesystemStorage\Tests\Application\ValueObject;
 
 use FilesystemStorage\Application\Exception\InvalidArgumentException;
-use PHPUnit\Framework\TestCase;
 use FilesystemStorage\Application\ValueObject\RelativePath;
+use PHPUnit\Framework\TestCase;
 
-class RelativeFilesystemPathTest extends TestCase
+class RelativePathTest extends TestCase
 {
     public function testAppendFile(): void
     {
         $this->assertPathEquals('/test/path/test.txt', (RelativePath::fromString('/test/path'))->append('test.txt'));
+    }
+
+    private function assertPathEquals(string $expected, RelativePath $path): void
+    {
+        self::assertEquals($expected, (string)$path);
     }
 
     public function testAppendDir(): void
@@ -64,19 +69,14 @@ class RelativeFilesystemPathTest extends TestCase
         (RelativePath::fromString($filename));
     }
 
-    public function testHasLeadingSlash(): void
-    {
-        $this->assertPathIsInvalid();
-        RelativePath::fromString('test/path');
-    }
-
     private function assertPathIsInvalid(): void
     {
         $this->expectException(InvalidArgumentException::class);
     }
 
-    private function assertPathEquals(string $expected, RelativePath $path): void
+    public function testHasLeadingSlash(): void
     {
-        self::assertEquals($expected, (string) $path);
+        $this->assertPathIsInvalid();
+        RelativePath::fromString('test/path');
     }
 }

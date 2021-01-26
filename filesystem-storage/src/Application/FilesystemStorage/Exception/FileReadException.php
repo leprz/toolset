@@ -8,6 +8,10 @@ use Exception;
 
 class FileReadException extends Exception
 {
+    /**
+     * @param string $path
+     * @return static
+     */
     public static function fromPath(string $path): self
     {
         return new self(sprintf('Can not read file [%s]', $path));

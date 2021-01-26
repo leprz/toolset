@@ -27,15 +27,6 @@ class UserAvatarLocalFilesystemStorage implements UserAvatarFilesystemStorageInt
         $this->resourcePath = $resourcesPath;
     }
 
-    /**
-     * @param \FilesystemStorage\Application\ValueObject\RelativePath $relativePath
-     * @return bool
-     */
-    public function exists(RelativePath $relativePath): bool
-    {
-        return file_exists((string) $this->resourcePath->appendRelativePath($relativePath));
-    }
-
     public function load(UserAvatarAssetPath $path): string
     {
         if (false === ($contents = @file_get_contents($this->resourcePath . $path))) {
@@ -50,8 +41,8 @@ class UserAvatarLocalFilesystemStorage implements UserAvatarFilesystemStorageInt
         $relativeDesignationPath = UserAvatarAssetPath::createRelativePathForFilename($filename);
         $absoluteDestinationPath = $this->resourcePath->appendRelativePath($relativeDesignationPath);
 
-        if (@file_put_contents((string) $absoluteDestinationPath, $contents) === false) {
-            throw FileWriteException::fromPath((string) $absoluteDestinationPath);
+        if (@file_put_contents((string)$absoluteDestinationPath, $contents) === false) {
+            throw FileWriteException::fromPath((string)$absoluteDestinationPath);
         }
 
         return UserAvatarAssetPath::fromRelativePath($relativeDesignationPath, $this);
@@ -63,8 +54,17 @@ class UserAvatarLocalFilesystemStorage implements UserAvatarFilesystemStorageInt
             $this->exists($path->getRelativePath()) &&
             !@unlink((string)$this->resourcePath->appendRelativePath($path->getRelativePath()))
         ) {
-            throw FileRemoveException::fromPath((string) $path);
+            throw FileRemoveException::fromPath((string)$path);
         }
+    }
+
+    /**
+     * @param \FilesystemStorage\Application\ValueObject\RelativePath $relativePath
+     * @return bool
+     */
+    public function exists(RelativePath $relativePath): bool
+    {
+        return file_exists((string)$this->resourcePath->appendRelativePath($relativePath));
     }
 
     public function url(UserAvatarAssetPath $path): Url

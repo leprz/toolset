@@ -8,6 +8,8 @@
       <sourceFolder url="file://$MODULE_DIR$/value-object/tests" isTestSource="true" packagePrefix="ValueObject\Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/shared-kernel/tests" isTestSource="true" packagePrefix="SharedKernel\Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/filesystem-storage/tests" isTestSource="true" packagePrefix="FilesystemStorage\Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/filesystem-storage/src" isTestSource="false" packagePrefix="FilesystemStorage\" />
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/persistence/src" isTestSource="false" packagePrefix="Persistence\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/amp" />

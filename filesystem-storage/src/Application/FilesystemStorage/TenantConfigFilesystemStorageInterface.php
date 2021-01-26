@@ -6,9 +6,6 @@ namespace FilesystemStorage\Application\FilesystemStorage;
 
 use FilesystemStorage\Application\Config\TenantConfig;
 
-/**
- * @package FilesystemStorage\Application\FilesystemStorage
- */
 interface TenantConfigFilesystemStorageInterface
 {
     /**
@@ -29,5 +26,8 @@ interface TenantConfigFilesystemStorageInterface
      */
     public function remove(): void;
 
+    /**
+     * @return bool
+     */
     public function exists(): bool;
 }

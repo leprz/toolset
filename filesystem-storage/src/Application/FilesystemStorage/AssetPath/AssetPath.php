@@ -10,8 +10,12 @@ use FilesystemStorage\Application\ValueObject\RelativePath;
 
 abstract class AssetPath
 {
+    /**
+     * @var \FilesystemStorage\Application\ValueObject\RelativePath
+     */
     protected RelativePath $relativePath;
-/**
+
+    /**
      * @param \FilesystemStorage\Application\ValueObject\RelativePath $relativePath
      * @param \FilesystemStorage\Application\FilesystemStorage\AssetExistsInterface $check
      * @throws \FilesystemStorage\Application\Exception\InvalidArgumentException
@@ -50,8 +54,12 @@ abstract class AssetPath
         }
     }
 
+    /**
+     * @return \FilesystemStorage\Application\ValueObject\RelativePath
+     */
     abstract protected static function baseDirectory(): RelativePath;
-/**
+
+    /**
      * @param \FilesystemStorage\Application\ValueObject\RelativePath $relativePath
      * @param \FilesystemStorage\Application\FilesystemStorage\AssetExistsInterface $storage
      * @return bool
@@ -62,22 +70,18 @@ abstract class AssetPath
     }
 
     /**
-     * @param string $filename
      * @return \FilesystemStorage\Application\ValueObject\RelativePath
-     * @throws \FilesystemStorage\Application\Exception\InvalidArgumentException
      */
-    public static function createRelativePathForFilename(string $filename): RelativePath
-    {
-        return static::baseDirectory()->append($filename);
-    }
-
     public function getRelativePath(): RelativePath
     {
         return $this->relativePath;
     }
 
+    /**
+     * @return string
+     */
     public function __toString(): string
     {
-        return (string) $this->relativePath;
+        return (string)$this->relativePath;
     }
 }

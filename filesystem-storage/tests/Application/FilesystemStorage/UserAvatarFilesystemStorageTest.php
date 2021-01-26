@@ -16,10 +16,16 @@ class UserAvatarFilesystemStorageTest extends KernelTestCase
      * @var \FilesystemStorage\Infrastructure\FilesystemStorage\UserAvatar\UserAvatarLocalFilesystemStorage
      */
     private UserAvatarLocalFilesystemStorage $storage;
+
     public function testSave(): void
     {
         $path = $this->storage->save($this->userAvatarFilenameFixture(), $this->userAvatarContentsFixture());
         $this->assertAvatarFileExists($path->getRelativePath());
+    }
+
+    private function userAvatarFilenameFixture(): string
+    {
+        return 'test-avatar.png';
     }
 
     private function userAvatarContentsFixture(): string
@@ -48,11 +54,6 @@ class UserAvatarFilesystemStorageTest extends KernelTestCase
             RelativePath::fromString('/avatars/' . $this->userAvatarFilenameFixture()),
             $this->storage
         );
-    }
-
-    private function userAvatarFilenameFixture(): string
-    {
-        return 'test-avatar.png';
     }
 
     private function assertAvatarHasBeenRemoved(UserAvatarAssetPath $path): void

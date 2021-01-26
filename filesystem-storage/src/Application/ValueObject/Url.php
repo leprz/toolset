@@ -9,7 +9,8 @@ use FilesystemStorage\Application\Config\Exception\InvalidConfigException;
 class Url
 {
     private string $url;
-/**
+
+    /**
      * @param string $url
      * @throws \FilesystemStorage\Application\Config\Exception\InvalidConfigException
      */
