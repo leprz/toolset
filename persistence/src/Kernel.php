@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Persistence;
 
-use Persistence\Application\Persistence\CustomerPersistenceInterface;
-use Persistence\Application\Repository\CustomerRepositoryInterface;
+use Persistence\Application\Persistence\Customer\CustomerPersistenceInterface;
+use Persistence\Application\Persistence\Customer\CustomerRepositoryInterface;
 use Persistence\Application\UseCase\CustomerChangeEmail\CustomerChangeEmailUseCase;
 use Persistence\Application\UseCase\CustomerImport\CustomerImportUseCase;
 use Persistence\Application\UseCase\CustomerRegister\CustomerRegisterUseCase;

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Persistence\Tests\UseCase\CustomerRegister;
 
-use Persistence\Application\Persistence\CustomerPersistenceInterface;
-use Persistence\Application\Repository\CustomerRepositoryInterface;
+use Persistence\Application\Persistence\Customer\CustomerPersistenceInterface;
+use Persistence\Application\Persistence\Customer\CustomerRepositoryInterface;
 use Persistence\Application\UseCase\CustomerRegister\CustomerRegisterCommand;
 use Persistence\Application\UseCase\CustomerRegister\CustomerRegisterUseCase;
 use Persistence\Application\ValueObject\CustomerFullName;
@@ -34,7 +34,7 @@ class CustomerRegisterE2ETest extends KernelTestCase
     private array $savedCustomers;
 
     /**
-     * @var \Persistence\Application\Persistence\CustomerPersistenceInterface
+     * @var \Persistence\Application\Persistence\Customer\CustomerPersistenceInterface
      */
     private CustomerPersistenceInterface $persistence;
 

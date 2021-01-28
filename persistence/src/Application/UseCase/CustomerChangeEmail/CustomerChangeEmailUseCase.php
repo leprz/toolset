@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Persistence\Application\UseCase\CustomerChangeEmail;
 
-use Persistence\Application\Persistence\CustomerPersistenceInterface;
-use Persistence\Application\Repository\CustomerRepositoryInterface;
+use Persistence\Application\Persistence\Customer\CustomerPersistenceInterface;
+use Persistence\Application\Persistence\Customer\CustomerRepositoryInterface;
 
 class CustomerChangeEmailUseCase
 {

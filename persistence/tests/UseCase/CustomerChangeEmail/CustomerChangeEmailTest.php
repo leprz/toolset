@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Persistence\Tests\UseCase\CustomerChangeEmail;
 
 use Persistence\Application\Entity\Customer;
-use Persistence\Application\Persistence\CustomerPersistenceInterface;
+use Persistence\Application\Persistence\Customer\CustomerPersistenceInterface;
 use Persistence\Application\UseCase\CustomerChangeEmail\CustomerChangeEmailCommand;
 use Persistence\Application\UseCase\CustomerChangeEmail\CustomerChangeEmailUseCase;
 use Persistence\Application\UseCase\CustomerChangeEmail\Exception\InvalidChangeRequestCode;
@@ -23,7 +23,7 @@ class CustomerChangeEmailTest extends KernelTestCase
     private CustomerChangeEmailUseCase $useCase;
 
     /**
-     * @var \Persistence\Application\Persistence\CustomerPersistenceInterface|\PHPUnit\Framework\MockObject\MockObject
+     * @var \Persistence\Application\Persistence\Customer\CustomerPersistenceInterface|\PHPUnit\Framework\MockObject\MockObject
      */
     private MockObject $customerPersistenceMock;
 

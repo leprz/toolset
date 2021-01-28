@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Persistence\Tests\UseCase\CustomerChangeEmail;
 
 use Persistence\Application\Entity\Customer;
-use Persistence\Application\Persistence\CustomerPersistenceInterface;
-use Persistence\Application\Repository\CustomerRepositoryInterface;
+use Persistence\Application\Persistence\Customer\CustomerPersistenceInterface;
+use Persistence\Application\Persistence\Customer\CustomerRepositoryInterface;
 use Persistence\Application\UseCase\CustomerChangeEmail\CustomerChangeEmailCommand;
 use Persistence\Application\UseCase\CustomerChangeEmail\CustomerChangeEmailUseCase;
 use Persistence\Application\ValueObject\CustomerId;
@@ -24,7 +24,7 @@ class CustomerChangeEmailE2ETest extends KernelTestCase
     private CustomerRepositoryInterface $customerRepository;
 
     /**
-     * @var \Persistence\Application\Persistence\CustomerPersistenceInterface
+     * @var \Persistence\Application\Persistence\Customer\CustomerPersistenceInterface
      */
     private CustomerPersistenceInterface $customerPersistence;
 

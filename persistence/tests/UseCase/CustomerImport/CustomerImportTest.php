@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Persistence\Tests\Application\UseCase\CustomerImport;
 
-use Persistence\Application\Persistence\CustomerPersistenceInterface;
+use Persistence\Application\Persistence\Customer\CustomerPersistenceInterface;
 use Persistence\Application\UseCase\CustomerImport\CustomerImportCommand;
 use Persistence\Application\UseCase\CustomerImport\CustomerImportUseCase;
 use Persistence\Application\UseCase\CustomerImport\CustomerToImport;
@@ -21,7 +21,7 @@ class CustomerImportTest extends KernelTestCase
     private CustomerImportUseCase $useCase;
 
     /**
-     * @var \Persistence\Application\Persistence\CustomerPersistenceInterface|\PHPUnit\Framework\MockObject\MockObject
+     * @var \Persistence\Application\Persistence\Customer\CustomerPersistenceInterface|\PHPUnit\Framework\MockObject\MockObject
      */
     private MockObject $customerPersistenceMock;
 

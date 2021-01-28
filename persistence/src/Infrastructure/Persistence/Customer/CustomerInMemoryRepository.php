@@ -7,7 +7,7 @@ namespace Persistence\Infrastructure\Persistence\Customer;
 use Persistence\Application\Entity\Customer;
 use Persistence\Application\Exception\DataSourceErrorException;
 use Persistence\Application\Exception\ResultNotFoundException;
-use Persistence\Application\Repository\CustomerRepositoryInterface;
+use Persistence\Application\Persistence\Customer\CustomerRepositoryInterface;
 use Persistence\Application\ValueObject\CustomerId;
 use Persistence\Infrastructure\DataSource\CustomerDataSource;
 use Persistence\Infrastructure\Persistence\Customer\Util\CustomerMapper;

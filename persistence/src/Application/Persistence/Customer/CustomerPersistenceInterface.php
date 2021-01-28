@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Persistence\Application\Persistence;
+namespace Persistence\Application\Persistence\Customer;
 
 use Persistence\Application\Entity\Customer;
 use Persistence\Application\ValueObject\CustomerId;

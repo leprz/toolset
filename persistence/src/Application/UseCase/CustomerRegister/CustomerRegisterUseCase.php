@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Persistence\Application\UseCase\CustomerRegister;
 
 use Persistence\Application\Entity\Customer;
-use Persistence\Application\Persistence\CustomerPersistenceInterface;
+use Persistence\Application\Persistence\Customer\CustomerPersistenceInterface;
 
 class CustomerRegisterUseCase
 {

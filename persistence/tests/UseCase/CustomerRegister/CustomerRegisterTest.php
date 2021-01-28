@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Persistence\Tests\UseCase\CustomerRegister;
 
-use Persistence\Application\Persistence\CustomerPersistenceInterface;
+use Persistence\Application\Persistence\Customer\CustomerPersistenceInterface;
 use Persistence\Application\UseCase\CustomerRegister\CustomerRegisterCommand;
 use Persistence\Application\UseCase\CustomerRegister\CustomerRegisterUseCase;
 use Persistence\Application\ValueObject\CustomerFullName;
@@ -18,7 +18,7 @@ class CustomerRegisterTest extends TestCase
 {
     private CustomerRegisterUseCase $useCase;
     /**
-     * @var \Persistence\Application\Persistence\CustomerPersistenceInterface|\PHPUnit\Framework\MockObject\MockObject
+     * @var \Persistence\Application\Persistence\Customer\CustomerPersistenceInterface|\PHPUnit\Framework\MockObject\MockObject
      */
     private MockObject $persistenceMock;
 

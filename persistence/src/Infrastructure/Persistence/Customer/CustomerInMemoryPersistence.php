@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Persistence\Infrastructure\Persistence\Customer;
 
 use Persistence\Application\Entity\Customer;
-use Persistence\Application\Persistence\CustomerPersistenceInterface;
+use Persistence\Application\Persistence\Customer\CustomerPersistenceInterface;
 use Persistence\Application\ValueObject\CustomerId;
 use Persistence\Infrastructure\DataSource\CustomerDataSource;
 use Persistence\Infrastructure\Persistence\Customer\Util\CustomerGetter;

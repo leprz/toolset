@@ -21,6 +21,8 @@ class CustomerMapper
      */
     public function mapFromDataSource(array $row): Customer
     {
+        [$customerId, $email, $firstName, $lastName] = $row;
+
         $reflection = new ReflectionClass(Customer::class);
 
         /** @var Customer $customer */
@@ -29,15 +31,15 @@ class CustomerMapper
         try {
             $reflectionProperty = $reflection->getProperty('customerId');
             $reflectionProperty->setAccessible(true);
-            $reflectionProperty->setValue($customer, CustomerId::fromString($row[0]));
+            $reflectionProperty->setValue($customer, CustomerId::fromString($customerId));
 
             $reflectionProperty = $reflection->getProperty('email');
             $reflectionProperty->setAccessible(true);
-            $reflectionProperty->setValue($customer, new Email($row[1]));
+            $reflectionProperty->setValue($customer, new Email($email));
 
             $reflectionProperty = $reflection->getProperty('name');
             $reflectionProperty->setAccessible(true);
-            $reflectionProperty->setValue($customer, new CustomerFullName($row[2], $row[3]));
+            $reflectionProperty->setValue($customer, new CustomerFullName($firstName, $lastName));
 
             return $customer;
         } catch (ReflectionException $e) {
