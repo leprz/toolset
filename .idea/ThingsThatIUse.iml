@@ -2,6 +2,14 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/value-object/src" isTestSource="false" packagePrefix="ValueObject\" />
+      <sourceFolder url="file://$MODULE_DIR$/persistence/tests" isTestSource="true" packagePrefix="Persistence\Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/value-object/tests" isTestSource="true" packagePrefix="ValueObject\Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/clock/src" isTestSource="false" packagePrefix="Clock\" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/clock/tests" isTestSource="true" packagePrefix="Clock\Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/persistence/src" isTestSource="false" packagePrefix="Persistence\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/amp" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/amphp/byte-stream" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />

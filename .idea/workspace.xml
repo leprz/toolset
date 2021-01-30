@@ -23,22 +23,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33cb54ac-aa4e-4592-a03f-f693a187fb12" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/clock/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clock/src/Application/Clock/ClockInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clock/src/Application/Clock/Date.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clock/src/Application/Clock/DateTime.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clock/src/Application/ValueObject/ActualDeliveryDate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clock/src/Application/ValueObject/EstimatedDeliveryDate.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clock/src/Infrastructure/Clock/SystemClock.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clock/tests/Application/Clock/ClockTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clock/tests/Application/Fake/FakeClock.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/filesystem-storage/resources/tests/avatars/test-avatar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ThingsThatIUse.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ThingsThatIUse.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistence/src/Application/Persistence/CustomerPersistenceInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/src/Application/Persistence/Customer/CustomerPersistenceInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistence/src/Application/Repository/CustomerRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/src/Application/Persistence/Customer/CustomerRepositoryInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistence/src/Application/UseCase/CustomerChangeEmail/CustomerChangeEmailUseCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/src/Application/UseCase/CustomerChangeEmail/CustomerChangeEmailUseCase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistence/src/Application/UseCase/CustomerImport/CustomerImportUseCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/src/Application/UseCase/CustomerImport/CustomerImportUseCase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistence/src/Application/UseCase/CustomerRegister/CustomerRegisterUseCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/src/Application/UseCase/CustomerRegister/CustomerRegisterUseCase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistence/src/Infrastructure/Persistence/Customer/CustomerInMemoryPersistence.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/src/Infrastructure/Persistence/Customer/CustomerInMemoryPersistence.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistence/src/Infrastructure/Persistence/Customer/CustomerInMemoryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/src/Infrastructure/Persistence/Customer/CustomerInMemoryRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistence/src/Infrastructure/Persistence/Customer/Util/CustomerMapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/src/Infrastructure/Persistence/Customer/Util/CustomerMapper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistence/src/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/src/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistence/tests/UseCase/CustomerChangeEmail/CustomerChangeEmailE2ETest.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/tests/UseCase/CustomerChangeEmail/CustomerChangeEmailE2ETest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistence/tests/UseCase/CustomerChangeEmail/CustomerChangeEmailTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/tests/UseCase/CustomerChangeEmail/CustomerChangeEmailTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistence/tests/UseCase/CustomerImport/CustomerImportE2ETest.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/tests/UseCase/CustomerImport/CustomerImportE2ETest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistence/tests/UseCase/CustomerImport/CustomerImportTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/tests/UseCase/CustomerImport/CustomerImportTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistence/tests/UseCase/CustomerRegister/CustomerRegisterE2ETest.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/tests/UseCase/CustomerRegister/CustomerRegisterE2ETest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistence/tests/UseCase/CustomerRegister/CustomerRegisterTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/persistence/tests/UseCase/CustomerRegister/CustomerRegisterTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/value-object/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/value-object/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,55 +157,55 @@
       <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\clock\src\Application\Clock" />
       <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\persistence\src\Application\Persistence\Customer" />
       <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\filesystem-storage\src\Application\ValueObject\Utils" />
       <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\filesystem-storage\src\Application\ValueObject" />
       <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\filesystem-storage\tests\Infrastructure\FilesystemStorage\LocalPath" />
-      <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\filesystem-storage\src\Application\FilesystemStorage" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.tests (1)">
-    <configuration name="LocalPath" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner directory="$PROJECT_DIR$/filesystem-storage/tests/Infrastructure/FilesystemStorage/LocalPath" />
+  <component name="RunManager" selected="PHPUnit.ClockTest.testEstimatedDeliveryTime">
+    <configuration name="ClockTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Clock\Tests\Application\Clock\ClockTest" file="$PROJECT_DIR$/clock/tests/Application/Clock/ClockTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="LocalPathUnixTest.testPathValidity" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="FilesystemStorage\Tests\Infrastructure\FilesystemStorage\LocalPath\LocalPathUnixTest" file="$PROJECT_DIR$/filesystem-storage/tests/Infrastructure/FilesystemStorage/LocalPath/LocalPathUnixTest.php" method="testPathValidity" scope="Method" />
+    <configuration name="ClockTest.testClock" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Clock\Tests\Application\Clock\ClockTest" file="$PROJECT_DIR$/clock/tests/Application/Clock/ClockTest.php" method="testClock" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="UserAvatarFilesystemStorageTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="FilesystemStorage\Tests\Application\FilesystemStorage\UserAvatarFilesystemStorageTest" file="$PROJECT_DIR$/filesystem-storage/tests/Application/FilesystemStorage/UserAvatarFilesystemStorageTest.php" scope="Class" />
+    <configuration name="ClockTest.testEstimatedDeliveryTime" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Clock\Tests\Application\Clock\ClockTest" file="$PROJECT_DIR$/clock/tests/Application/Clock/ClockTest.php" method="testEstimatedDeliveryTime" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ClockTest.testTodayWasBefore" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Clock\Tests\Application\Clock\ClockTest" file="$PROJECT_DIR$/clock/tests/Application/Clock/ClockTest.php" method="testTodayWasBefore" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="tests (1)" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner directory="$PROJECT_DIR$/persistence/tests" />
       <method v="2" />
     </configuration>
-    <configuration name="tests" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner directory="$PROJECT_DIR$/filesystem-storage/tests" />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="PHPUnit.LocalPathUnixTest.testPathValidity" />
-      <item itemvalue="PHPUnit.LocalPath" />
-      <item itemvalue="PHPUnit.UserAvatarFilesystemStorageTest" />
       <item itemvalue="PHPUnit.tests (1)" />
-      <item itemvalue="PHPUnit.tests" />
+      <item itemvalue="PHPUnit.ClockTest.testClock" />
+      <item itemvalue="PHPUnit.ClockTest.testTodayWasBefore" />
+      <item itemvalue="PHPUnit.ClockTest.testEstimatedDeliveryTime" />
+      <item itemvalue="PHPUnit.ClockTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.ClockTest.testEstimatedDeliveryTime" />
+        <item itemvalue="PHPUnit.ClockTest" />
+        <item itemvalue="PHPUnit.ClockTest.testTodayWasBefore" />
+        <item itemvalue="PHPUnit.ClockTest.testClock" />
         <item itemvalue="PHPUnit.tests (1)" />
-        <item itemvalue="PHPUnit.tests" />
-        <item itemvalue="PHPUnit.UserAvatarFilesystemStorageTest" />
-        <item itemvalue="PHPUnit.LocalPath" />
-        <item itemvalue="PHPUnit.LocalPathUnixTest.testPathValidity" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="efa90b29-8112-4c57-9ef3-5bb21ff5847e" name="Default Changelist" comment="" />
+      <changelist id="33cb54ac-aa4e-4592-a03f-f693a187fb12" name="Default Changelist" comment="" />
       <created>1608532048434</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -221,6 +219,7 @@
       <workItem from="1611637335825" duration="9460000" />
       <workItem from="1611686669713" duration="5481000" />
       <workItem from="1611810034901" duration="3869000" />
+      <workItem from="1611984644160" duration="2440000" />
     </task>
     <task id="LOCAL-00001" summary="pattern(persistence): add persistence with example test cases">
       <created>1611347580870</created>
@@ -271,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611692071804</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="refactor(persistence): application directory structure and mapper improved">
+      <created>1611815376830</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1611815376830</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,7 +299,8 @@
     <MESSAGE value="pattern(persistence): add persistence with example test cases" />
     <MESSAGE value="tmp" />
     <MESSAGE value="tmp1" />
-    <option name="LAST_COMMIT_MESSAGE" value="tmp1" />
+    <MESSAGE value="refactor(persistence): application directory structure and mapper improved" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(persistence): application directory structure and mapper improved" />
   </component>
   <component name="WindowStateProjectService">
     <state x="395" y="91" key="#Inspections" timestamp="1610693400549">
@@ -324,82 +331,86 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="520" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1611399518663" />
-    <state x="574" y="94" key="#com.intellij.ide.util.MemberChooser" timestamp="1611689134170">
+    <state x="574" y="94" key="#com.intellij.ide.util.MemberChooser" timestamp="1611869855457">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="94" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1611689134170" />
+    <state x="574" y="94" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1611869855457" />
     <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1611637263653">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1611637263653" />
-    <state x="410" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1611643815825">
+    <state x="410" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1611985160029">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="410" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1611643815825" />
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1611688796695">
+    <state x="410" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1611985160029" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1611816982688">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1611688796695" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1611816982688" />
+    <state x="549" y="338" key="#com.jetbrains.php.lang.intentions.PhpImportClassDialog#" timestamp="1611867900726">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="338" key="#com.jetbrains.php.lang.intentions.PhpImportClassDialog#/0.0.1536.824@0.0.1536.824" timestamp="1611867900726" />
     <state x="586" y="170" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1608535790634">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="586" y="170" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0/0.0.1536.824@0.0.1536.824" timestamp="1608535790634" />
-    <state x="524" y="115" key="#xdebugger.evaluate" timestamp="1611470801594">
+    <state x="524" y="115" key="#xdebugger.evaluate" timestamp="1611868786549">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="524" y="115" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1611470801594" />
+    <state x="524" y="115" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1611868786549" />
     <state x="528" y="282" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1611813673498">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="528" y="282" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1611813673498" />
-    <state x="47" y="0" width="1095" height="824" key="CommitChangelistDialog2" timestamp="1611692071023">
+    <state x="47" y="0" width="1095" height="824" key="CommitChangelistDialog2" timestamp="1611815376078">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="47" y="0" width="1095" height="824" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1611692071023" />
+    <state x="47" y="0" width="1095" height="824" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1611815376078" />
     <state x="545" y="325" key="ComposerInitDialogKey" timestamp="1608532657553">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="545" y="325" key="ComposerInitDialogKey/0.0.1536.824@0.0.1536.824" timestamp="1608532657553" />
-    <state width="822" height="466" key="DebuggerActiveHint" timestamp="1611475309644">
+    <state width="822" height="466" key="DebuggerActiveHint" timestamp="1611868533984">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="822" height="466" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1611475309644" />
+    <state width="822" height="466" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1611868533984" />
     <state x="737" y="30" key="FileChooserDialogImpl" timestamp="1611393069767">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="737" y="30" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1611393069767" />
-    <state width="1493" height="130" key="GridCell.Tab.0.bottom" timestamp="1611813838953">
+    <state width="1493" height="191" key="GridCell.Tab.0.bottom" timestamp="1611985235094">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="130" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611813838953" />
-    <state width="1493" height="130" key="GridCell.Tab.0.center" timestamp="1611813838953">
+    <state width="1493" height="191" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611985235094" />
+    <state width="1493" height="191" key="GridCell.Tab.0.center" timestamp="1611985235094">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="130" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1611813838953" />
-    <state width="1493" height="130" key="GridCell.Tab.0.left" timestamp="1611813838953">
+    <state width="1493" height="191" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1611985235094" />
+    <state width="1493" height="191" key="GridCell.Tab.0.left" timestamp="1611985235094">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="130" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1611813838953" />
-    <state width="1493" height="130" key="GridCell.Tab.0.right" timestamp="1611813838953">
+    <state width="1493" height="191" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1611985235094" />
+    <state width="1493" height="191" key="GridCell.Tab.0.right" timestamp="1611985235094">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="130" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1611813838953" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1611692219799">
+    <state width="1493" height="191" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1611985235094" />
+    <state width="1493" height="308" key="GridCell.Tab.1.bottom" timestamp="1611870594853">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611692219799" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1611692219799">
+    <state width="1493" height="308" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1611870594853" />
+    <state width="1493" height="308" key="GridCell.Tab.1.center" timestamp="1611870594853">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1611692219799" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1611692219799">
+    <state width="1493" height="308" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1611870594853" />
+    <state width="1493" height="308" key="GridCell.Tab.1.left" timestamp="1611870594853">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1611692219799" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1611692219799">
+    <state width="1493" height="308" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1611870594853" />
+    <state width="1493" height="308" key="GridCell.Tab.1.right" timestamp="1611870594853">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1611692219799" />
+    <state width="1493" height="308" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1611870594853" />
     <state x="147" y="65" key="MergeDialog" timestamp="1610693121673">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -408,14 +419,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="407" y="174" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1610693123186" />
-    <state x="501" y="135" key="NewPhpClassDialog" timestamp="1611688551365">
+    <state x="501" y="135" key="NewPhpClassDialog" timestamp="1611867644066">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="501" y="135" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1611688551365" />
-    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1611380447654">
+    <state x="501" y="135" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1611867644066" />
+    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1611815430994">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1611380447654" />
+    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1611815430994" />
     <state x="584" y="346" key="ReplaceDuplicatesPrompt" timestamp="1608535793305">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -436,18 +447,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1611344957156" />
-    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1611692075093">
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1611815379760">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1611692075093" />
+    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1611815379760" />
     <state x="404" y="27" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1611378121674">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="404" y="27" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1611378121674" />
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1611393367751">
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1611867979513">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1611393367751" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1611867979513" />
     <state x="398" y="220" width="1138" height="580" key="com.jetbrains.php.test.PhpNewTestDialog" timestamp="1611637414644">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -460,14 +471,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="455" y="184" width="847" height="640" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1611813822226" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1611643837148">
+    <state x="425" y="187" key="run.anything.popup" timestamp="1611869542063">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1611643837148" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1611689036049">
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1611869542063" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1611817027312">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1611689036049" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1611817027312" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ThingsThatIUse@tests.xml" NAME="tests Coverage Results" MODIFIED="1611486982434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

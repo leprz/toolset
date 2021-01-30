@@ -16,12 +16,14 @@
   "autoload": {
     "psr-4": {
       "ValueObject\\": "value-object/src/",
-      "Persistence\\": "persistence/src/"
+      "Persistence\\": "persistence/src/",
+      "Clock\\": "clock/src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
       "ValueObject\\Tests\\": "value-object/tests/",
+      "Clock\\Tests\\": "clock/tests/",
       "Persistence\\Tests\\": "persistence/tests/"
     }
   },
