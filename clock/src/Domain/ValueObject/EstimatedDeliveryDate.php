@@ -1,14 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace Clock\Application\ValueObject;
-
-use Clock\Application\Clock\Date;
+namespace Clock\Domain\ValueObject;
 
 class EstimatedDeliveryDate
 {
     /**
-     * @var \Clock\Application\Clock\Date
+     * @var \Clock\Domain\ValueObject\Date
      */
     private Date $estimatedDelivery;
 
@@ -27,9 +25,6 @@ class EstimatedDeliveryDate
         return new self($date);
     }
 
-    /**
-     * @return \Clock\Application\Clock\Date
-     */
     public function getDate(): Date
     {
         return $this->estimatedDelivery;

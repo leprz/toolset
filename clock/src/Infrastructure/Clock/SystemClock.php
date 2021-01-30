@@ -4,8 +4,8 @@ declare(strict_types=1);
 namespace Clock\Infrastructure\Clock;
 
 use Clock\Application\Clock\ClockInterface;
-use Clock\Application\Clock\Date;
-use Clock\Application\Clock\DateTime;
+use Clock\Domain\ValueObject\Date;
+use Clock\Domain\ValueObject\DateTime;
 use DateTimeImmutable;
 
 class SystemClock implements ClockInterface

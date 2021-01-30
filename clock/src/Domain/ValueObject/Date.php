@@ -1,17 +1,19 @@
 <?php
 declare(strict_types=1);
 
-namespace Clock\Application\Clock;
+namespace Clock\Domain\ValueObject;
 
+use Clock\Domain\Exception\InvalidArgumentException;
 use DateInterval;
 use DateTimeImmutable;
+use Exception;
 
 class Date
 {
     /**
      * @var \DateTimeImmutable
      */
-    private DateTimeImmutable $date;
+    protected DateTimeImmutable $date;
 
     /**
      * @param \DateTimeImmutable $date
@@ -21,14 +23,23 @@ class Date
         $this->date = $date->setTime(0, 0, 0);
     }
 
-    public static function fromString(string $date): self
+    /**
+     * @param string $date
+     * @return \Clock\Domain\ValueObject\Date
+     * @throws \Clock\Domain\Exception\InvalidArgumentException
+     */
+    public static function fromString(string $date): Date
     {
-        return new self(new DateTimeImmutable($date));
+        try {
+            return new self(new DateTimeImmutable($date));
+        } catch (Exception $e) {
+            throw new InvalidArgumentException($e->getMessage());
+        }
     }
 
     public function lessThanOrEqual(Date $date): bool
     {
-        return $this->date < $date->addDays(1)->getDateTime();
+        return $this->date <= $date->date;
     }
 
     /**

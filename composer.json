@@ -28,6 +28,7 @@
     }
   },
   "require": {
+    "nesbot/carbon": "^2.44",
     "pimple/pimple": "^3.0"
   },
   "require-dev": {

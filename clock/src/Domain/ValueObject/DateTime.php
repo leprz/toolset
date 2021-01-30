@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Clock\Application\Clock;
+namespace Clock\Domain\ValueObject;
 
 use DateTimeImmutable;
 

@@ -8,6 +8,7 @@
     <projectFiles>
         <directory name="value-object/src" />
         <directory name="persistence/src" />
+        <directory name="clock/src" />
         <ignoreFiles>
             <directory name="vendor" />
             <directory name="*/tests" />

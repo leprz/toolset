@@ -1,9 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Clock\Application\ValueObject;
-
-use Clock\Application\Clock\Date;
+namespace Clock\Domain\ValueObject;
 
 class ActualDeliveryDate
 {
