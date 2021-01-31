@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Clock\Tests\Application\Clock\Performance;
+namespace Clock\Tests\Application\Date\Performance;
 
 use PHPUnit\Framework\TestCase;
 

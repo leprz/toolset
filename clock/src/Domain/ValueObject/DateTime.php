@@ -3,33 +3,15 @@ declare(strict_types=1);
 
 namespace Clock\Domain\ValueObject;
 
-use DateTimeImmutable;
-
-class DateTime
+abstract class DateTime
 {
     /**
-     * @var \DateTimeImmutable
+     * @return mixed
      */
-    private DateTimeImmutable $dateTime;
+    abstract protected function getDate();
 
     /**
-     * @param \DateTimeImmutable $dateTime
+     * @return string
      */
-    public function __construct(DateTimeImmutable $dateTime)
-    {
-        $this->dateTime = $dateTime;
-    }
-
-    /**
-     * @return \DateTimeImmutable
-     */
-    public function getDateTime(): DateTimeImmutable
-    {
-        return $this->dateTime;
-    }
-
-    public function __toString(): string
-    {
-        return $this->dateTime->format('Y-m-d H:i:s');
-    }
+    abstract public function __toString(): string;
 }

@@ -3,30 +3,29 @@ declare(strict_types=1);
 
 namespace Clock\Tests\Application\Fake;
 
-use Clock\Application\Clock\ClockInterface;
-use Clock\Domain\ValueObject\Date;
-use Clock\Domain\ValueObject\DateTime;
-use DateTimeImmutable;
+use Clock\Application\Date\ClockInterface;
+use Clock\Application\Date\Date;
+use Clock\Application\Date\DateTime;
 
 class FakeClock implements ClockInterface
 {
-    private DateTimeImmutable $fakeNow;
+    private string $fakeNow;
 
     /**
-     * @param \DateTimeImmutable $fakeNow
+     * @param string $date
      */
-    public function __construct(DateTimeImmutable $fakeNow)
+    public function __construct(string $date)
     {
-        $this->fakeNow = $fakeNow;
+        $this->fakeNow = $date;
     }
 
-    public function now(): DateTime
+    public function now(): \Clock\Domain\ValueObject\DateTime
     {
-        return new DateTime($this->fakeNow);
+        return DateTime::fromString($this->fakeNow);
     }
 
-    public function today(): Date
+    public function today(): \Clock\Domain\ValueObject\Date
     {
-        return new Date($this->fakeNow);
+        return Date::fromString($this->fakeNow);
     }
 }

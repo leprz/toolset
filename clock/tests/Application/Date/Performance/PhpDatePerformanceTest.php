@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Clock\Tests\Application\Clock\Performance;
+namespace Clock\Tests\Application\Date\Performance;
 
-use Clock\Tests\Application\Clock\Performance\Implementation\PhpDate;
+use Clock\Tests\Application\Date\Performance\Implementation\PhpDate;
 use DateTimeImmutable;
 
 class PhpDatePerformanceTest extends DatePerformanceTest

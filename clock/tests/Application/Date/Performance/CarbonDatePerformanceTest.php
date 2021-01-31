@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Clock\Tests\Application\Clock\Performance;
+namespace Clock\Tests\Application\Date\Performance;
 
 use Carbon\CarbonImmutable;
-use Clock\Tests\Application\Clock\Performance\Implementation\CarbonDate;
+use Clock\Tests\Application\Date\Performance\Implementation\CarbonDate;
 
 class CarbonDatePerformanceTest extends DatePerformanceTest
 {

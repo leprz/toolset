@@ -4,8 +4,8 @@ declare(strict_types=1);
 namespace Clock\Tests\Domain;
 
 use Clock\Domain\ValueObject\ActualDeliveryDate;
-use Clock\Domain\ValueObject\Date;
 use Clock\Domain\ValueObject\EstimatedDeliveryDate;
+use Clock\Infrastructure\ValueObject\Date;
 use PHPUnit\Framework\TestCase;
 
 class DeliveryDateTest extends TestCase

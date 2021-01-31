@@ -1,18 +1,17 @@
 <?php
 declare(strict_types=1);
 
-namespace Clock\Tests\Application\Clock;
+namespace Clock\Tests\Application\Date;
 
-use Clock\Application\Clock\ClockInterface;
-use Clock\Domain\ValueObject\Date;
+use Clock\Application\Date\ClockInterface;
+use Clock\Infrastructure\ValueObject\Date;
 use Clock\Tests\Application\Fake\FakeClock;
-use DateTimeImmutable;
-use PHPUnit\Framework\TestCase;
+use Clock\Tests\KernelTestCase;
 
-class ClockTest extends TestCase
+class ClockTest extends KernelTestCase
 {
     /**
-     * @var \Clock\Application\Clock\ClockInterface
+     * @var \Clock\Application\Date\ClockInterface
      */
     private ClockInterface $clock;
 
@@ -34,6 +33,8 @@ class ClockTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->clock = new FakeClock(new DateTimeImmutable('2020-05-05 12:00:00'));
+        self::bootKernel();
+
+        $this->clock = new FakeClock('2020-05-05 12:00:00');
     }
 }

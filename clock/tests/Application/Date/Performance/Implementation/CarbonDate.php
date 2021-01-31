@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Clock\Tests\Application\Clock\Performance\Implementation;
+namespace Clock\Tests\Application\Date\Performance\Implementation;
 
 use Carbon\CarbonImmutable;
 

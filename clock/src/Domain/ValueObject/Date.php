@@ -3,67 +3,27 @@ declare(strict_types=1);
 
 namespace Clock\Domain\ValueObject;
 
-use Clock\Domain\Exception\InvalidArgumentException;
-use DateInterval;
-use DateTimeImmutable;
-use Exception;
-
-class Date
+abstract class Date
 {
     /**
-     * @var \DateTimeImmutable
+     * @param \Clock\Domain\ValueObject\Date $date
+     * @return bool
      */
-    protected DateTimeImmutable $date;
+    abstract public function lessThanOrEqual(self $date): bool;
 
     /**
-     * @param \DateTimeImmutable $date
+     * @param int $days
+     * @return self
      */
-    public function __construct(DateTimeImmutable $date)
-    {
-        $this->date = $date->setTime(0, 0, 0);
-    }
+    abstract public function addDays(int $days): self;
 
     /**
-     * @param string $date
-     * @return \Clock\Domain\ValueObject\Date
-     * @throws \Clock\Domain\Exception\InvalidArgumentException
+     * @return mixed
      */
-    public static function fromString(string $date): Date
-    {
-        try {
-            return new self(new DateTimeImmutable($date));
-        } catch (Exception $e) {
-            throw new InvalidArgumentException($e->getMessage());
-        }
-    }
-
-    public function lessThanOrEqual(Date $date): bool
-    {
-        return $this->date <= $date->date;
-    }
+    abstract protected function getDate();
 
     /**
-     * @return \DateTimeImmutable
+     * @return string
      */
-    public function getDateTime(): DateTimeImmutable
-    {
-        return $this->date;
-    }
-
-    /** @noinspection PhpUnhandledExceptionInspection */
-    public function addDays(int $days): self
-    {
-        return new self(
-            $this->date->add(
-                new DateInterval(
-                    sprintf('P%sD', $days)
-                )
-            )
-        );
-    }
-
-    public function __toString(): string
-    {
-        return $this->date->format('Y-m-d');
-    }
+    abstract public function __toString(): string;
 }
