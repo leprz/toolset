@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Persistence\Application\Persistence\Customer;
 
-use Persistence\Application\Entity\Customer;
-use Persistence\Application\ValueObject\CustomerId;
+use Persistence\Domain\Customer;
+use Persistence\Domain\ValueObject\CustomerId;
 
 interface CustomerRepositoryInterface
 {
     /**
-     * @param \Persistence\Application\ValueObject\CustomerId $customerId
-     * @return \Persistence\Application\Entity\Customer
+     * @param \Persistence\Domain\ValueObject\CustomerId $customerId
+     * @return \Persistence\Domain\Customer
      * @throws \Persistence\Application\Exception\DataSourceErrorException
      * @throws \Persistence\Application\Exception\ResultNotFoundException
      */

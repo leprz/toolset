@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace Persistence\Application\UseCase\CustomerChangeEmail;
 
-use Persistence\Application\ValueObject\CustomerId;
-use Persistence\Application\ValueObject\Email;
+use Persistence\Domain\ValueObject\CustomerId;
+use Persistence\Domain\ValueObject\Email;
 
 class CustomerChangeEmailCommand
 {
     /**
-     * @var \Persistence\Application\ValueObject\CustomerId
+     * @var \Persistence\Domain\ValueObject\CustomerId
      */
     private CustomerId $customerId;
     /**
-     * @var \Persistence\Application\ValueObject\Email
+     * @var \Persistence\Domain\ValueObject\Email
      */
     private Email $email;
 

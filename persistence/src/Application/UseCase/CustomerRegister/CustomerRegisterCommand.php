@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Persistence\Application\UseCase\CustomerRegister;
 
-use Persistence\Application\ValueObject\CustomerFullName;
-use Persistence\Application\ValueObject\CustomerId;
-use Persistence\Application\ValueObject\Email;
+use Persistence\Domain\ValueObject\CustomerFullName;
+use Persistence\Domain\ValueObject\CustomerId;
+use Persistence\Domain\ValueObject\Email;
 
 class CustomerRegisterCommand
 {

@@ -8,8 +8,8 @@ use Persistence\Application\Persistence\Customer\CustomerPersistenceInterface;
 use Persistence\Application\UseCase\CustomerImport\CustomerImportCommand;
 use Persistence\Application\UseCase\CustomerImport\CustomerImportUseCase;
 use Persistence\Application\UseCase\CustomerImport\CustomerToImport;
-use Persistence\Application\ValueObject\CustomerFullName;
-use Persistence\Application\ValueObject\Email;
+use Persistence\Domain\ValueObject\Email;
+use Persistence\Domain\ValueObject\CustomerFullName;
 use Persistence\Tests\KernelTestCase;
 use PHPUnit\Framework\MockObject\MockObject;
 
@@ -40,14 +40,14 @@ class CustomerImportTest extends KernelTestCase
 
         $command->addData(
             new CustomerToImport(
-                new Email('bob@example.com'),
+                Email::fromString('bob@example.com'),
                 new CustomerFullName('Bob', 'Lee')
             )
         );
 
         $command->addData(
             new CustomerToImport(
-                new Email('matt@example.com'),
+                Email::fromString('matt@example.com'),
                 new CustomerFullName('Matt', 'Lee')
             )
         );

@@ -4,29 +4,29 @@ declare(strict_types=1);
 
 namespace Persistence\Application\Persistence\Customer;
 
-use Persistence\Application\Entity\Customer;
-use Persistence\Application\ValueObject\CustomerId;
+use Persistence\Domain\Customer;
+use Persistence\Domain\ValueObject\CustomerId;
 
 interface CustomerPersistenceInterface
 {
     /**
-     * @param \Persistence\Application\Entity\Customer $customer
+     * @param \Persistence\Domain\Customer $customer
      */
     public function add(Customer $customer): void;
 
     /**
-     * @return \Persistence\Application\ValueObject\CustomerId
+     * @return \Persistence\Domain\ValueObject\CustomerId
      */
     public function generateNextId(): CustomerId;
 
     /**
-     * @param \Persistence\Application\Entity\Customer $customer
+     * @param \Persistence\Domain\Customer $customer
      * @throws \Persistence\Application\Exception\ResultNotFoundException
      */
     public function save(Customer $customer): void;
 
     /**
-     * @param \Persistence\Application\Entity\Customer $customer
+     * @param \Persistence\Domain\Customer $customer
      * @throws \Persistence\Application\Exception\ResultNotFoundException
      */
     public function remove(Customer $customer): void;

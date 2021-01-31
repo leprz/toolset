@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Persistence\Application\UseCase\CustomerImport;
 
-use Persistence\Application\ValueObject\CustomerFullName;
-use Persistence\Application\ValueObject\Email;
+use Persistence\Domain\ValueObject\CustomerFullName;
+use Persistence\Domain\ValueObject\Email;
 
 class CustomerToImport
 {

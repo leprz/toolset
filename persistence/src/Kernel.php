@@ -12,7 +12,6 @@ use Persistence\Application\UseCase\CustomerRegister\CustomerRegisterUseCase;
 use Persistence\Infrastructure\DataSource\CustomerDataSource;
 use Persistence\Infrastructure\Persistence\Customer\CustomerIdGenerator;
 use Persistence\Infrastructure\Persistence\Customer\CustomerInMemoryPersistence;
-use Persistence\Infrastructure\Persistence\Customer\CustomerInMemoryRepository;
 use Persistence\Infrastructure\Persistence\Customer\Util\CustomerMapper;
 use Pimple\Container;
 
@@ -23,6 +22,9 @@ class Kernel
      */
     private Container $container;
 
+    /**
+     * @param \Pimple\Container $container
+     */
     public function __construct(Container $container)
     {
         $this->container = $container;
@@ -39,8 +41,12 @@ class Kernel
         };
 
         $this->container[CustomerRepositoryInterface::class] =
-            static function (Container $c): CustomerInMemoryRepository {
-                return new CustomerInMemoryRepository($c[CustomerDataSource::class], $c[CustomerMapper::class]);
+            static function (Container $c): CustomerRepositoryInterface {
+                return new CustomerInMemoryPersistence(
+                    $c[CustomerDataSource::class],
+                    $c[CustomerIdGenerator::class],
+                    $c[CustomerMapper::class]
+                );
             };
 
         $this->container[CustomerIdGenerator::class] =
@@ -76,6 +82,9 @@ class Kernel
             };
     }
 
+    /**
+     * @return \Pimple\Container
+     */
     public function getContainer(): Container
     {
         return $this->container;

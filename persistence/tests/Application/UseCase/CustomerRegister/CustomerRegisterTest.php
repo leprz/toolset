@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Persistence\Tests\UseCase\CustomerRegister;
+namespace Persistence\Tests\Application\UseCase\CustomerRegister;
 
 use Persistence\Application\Persistence\Customer\CustomerPersistenceInterface;
 use Persistence\Application\UseCase\CustomerRegister\CustomerRegisterCommand;
 use Persistence\Application\UseCase\CustomerRegister\CustomerRegisterUseCase;
-use Persistence\Application\ValueObject\CustomerFullName;
-use Persistence\Application\ValueObject\CustomerId;
-use Persistence\Application\ValueObject\Email;
+use Persistence\Domain\ValueObject\Email;
+use Persistence\Domain\ValueObject\CustomerFullName;
+use Persistence\Domain\ValueObject\CustomerId;
 use Persistence\Infrastructure\Persistence\Customer\CustomerIdGenerator;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -37,7 +37,7 @@ class CustomerRegisterTest extends TestCase
     {
         return new CustomerRegisterCommand(
             $customerId,
-            new Email('john.doe@example.com'),
+            Email::fromString('john.doe@example.com'),
             new CustomerFullName('John', 'Doe')
         );
     }

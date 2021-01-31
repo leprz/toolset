@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Persistence\Tests\UseCase\CustomerChangeEmail;
+namespace Persistence\Tests\Application\UseCase\CustomerChangeEmail;
 
-use Persistence\Application\Entity\Customer;
 use Persistence\Application\Persistence\Customer\CustomerPersistenceInterface;
 use Persistence\Application\Persistence\Customer\CustomerRepositoryInterface;
 use Persistence\Application\UseCase\CustomerChangeEmail\CustomerChangeEmailCommand;
 use Persistence\Application\UseCase\CustomerChangeEmail\CustomerChangeEmailUseCase;
-use Persistence\Application\ValueObject\CustomerId;
-use Persistence\Application\ValueObject\Email;
+use Persistence\Domain\ValueObject\CustomerId;
+use Persistence\Domain\ValueObject\Email;
+use Persistence\Domain\Customer;
 use Persistence\Infrastructure\Persistence\Customer\Util\CustomerGetter;
 use Persistence\Tests\KernelTestCase;
 
@@ -21,6 +21,9 @@ class CustomerChangeEmailE2ETest extends KernelTestCase
      */
     private CustomerChangeEmailUseCase $useCase;
 
+    /**
+     * @var mixed|\Persistence\Application\Persistence\Customer\CustomerRepositoryInterface
+     */
     private CustomerRepositoryInterface $customerRepository;
 
     /**
@@ -29,14 +32,14 @@ class CustomerChangeEmailE2ETest extends KernelTestCase
     private CustomerPersistenceInterface $customerPersistence;
 
     /**
-     * @var \Persistence\Application\Entity\Customer
+     * @var \Persistence\Domain\Customer
      */
     private Customer $customerInitialState;
 
     /** @noinspection PhpUnhandledExceptionInspection */
     public function testHandle(): void
     {
-        $newEmail = new Email('test@example.com');
+        $newEmail = Email::fromString('test@example.com');
 
         $this->useCase->handle($this->changeJohnDoeEmailCommandFixture($newEmail));
 
@@ -47,15 +50,20 @@ class CustomerChangeEmailE2ETest extends KernelTestCase
 
     private function changeJohnDoeEmailCommandFixture(Email $newEmail): CustomerChangeEmailCommand
     {
-        return new CustomerChangeEmailCommand(CustomerId::fromString('a1'), $newEmail, 'abc123');
+        return new CustomerChangeEmailCommand($this->customerIdFixture(), $newEmail, 'abc123');
     }
 
     /** @noinspection PhpUnhandledExceptionInspection */
     private function assertEmailHasBeenChanged(Email $newEmail): void
     {
-        $customer = $this->customerRepository->getForId(CustomerId::fromString('a1'));
+        $customer = $this->customerRepository->getForId($this->customerIdFixture());
 
         self::assertEquals($newEmail, CustomerGetter::getEmail($customer));
+    }
+
+    private function customerIdFixture(): CustomerId
+    {
+        return CustomerId::fromString('8B8B3F05-96BE-473C-80BF-5D6F2D0B1449');
     }
 
     /** @noinspection PhpUnhandledExceptionInspection */
@@ -77,6 +85,8 @@ class CustomerChangeEmailE2ETest extends KernelTestCase
 
         $this->customerPersistence = $container[CustomerPersistenceInterface::class];
 
-        $this->customerInitialState = $this->customerRepository->getForId(CustomerId::fromString('a1'));
+        $this->customerInitialState = $this->customerRepository->getForId(
+            CustomerId::fromString('8B8B3F05-96BE-473C-80BF-5D6F2D0B1449')
+        );
     }
 }

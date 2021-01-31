@@ -16,13 +16,15 @@
   "autoload": {
     "psr-4": {
       "ValueObject\\": "value-object/src/",
-      "Persistence\\": "persistence/src/"
+      "Persistence\\": "persistence/src/",
+      "SharedKernel\\": "shared-kernel/src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
       "ValueObject\\Tests\\": "value-object/tests/",
-      "Persistence\\Tests\\": "persistence/tests/"
+      "Persistence\\Tests\\": "persistence/tests/",
+      "SharedKernel\\Tests\\": "shared-kernel/tests/"
     }
   },
   "require": {

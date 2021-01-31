@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Persistence\Tests\Fixture;
+namespace Persistence\Tests\Fake;
 
-use Persistence\Application\ValueObject\CustomerId;
+use Persistence\Domain\ValueObject\CustomerId;
 use Persistence\Infrastructure\Persistence\Customer\CustomerIdGenerator;
 
-class CustomerIdGeneratorFixture extends CustomerIdGenerator
+class FakeCustomerIdGenerator extends CustomerIdGenerator
 {
     /**
-     * @var \Persistence\Application\ValueObject\CustomerId[]
+     * @var \Persistence\Domain\ValueObject\CustomerId[]
      */
     private array $generatedIds = [];
 
@@ -22,7 +22,7 @@ class CustomerIdGeneratorFixture extends CustomerIdGenerator
     }
 
     /**
-     * @return \Persistence\Application\ValueObject\CustomerId[]
+     * @return \Persistence\Domain\ValueObject\CustomerId[]
      */
     public function getGeneratedIds(): array
     {

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Persistence\Infrastructure\Persistence\Customer\Util;
 
-use Persistence\Application\Entity\Customer;
-use Persistence\Application\ValueObject\CustomerFullName;
-use Persistence\Application\ValueObject\CustomerId;
-use Persistence\Application\ValueObject\Email;
+use Persistence\Domain\ValueObject\CustomerId;
+use Persistence\Domain\ValueObject\Email;
+use Persistence\Domain\Customer;
+use Persistence\Domain\ValueObject\CustomerFullName;
 use Persistence\Infrastructure\Persistence\Exception\MappingException;
 use ReflectionClass;
 use ReflectionException;
@@ -16,8 +16,9 @@ class CustomerMapper
 {
     /**
      * @param array<mixed> $row
-     * @return \Persistence\Application\Entity\Customer
+     * @return \Persistence\Domain\Customer
      * @throws \Persistence\Infrastructure\Persistence\Exception\MappingException
+     * @noinspection PhpDocMissingThrowsInspection
      */
     public function mapFromDataSource(array $row): Customer
     {
@@ -31,11 +32,18 @@ class CustomerMapper
         try {
             $reflectionProperty = $reflection->getProperty('customerId');
             $reflectionProperty->setAccessible(true);
+
+            /**
+             * @noinspection PhpUnhandledExceptionInspection
+             * This is fragile to data corruption coming from the data store. It should be handled somehow.
+             */
             $reflectionProperty->setValue($customer, CustomerId::fromString($customerId));
 
             $reflectionProperty = $reflection->getProperty('email');
             $reflectionProperty->setAccessible(true);
-            $reflectionProperty->setValue($customer, new Email($email));
+
+            /** @noinspection PhpUnhandledExceptionInspection */
+            $reflectionProperty->setValue($customer, Email::fromString($email));
 
             $reflectionProperty = $reflection->getProperty('name');
             $reflectionProperty->setAccessible(true);
@@ -48,7 +56,7 @@ class CustomerMapper
     }
 
     /**
-     * @param \Persistence\Application\Entity\Customer $customer
+     * @param \Persistence\Domain\Customer $customer
      * @return array<mixed>
      */
     public function mapToDataSource(Customer $customer): array
