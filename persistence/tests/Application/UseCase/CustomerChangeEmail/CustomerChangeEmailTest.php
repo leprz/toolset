@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Persistence\Tests\UseCase\CustomerChangeEmail;
+namespace Persistence\Tests\Application\UseCase\CustomerChangeEmail;
 
-use Persistence\Application\Entity\Customer;
 use Persistence\Application\Persistence\Customer\CustomerPersistenceInterface;
 use Persistence\Application\UseCase\CustomerChangeEmail\CustomerChangeEmailCommand;
 use Persistence\Application\UseCase\CustomerChangeEmail\CustomerChangeEmailUseCase;
 use Persistence\Application\UseCase\CustomerChangeEmail\Exception\InvalidChangeRequestCode;
-use Persistence\Application\ValueObject\CustomerId;
-use Persistence\Application\ValueObject\Email;
+use Persistence\Domain\ValueObject\CustomerId;
+use Persistence\Domain\ValueObject\Email;
+use Persistence\Domain\Customer;
 use Persistence\Infrastructure\Persistence\Customer\Util\CustomerGetter;
 use Persistence\Tests\KernelTestCase;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -30,7 +30,7 @@ class CustomerChangeEmailTest extends KernelTestCase
     /** @noinspection PhpUnhandledExceptionInspection */
     public function testHandle(): void
     {
-        $newEmail = new Email('test@example.com');
+        $newEmail = Email::fromString('test@example.com');
 
         $this->assertEmailHasBeenChanged($newEmail);
 
@@ -40,7 +40,7 @@ class CustomerChangeEmailTest extends KernelTestCase
     /** @noinspection PhpUnhandledExceptionInspection */
     public function testHandleWithInvalidChangeRequestEmail(): void
     {
-        $newEmail = new Email('test@example.com');
+        $newEmail = Email::fromString('test@example.com');
 
         $this->assertInvalidChangeRequestCodeFound();
 
@@ -49,7 +49,12 @@ class CustomerChangeEmailTest extends KernelTestCase
 
     private function changeInvalidChangeRequestCodeCommandFixture(Email $newEmail): CustomerChangeEmailCommand
     {
-        return new CustomerChangeEmailCommand(CustomerId::fromString('a1'), $newEmail, 'invalid-code');
+        return new CustomerChangeEmailCommand($this->customerIdFixture(), $newEmail, 'invalid-code');
+    }
+
+    private function customerIdFixture(): CustomerId
+    {
+        return CustomerId::fromString('8B8B3F05-96BE-473C-80BF-5D6F2D0B1449');
     }
 
     private function assertInvalidChangeRequestCodeFound(): void
@@ -71,7 +76,7 @@ class CustomerChangeEmailTest extends KernelTestCase
 
     private function changeJohnDoeEmailCommandFixture(Email $newEmail): CustomerChangeEmailCommand
     {
-        return new CustomerChangeEmailCommand(CustomerId::fromString('a1'), $newEmail, 'abc123');
+        return new CustomerChangeEmailCommand($this->customerIdFixture(), $newEmail, 'abc123');
     }
 
     protected function setUp(): void

@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Persistence\Tests\UseCase\CustomerRegister;
+namespace Persistence\Tests\Application\UseCase\CustomerRegister;
 
 use Persistence\Application\Persistence\Customer\CustomerPersistenceInterface;
 use Persistence\Application\Persistence\Customer\CustomerRepositoryInterface;
 use Persistence\Application\UseCase\CustomerRegister\CustomerRegisterCommand;
 use Persistence\Application\UseCase\CustomerRegister\CustomerRegisterUseCase;
-use Persistence\Application\ValueObject\CustomerFullName;
-use Persistence\Application\ValueObject\CustomerId;
-use Persistence\Application\ValueObject\Email;
-use Persistence\Infrastructure\Persistence\Customer\Util\CustomerGetter;
+use Persistence\Domain\ValueObject\Email;
+use Persistence\Domain\ValueObject\CustomerFullName;
+use Persistence\Domain\ValueObject\CustomerId;
 use Persistence\Infrastructure\Persistence\Customer\CustomerIdGenerator;
 use Persistence\Infrastructure\Persistence\Customer\CustomerInMemoryRepository;
+use Persistence\Infrastructure\Persistence\Customer\Util\CustomerGetter;
 use Persistence\Tests\KernelTestCase;
 
 class CustomerRegisterE2ETest extends KernelTestCase
@@ -29,7 +29,7 @@ class CustomerRegisterE2ETest extends KernelTestCase
     private CustomerInMemoryRepository $repository;
 
     /**
-     * @var \Persistence\Application\Entity\Customer[]
+     * @var \Persistence\Domain\Customer[]
      */
     private array $savedCustomers;
 
@@ -55,7 +55,7 @@ class CustomerRegisterE2ETest extends KernelTestCase
     {
         return new CustomerRegisterCommand(
             $customerId,
-            new Email('john.doe@example.com'),
+            Email::fromString('john.doe@example.com'),
             new CustomerFullName('John', 'Doe')
         );
     }

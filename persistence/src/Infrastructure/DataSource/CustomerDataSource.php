@@ -12,7 +12,7 @@ class CustomerDataSource
      * @var array<mixed>
      */
     private static array $customers = [
-        ['a1', 'john.doe@example.com', 'John', 'Doe']
+        ['8B8B3F05-96BE-473C-80BF-5D6F2D0B1449', 'john.doe@example.com', 'John', 'Doe']
     ];
 
     /**

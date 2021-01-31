@@ -9,20 +9,20 @@ use Persistence\Application\Persistence\Customer\CustomerRepositoryInterface;
 use Persistence\Application\UseCase\CustomerImport\CustomerImportCommand;
 use Persistence\Application\UseCase\CustomerImport\CustomerImportUseCase;
 use Persistence\Application\UseCase\CustomerImport\CustomerToImport;
-use Persistence\Application\ValueObject\CustomerFullName;
-use Persistence\Application\ValueObject\Email;
-use Persistence\Infrastructure\Persistence\Customer\Util\CustomerGetter;
+use Persistence\Domain\ValueObject\Email;
+use Persistence\Domain\ValueObject\CustomerFullName;
 use Persistence\Infrastructure\Persistence\Customer\CustomerIdGenerator;
 use Persistence\Infrastructure\Persistence\Customer\CustomerInMemoryRepository;
-use Persistence\Tests\Fixture\CustomerIdGeneratorFixture;
+use Persistence\Infrastructure\Persistence\Customer\Util\CustomerGetter;
+use Persistence\Tests\Fake\FakeCustomerIdGenerator;
 use Persistence\Tests\KernelTestCase;
 
 class CustomerImportE2ETest extends KernelTestCase
 {
     /**
-     * @var \Persistence\Tests\Fixture\CustomerIdGeneratorFixture
+     * @var \Persistence\Tests\Fake\FakeCustomerIdGenerator
      */
-    private CustomerIdGeneratorFixture $customerIdGenerator;
+    private FakeCustomerIdGenerator $customerIdGenerator;
 
     /**
      * @var \Persistence\Application\UseCase\CustomerImport\CustomerImportUseCase
@@ -35,7 +35,7 @@ class CustomerImportE2ETest extends KernelTestCase
     private CustomerInMemoryRepository $repository;
 
     /**
-     * @var \Persistence\Application\Entity\Customer[]
+     * @var \Persistence\Domain\Customer[]
      */
     private array $savedCustomers = [];
 
@@ -61,14 +61,14 @@ class CustomerImportE2ETest extends KernelTestCase
 
         $command->addData(
             new CustomerToImport(
-                new Email('bob@example.com'),
+                Email::fromString('bob@example.com'),
                 new CustomerFullName('Bob', 'Lee')
             )
         );
 
         $command->addData(
             new CustomerToImport(
-                new Email('matt@example.com'),
+                Email::fromString('matt@example.com'),
                 new CustomerFullName('Matt', 'Lee')
             )
         );
@@ -106,7 +106,7 @@ class CustomerImportE2ETest extends KernelTestCase
 
         $container = self::$container;
 
-        $this->customerIdGenerator = new CustomerIdGeneratorFixture();
+        $this->customerIdGenerator = new FakeCustomerIdGenerator();
 
         $container[CustomerIdGenerator::class] = $this->customerIdGenerator;
 

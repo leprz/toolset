@@ -2,27 +2,27 @@
 
 declare(strict_types=1);
 
-namespace Persistence\Application\Entity;
+namespace Persistence\Domain;
 
 use Persistence\Application\UseCase\CustomerChangeEmail\Exception\InvalidChangeRequestCode;
-use Persistence\Application\ValueObject\CustomerFullName;
-use Persistence\Application\ValueObject\CustomerId;
-use Persistence\Application\ValueObject\Email;
+use Persistence\Domain\ValueObject\CustomerFullName;
+use Persistence\Domain\ValueObject\CustomerId;
+use Persistence\Domain\ValueObject\Email;
 
 class Customer
 {
     /**
-     * @var \Persistence\Application\ValueObject\CustomerId
+     * @var \Persistence\Domain\ValueObject\CustomerId
      */
     protected CustomerId $customerId;
 
     /**
-     * @var \Persistence\Application\ValueObject\CustomerFullName
+     * @var \Persistence\Domain\ValueObject\CustomerFullName
      */
     protected CustomerFullName $name;
 
     /**
-     * @var \Persistence\Application\ValueObject\Email
+     * @var \Persistence\Domain\ValueObject\Email
      */
     protected Email $email;
 
@@ -33,9 +33,9 @@ class Customer
     private string $emailChangeRequestCode = 'abc123';
 
     /**
-     * @param \Persistence\Application\ValueObject\CustomerId $customerId
-     * @param \Persistence\Application\ValueObject\Email $email
-     * @param \Persistence\Application\ValueObject\CustomerFullName $customerName
+     * @param \Persistence\Domain\ValueObject\CustomerId $customerId
+     * @param \Persistence\Domain\ValueObject\Email $email
+     * @param \Persistence\Domain\ValueObject\CustomerFullName $customerName
      */
     private function __construct(CustomerId $customerId, Email $email, CustomerFullName $customerName)
     {
@@ -45,10 +45,10 @@ class Customer
     }
 
     /**
-     * @param \Persistence\Application\ValueObject\CustomerId $customerId
-     * @param \Persistence\Application\ValueObject\Email $email
-     * @param \Persistence\Application\ValueObject\CustomerFullName $customerFullName
-     * @return \Persistence\Application\Entity\Customer
+     * @param \Persistence\Domain\ValueObject\CustomerId $customerId
+     * @param \Persistence\Domain\ValueObject\Email $email
+     * @param \Persistence\Domain\ValueObject\CustomerFullName $customerFullName
+     * @return \Persistence\Domain\Customer
      */
     public static function register(CustomerId $customerId, Email $email, CustomerFullName $customerFullName): Customer
     {
@@ -56,7 +56,7 @@ class Customer
     }
 
     /**
-     * @param \Persistence\Application\ValueObject\Email $email
+     * @param \Persistence\Domain\ValueObject\Email $email
      * @param string $changeRequestCode
      * @throws \Persistence\Application\UseCase\CustomerChangeEmail\Exception\InvalidChangeRequestCode
      */

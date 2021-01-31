@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Persistence\Infrastructure\Persistence\Customer;
 
-use Persistence\Application\Entity\Customer;
 use Persistence\Application\Persistence\Customer\CustomerPersistenceInterface;
-use Persistence\Application\ValueObject\CustomerId;
+use Persistence\Domain\Customer;
+use Persistence\Domain\ValueObject\CustomerId;
 use Persistence\Infrastructure\DataSource\CustomerDataSource;
 use Persistence\Infrastructure\Persistence\Customer\Util\CustomerGetter;
 use Persistence\Infrastructure\Persistence\Customer\Util\CustomerMapper;
@@ -17,10 +17,12 @@ class CustomerInMemoryPersistence implements CustomerPersistenceInterface
      * @var \Persistence\Infrastructure\DataSource\CustomerDataSource
      */
     private CustomerDataSource $dataSource;
+
     /**
      * @var \Persistence\Infrastructure\Persistence\Customer\CustomerIdGenerator
      */
     private CustomerIdGenerator $idGenerator;
+
     /**
      * @var \Persistence\Infrastructure\Persistence\Customer\Util\CustomerMapper
      */
@@ -41,6 +43,9 @@ class CustomerInMemoryPersistence implements CustomerPersistenceInterface
         $this->mapper = $mapper;
     }
 
+    /**
+     * @inheritDoc
+     */
     public function add(Customer $customer): void
     {
         $this->dataSource->add($this->mapper->mapToDataSource($customer));
@@ -54,6 +59,9 @@ class CustomerInMemoryPersistence implements CustomerPersistenceInterface
         $this->dataSource->update((string)CustomerGetter::getId($customer), $this->mapper->mapToDataSource($customer));
     }
 
+    /**
+     * @inheritDoc
+     */
     public function generateNextId(): CustomerId
     {
         return $this->idGenerator->generate();

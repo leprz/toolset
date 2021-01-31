@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Persistence\Infrastructure\Persistence\Customer;
 
-use Persistence\Application\Entity\Customer;
 use Persistence\Application\Exception\DataSourceErrorException;
 use Persistence\Application\Exception\ResultNotFoundException;
 use Persistence\Application\Persistence\Customer\CustomerRepositoryInterface;
-use Persistence\Application\ValueObject\CustomerId;
+use Persistence\Domain\Customer;
+use Persistence\Domain\ValueObject\CustomerId;
 use Persistence\Infrastructure\DataSource\CustomerDataSource;
 use Persistence\Infrastructure\Persistence\Customer\Util\CustomerMapper;
 use Persistence\Infrastructure\Persistence\Exception\MappingException;
@@ -19,6 +19,7 @@ class CustomerInMemoryRepository implements CustomerRepositoryInterface
      * @var \Persistence\Infrastructure\DataSource\CustomerDataSource
      */
     private CustomerDataSource $dataSource;
+
     /**
      * @var \Persistence\Infrastructure\Persistence\Customer\Util\CustomerMapper
      */

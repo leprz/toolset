@@ -117,7 +117,7 @@ public function generateNextId(): CustomerId
 ```
 Thanks to that we can easily substitute `idGenerator` in tests and collect all generated ids for entity:
 ```php
-class CustomerIdGeneratorFixture extends CustomerIdGenerator
+class FakeCustomerIdGenerator extends CustomerIdGenerator
 {
     private array $generatedIds = [];
     

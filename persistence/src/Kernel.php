@@ -23,6 +23,9 @@ class Kernel
      */
     private Container $container;
 
+    /**
+     * @param \Pimple\Container $container
+     */
     public function __construct(Container $container)
     {
         $this->container = $container;
@@ -76,6 +79,9 @@ class Kernel
             };
     }
 
+    /**
+     * @return \Pimple\Container
+     */
     public function getContainer(): Container
     {
         return $this->container;
