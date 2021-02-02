@@ -10,9 +10,13 @@ use PHPUnit\Framework\TestCase;
 
 class RelativePathTest extends TestCase
 {
+    /** @noinspection PhpUnhandledExceptionInspection */
     public function testAppendFile(): void
     {
-        $this->assertPathEquals('/test/path/test.txt', (RelativePath::fromString('/test/path'))->append('test.txt'));
+        $this->assertPathEquals(
+            '/test/path/test.txt',
+            (RelativePath::fromString('/test/path'))->append('test.txt')
+        );
     }
 
     private function assertPathEquals(string $expected, RelativePath $path): void
@@ -20,21 +24,34 @@ class RelativePathTest extends TestCase
         self::assertEquals($expected, (string)$path);
     }
 
+    /** @noinspection PhpUnhandledExceptionInspection */
     public function testAppendDir(): void
     {
-        $this->assertPathEquals('/test/path/test', (RelativePath::fromString('/test/path'))->append('test'));
+        $this->assertPathEquals(
+            '/test/path/test',
+            (RelativePath::fromString('/test/path'))->append('test')
+        );
     }
 
+    /** @noinspection PhpUnhandledExceptionInspection */
     public function testPrependDir(): void
     {
-        $this->assertPathEquals('/dir/test/path', (RelativePath::fromString('/test/path'))->prependDir('dir'));
+        $this->assertPathEquals(
+            '/dir/test/path',
+            (RelativePath::fromString('/test/path'))->prependDir('dir')
+        );
     }
 
+    /** @noinspection PhpUnhandledExceptionInspection */
     public function testPrependMultipleDirs(): void
     {
-        $this->assertPathEquals('/foo/bar/test/path', (RelativePath::fromString('/test/path'))->prependDir('/foo/bar'));
+        $this->assertPathEquals(
+            '/foo/bar/test/path',
+            (RelativePath::fromString('/test/path'))->prependDir('/foo/bar')
+        );
     }
 
+    /** @noinspection PhpUnhandledExceptionInspection */
     public function testMultipleSlashes(): void
     {
         $this->assertPathEquals('/test/path', (RelativePath::fromString('/test//path')));
@@ -42,6 +59,7 @@ class RelativePathTest extends TestCase
         $this->assertPathEquals('/test/path', (RelativePath::fromString('/test/////path')));
     }
 
+    /** @noinspection PhpUnhandledExceptionInspection */
     public function testRemovingTrailingSlash(): void
     {
         $this->assertPathEquals('/test/filename.txt', RelativePath::fromString('/test/filename.txt/'));
@@ -66,7 +84,8 @@ class RelativePathTest extends TestCase
     public function testInvalidFilename(string $filename): void
     {
         $this->assertPathIsInvalid();
-        (RelativePath::fromString($filename));
+
+        RelativePath::fromString($filename);
     }
 
     private function assertPathIsInvalid(): void
@@ -74,9 +93,11 @@ class RelativePathTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
     }
 
+    /** @noinspection PhpUnhandledExceptionInspection */
     public function testHasLeadingSlash(): void
     {
         $this->assertPathIsInvalid();
+
         RelativePath::fromString('test/path');
     }
 }

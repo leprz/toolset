@@ -9,13 +9,23 @@ use JsonException;
 
 class Json
 {
+    /**
+     * @var string
+     */
     private string $json;
 
+    /**
+     * @param string $json
+     */
     private function __construct(string $json)
     {
         $this->json = $json;
     }
 
+    /**
+     * @param array $data
+     * @return static
+     */
     public static function fromArray(array $data): self
     {
         try {
@@ -25,6 +35,10 @@ class Json
         }
     }
 
+    /**
+     * @param string $json
+     * @return static
+     */
     public static function fromString(string $json): self
     {
         try {
@@ -56,6 +70,9 @@ class Json
         return self::jsonToArray($this->json);
     }
 
+    /**
+     * @return string
+     */
     public function __toString(): string
     {
         return $this->json;

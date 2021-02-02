@@ -18,11 +18,16 @@ class UserAvatarAssetPathTest extends TestCase
      */
     private MockObject $storageMock;
 
+    /** @noinspection PhpUnhandledExceptionInspection */
     public function testCreateRelativePathForFileName(): void
     {
-        self::assertEquals('/avatars/test.jpg', UserAvatarAssetPath::createRelativePathForFilename('test.jpg'));
+        self::assertEquals(
+            '/avatars/test.jpg',
+            UserAvatarAssetPath::createRelativePathForFilename('test.jpg')
+        );
     }
 
+    /** @noinspection PhpUnhandledExceptionInspection */
     public function testFromRelativePath(): void
     {
         $this->assertPathEqualsTo(
@@ -39,6 +44,7 @@ class UserAvatarAssetPathTest extends TestCase
         self::assertEquals($expected, (string)$assetPath);
     }
 
+    /** @noinspection PhpUnhandledExceptionInspection */
     public function testWrongBasePath(): void
     {
         $this->assertAvatarPathIsInvalid();

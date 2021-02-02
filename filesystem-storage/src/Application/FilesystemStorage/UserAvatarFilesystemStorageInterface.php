@@ -6,16 +6,11 @@ namespace FilesystemStorage\Application\FilesystemStorage;
 
 use FilesystemStorage\Application\FilesystemStorage;
 use FilesystemStorage\Application\FilesystemStorage\AssetPath\UserAvatarAssetPath;
-use FilesystemStorage\Application\ValueObject\Url;
+use FilesystemStorage\Domain\ValueObject\File;
+use FilesystemStorage\Domain\ValueObject\UserId;
 
 interface UserAvatarFilesystemStorageInterface extends AssetExistsInterface
 {
-    /**
-     * @param \FilesystemStorage\Application\FilesystemStorage\AssetPath\UserAvatarAssetPath $path
-     * @return \FilesystemStorage\Application\ValueObject\Url
-     */
-    public function url(UserAvatarAssetPath $path): Url;
-
     /**
      * Return file contents
      *
@@ -26,14 +21,13 @@ interface UserAvatarFilesystemStorageInterface extends AssetExistsInterface
     public function load(UserAvatarAssetPath $path): string;
 
     /**
-     * @param string $filename
-     * @param string $contents
+     * @param \FilesystemStorage\Domain\ValueObject\UserId $userId
+     * @param \FilesystemStorage\Domain\ValueObject\File $file
      * @return \FilesystemStorage\Application\FilesystemStorage\AssetPath\UserAvatarAssetPath
      * @throws \FilesystemStorage\Application\Exception\InvalidArgumentException
-     * @throws \FilesystemStorage\Application\FilesystemStorage\Exception\AssetNotExistException
      * @throws \FilesystemStorage\Application\FilesystemStorage\Exception\FileWriteException
      */
-    public function save(string $filename, string $contents): UserAvatarAssetPath;
+    public function save(UserId $userId, File $file): UserAvatarAssetPath;
 
     /**
      * @param \FilesystemStorage\Application\FilesystemStorage\AssetPath\UserAvatarAssetPath $path

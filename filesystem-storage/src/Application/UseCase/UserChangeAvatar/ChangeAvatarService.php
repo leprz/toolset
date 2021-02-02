@@ -5,7 +5,6 @@ namespace FilesystemStorage\Application\UseCase\UserChangeAvatar;
 
 use FilesystemStorage\Application\Exception\InvalidArgumentException;
 use FilesystemStorage\Application\FilesystemStorage\AssetPath\UserAvatarAssetPath;
-use FilesystemStorage\Application\FilesystemStorage\Exception\AssetNotExistException;
 use FilesystemStorage\Application\FilesystemStorage\Exception\FileRemoveException;
 use FilesystemStorage\Application\FilesystemStorage\Exception\FileWriteException;
 use FilesystemStorage\Application\FilesystemStorage\UserAvatarFilesystemStorageInterface;
@@ -23,6 +22,9 @@ class ChangeAvatarService implements ChangeAvatarServiceInterface
      */
     private UserAvatarFilesystemStorageInterface $avatarStorage;
 
+    /**
+     * @param \FilesystemStorage\Application\FilesystemStorage\UserAvatarFilesystemStorageInterface $avatarStorage
+     */
     public function __construct(UserAvatarFilesystemStorageInterface $avatarStorage)
     {
         $this->avatarStorage = $avatarStorage;
@@ -52,10 +54,8 @@ class ChangeAvatarService implements ChangeAvatarServiceInterface
     public function saveAvatar(UserId $userId, File $avatarImage): UserAvatarImage
     {
         try {
-            return $this->avatarStorage->save((string)$userId, $avatarImage->getContents());
-        } catch (InvalidArgumentException $e) {
-        } catch (AssetNotExistException $e) {
-        } catch (FileWriteException $e) {
+            return $this->avatarStorage->save($userId, $avatarImage);
+        } catch (InvalidArgumentException | FileWriteException $e) {
             throw new AvatarCanNotBeSavedException($e->getMessage());
         }
     }

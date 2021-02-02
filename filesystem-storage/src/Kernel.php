@@ -9,6 +9,9 @@ use FilesystemStorage\Infrastructure\FilesystemStorage\LocalResourcePath;
 
 class Kernel
 {
+    /**
+     * @var \FilesystemStorage\Infrastructure\FilesystemStorage\LocalResourcePath
+     */
     protected LocalResourcePath $resourcesPath;
 
     /**

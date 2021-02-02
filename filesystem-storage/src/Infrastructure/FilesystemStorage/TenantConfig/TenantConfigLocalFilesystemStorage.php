@@ -16,21 +16,39 @@ class TenantConfigLocalFilesystemStorage implements TenantConfigFilesystemStorag
 {
     public const CONFIG_FILE_NAME = 'tenant_config.json';
 
+    /**
+     * @var string
+     */
     private string $configPath;
 
+    /**
+     * @var \FilesystemStorage\Infrastructure\FilesystemStorage\TenantConfig\TenantConfigJsonMapper
+     */
     private TenantConfigJsonMapper $mapper;
 
+    /**
+     * @param \FilesystemStorage\Infrastructure\FilesystemStorage\LocalResourcePath $resourcesPath
+     * @param \FilesystemStorage\Infrastructure\FilesystemStorage\TenantConfig\TenantConfigJsonMapper $mapper
+     * @throws \FilesystemStorage\Application\Exception\InvalidArgumentException
+     */
     public function __construct(LocalResourcePath $resourcesPath, TenantConfigJsonMapper $mapper)
     {
         $this->setConfigPath($resourcesPath);
         $this->mapper = $mapper;
     }
 
+    /**
+     * @param \FilesystemStorage\Infrastructure\FilesystemStorage\LocalResourcePath $resourcesPath
+     * @throws \FilesystemStorage\Application\Exception\InvalidArgumentException
+     */
     private function setConfigPath(LocalResourcePath $resourcesPath): void
     {
         $this->configPath = (string)$resourcesPath->append(self::CONFIG_FILE_NAME);
     }
 
+    /**
+     * @inheritDoc
+     */
     public function load(): TenantConfig
     {
         if (false === ($contents = @file_get_contents($this->configPath))) {
@@ -40,6 +58,9 @@ class TenantConfigLocalFilesystemStorage implements TenantConfigFilesystemStorag
         return $this->mapper->fromJson(Json::fromString($contents));
     }
 
+    /**
+     * @inheritDoc
+     */
     public function save(TenantConfig $config): void
     {
         if (
@@ -52,6 +73,9 @@ class TenantConfigLocalFilesystemStorage implements TenantConfigFilesystemStorag
         }
     }
 
+    /**
+     * @inheritDoc
+     */
     public function remove(): void
     {
         if (
@@ -62,6 +86,9 @@ class TenantConfigLocalFilesystemStorage implements TenantConfigFilesystemStorag
         }
     }
 
+    /**
+     * @inheritDoc
+     */
     public function exists(): bool
     {
         return file_exists($this->configPath);

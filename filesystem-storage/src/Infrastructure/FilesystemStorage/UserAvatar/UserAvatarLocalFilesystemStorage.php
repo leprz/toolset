@@ -10,7 +10,8 @@ use FilesystemStorage\Application\FilesystemStorage\Exception\FileRemoveExceptio
 use FilesystemStorage\Application\FilesystemStorage\Exception\FileWriteException;
 use FilesystemStorage\Application\FilesystemStorage\UserAvatarFilesystemStorageInterface;
 use FilesystemStorage\Application\ValueObject\RelativePath;
-use FilesystemStorage\Application\ValueObject\Url;
+use FilesystemStorage\Domain\ValueObject\File;
+use FilesystemStorage\Domain\ValueObject\UserId;
 use FilesystemStorage\Infrastructure\FilesystemStorage\LocalResourcePath;
 
 class UserAvatarLocalFilesystemStorage implements UserAvatarFilesystemStorageInterface
@@ -36,12 +37,15 @@ class UserAvatarLocalFilesystemStorage implements UserAvatarFilesystemStorageInt
         return $contents;
     }
 
-    public function save(string $filename, string $contents): UserAvatarAssetPath
+    public function save(UserId $userId, File $file): UserAvatarAssetPath
     {
-        $relativeDesignationPath = UserAvatarAssetPath::createRelativePathForFilename($filename);
+        $relativeDesignationPath = UserAvatarAssetPath::createRelativePathForFilename(
+            sprintf('%s.%s', $userId, $file->getExtension())
+        );
+
         $absoluteDestinationPath = $this->resourcePath->appendRelativePath($relativeDesignationPath);
 
-        if (@file_put_contents((string)$absoluteDestinationPath, $contents) === false) {
+        if (@file_put_contents((string)$absoluteDestinationPath, $file->getContents()) === false) {
             throw FileWriteException::fromPath((string)$absoluteDestinationPath);
         }
 
@@ -65,10 +69,5 @@ class UserAvatarLocalFilesystemStorage implements UserAvatarFilesystemStorageInt
     public function exists(RelativePath $relativePath): bool
     {
         return file_exists((string)$this->resourcePath->appendRelativePath($relativePath));
-    }
-
-    public function url(UserAvatarAssetPath $path): Url
-    {
-        // TODO
     }
 }

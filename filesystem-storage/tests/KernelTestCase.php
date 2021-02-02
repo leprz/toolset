@@ -11,6 +11,7 @@ class KernelTestCase extends TestCase
 {
     protected static ?Kernel $kernel = null;
 
+    /** @noinspection PhpUnhandledExceptionInspection */
     public static function bootKernel(): void
     {
         if (!self::$kernel) {

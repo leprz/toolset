@@ -8,7 +8,7 @@ use FilesystemStorage\Application\FilesystemStorage\UserAvatarFilesystemStorageI
 use FilesystemStorage\Application\ValueObject\RelativePath;
 use FilesystemStorage\Domain\ValueObject\UserAvatarImage;
 
-final class UserAvatarAssetPath extends AssetPath implements UserAvatarImage
+class UserAvatarAssetPath extends AssetPath implements UserAvatarImage
 {
     /**
      * @param \FilesystemStorage\Application\ValueObject\RelativePath $relativePath

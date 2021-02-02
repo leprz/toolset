@@ -14,6 +14,7 @@ class TenantConfigFilesystemStorageTest extends KernelTestCase
 {
     private TenantConfigFilesystemStorageInterface $storage;
 
+    /** @noinspection PhpUnhandledExceptionInspection */
     public function testSave(): void
     {
         $this->storage->save(new TenantConfig('testName', 2000));
@@ -27,6 +28,7 @@ class TenantConfigFilesystemStorageTest extends KernelTestCase
 
     /**
      * @depends testSave
+     * @noinspection PhpUnhandledExceptionInspection
      */
     public function testLoad(): void
     {
@@ -35,6 +37,7 @@ class TenantConfigFilesystemStorageTest extends KernelTestCase
 
     /**
      * @depends testSave
+     * @noinspection PhpUnhandledExceptionInspection
      */
     public function testRemove(): void
     {
@@ -47,6 +50,7 @@ class TenantConfigFilesystemStorageTest extends KernelTestCase
         self::assertFalse($this->storage->exists());
     }
 
+    /** @noinspection PhpUnhandledExceptionInspection */
     protected function setUp(): void
     {
         self::bootKernel();

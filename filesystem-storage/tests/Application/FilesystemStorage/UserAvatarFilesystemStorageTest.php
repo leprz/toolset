@@ -5,9 +5,11 @@ declare(strict_types=1);
 namespace FilesystemStorage\Tests\Application\FilesystemStorage;
 
 use FilesystemStorage\Application\FilesystemStorage\AssetPath\UserAvatarAssetPath;
-use FilesystemStorage\Application\FilesystemStorage\Exception\FileWriteException;
 use FilesystemStorage\Application\ValueObject\RelativePath;
+use FilesystemStorage\Domain\ValueObject\File;
+use FilesystemStorage\Domain\ValueObject\UserId;
 use FilesystemStorage\Infrastructure\FilesystemStorage\UserAvatar\UserAvatarLocalFilesystemStorage;
+use FilesystemStorage\Tests\Application\UseCase\UserChangeAvatar\FakeUserAvatarFile;
 use FilesystemStorage\Tests\KernelTestCase;
 
 class UserAvatarFilesystemStorageTest extends KernelTestCase
@@ -17,20 +19,23 @@ class UserAvatarFilesystemStorageTest extends KernelTestCase
      */
     private UserAvatarLocalFilesystemStorage $storage;
 
+    /** @noinspection PhpUnhandledExceptionInspection */
     public function testSave(): void
     {
-        $path = $this->storage->save($this->userAvatarFilenameFixture(), $this->userAvatarContentsFixture());
+        $path = $this->storage->save($this->userIdFixture(), $this->userAvatarFileFixture());
+
         $this->assertAvatarFileExists($path->getRelativePath());
     }
 
-    private function userAvatarFilenameFixture(): string
+    /** @noinspection PhpUnhandledExceptionInspection */
+    private function userIdFixture(): UserId
     {
-        return 'test-avatar.png';
+        return UserId::fromString('30753a68-31bf-4af8-be5b-d5ca8bf5fbeb');
     }
 
-    private function userAvatarContentsFixture(): string
+    private function userAvatarFileFixture(): File
     {
-        return file_get_contents(__DIR__ . '/assets/robot.png');
+        return new FakeUserAvatarFile();
     }
 
     private function assertAvatarFileExists(RelativePath $path): void
@@ -40,6 +45,7 @@ class UserAvatarFilesystemStorageTest extends KernelTestCase
 
     /**
      * @depends testSave
+     * @noinspection PhpUnhandledExceptionInspection
      */
     public function testRemove(): void
     {
@@ -48,10 +54,11 @@ class UserAvatarFilesystemStorageTest extends KernelTestCase
         $this->assertAvatarHasBeenRemoved($path);
     }
 
+    /** @noinspection PhpUnhandledExceptionInspection */
     private function userAvatarAssetPathFixture(): UserAvatarAssetPath
     {
         return UserAvatarAssetPath::fromRelativePath(
-            RelativePath::fromString('/avatars/' . $this->userAvatarFilenameFixture()),
+            RelativePath::fromString('/avatars/' . $this->userIdFixture()),
             $this->storage
         );
     }
@@ -61,21 +68,11 @@ class UserAvatarFilesystemStorageTest extends KernelTestCase
         self::assertFalse($this->storage->exists($path->getRelativePath()));
     }
 
+    /** @noinspection PhpUnhandledExceptionInspection */
     public function testLoad(): void
     {
-        $path = $this->storage->save($this->userAvatarFilenameFixture(), $this->userAvatarContentsFixture());
+        $path = $this->storage->save($this->userIdFixture(), $this->userAvatarFileFixture());
         self::assertNotEmpty($this->storage->load($path));
-    }
-
-    public function testSaveWithNonExistingDirectory(): void
-    {
-        $this->assertFileCanNotBeWritten();
-        $this->storage->save('wrong-dir/test.png', $this->userAvatarContentsFixture());
-    }
-
-    private function assertFileCanNotBeWritten(): void
-    {
-        $this->expectException(FileWriteException::class);
     }
 
     protected function setUp(): void
