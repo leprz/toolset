@@ -1,9 +1,11 @@
 <?php
+
 declare(strict_types=1);
 
 namespace FilesystemStorage\Domain;
 
-use FilesystemStorage\Domain\ValueObject\UserAvatarImage;
+use FilesystemStorage\Domain\ValueObject\RelativePathInterface;
+use FilesystemStorage\Domain\ValueObject\UserAvatarImageInterface;
 use FilesystemStorage\Domain\ValueObject\UserId;
 
 class UserCard
@@ -14,9 +16,14 @@ class UserCard
     private UserId $id;
 
     /**
-     * @var \FilesystemStorage\Domain\ValueObject\UserAvatarImage|null
+     * @var \FilesystemStorage\Domain\ValueObject\RelativePathInterface|null
      */
-    private ?UserAvatarImage $avatar = null;
+    private ?RelativePathInterface $avatar = null;
+
+    public function __construct(UserId $id)
+    {
+        $this->id = $id;
+    }
 
     /**
      * @param \FilesystemStorage\Domain\ChangeAvatarDataInterface $data
@@ -30,8 +37,15 @@ class UserCard
         }
 
         $newAvatar = $service->saveAvatar($this->id, $data->getAvatarImage());
+        $this->setAvatar($newAvatar);
+    }
 
-        $this->avatar = $newAvatar;
+    /**
+     * @param \FilesystemStorage\Domain\ValueObject\UserAvatarImageInterface $userAvatarImage
+     */
+    private function setAvatar(UserAvatarImageInterface $userAvatarImage): void
+    {
+        $this->avatar = $userAvatarImage->getRelativePath();
     }
 
     /**

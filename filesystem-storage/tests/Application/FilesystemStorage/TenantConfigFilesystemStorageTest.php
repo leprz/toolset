@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace FilesystemStorage\Tests\Application\FilesystemStorage;
 
 use FilesystemStorage\Application\Config\TenantConfig;
-use FilesystemStorage\Application\FilesystemStorage\TenantConfigFilesystemStorageInterface;
+use FilesystemStorage\Application\FilesystemStorage\TenantConfig\TenantConfigFilesystemStorageInterface;
 use FilesystemStorage\Infrastructure\FilesystemStorage\TenantConfig\TenantConfigJsonMapper;
 use FilesystemStorage\Infrastructure\FilesystemStorage\TenantConfig\TenantConfigLocalFilesystemStorage;
 use FilesystemStorage\Tests\KernelTestCase;

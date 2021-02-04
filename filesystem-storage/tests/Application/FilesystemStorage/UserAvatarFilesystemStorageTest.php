@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace FilesystemStorage\Tests\Application\FilesystemStorage;
 
-use FilesystemStorage\Application\FilesystemStorage\AssetPath\UserAvatarAssetPath;
+use FilesystemStorage\Application\FilesystemStorage\UserAvatar\UserAvatarAssetPath;
 use FilesystemStorage\Application\ValueObject\RelativePath;
-use FilesystemStorage\Domain\ValueObject\File;
+use FilesystemStorage\Domain\ValueObject\FileInterface;
 use FilesystemStorage\Domain\ValueObject\UserId;
 use FilesystemStorage\Infrastructure\FilesystemStorage\UserAvatar\UserAvatarLocalFilesystemStorage;
-use FilesystemStorage\Tests\Application\UseCase\UserChangeAvatar\FakeUserAvatarFile;
+use FilesystemStorage\Tests\Application\UseCase\UserChangeAvatar\FakeUserAvatarFileInterface;
 use FilesystemStorage\Tests\KernelTestCase;
 
 class UserAvatarFilesystemStorageTest extends KernelTestCase
@@ -33,9 +33,9 @@ class UserAvatarFilesystemStorageTest extends KernelTestCase
         return UserId::fromString('30753a68-31bf-4af8-be5b-d5ca8bf5fbeb');
     }
 
-    private function userAvatarFileFixture(): File
+    private function userAvatarFileFixture(): FileInterface
     {
-        return new FakeUserAvatarFile();
+        return new FakeUserAvatarFileInterface();
     }
 
     private function assertAvatarFileExists(RelativePath $path): void
@@ -58,7 +58,9 @@ class UserAvatarFilesystemStorageTest extends KernelTestCase
     private function userAvatarAssetPathFixture(): UserAvatarAssetPath
     {
         return UserAvatarAssetPath::fromRelativePath(
-            RelativePath::fromString('/avatars/' . $this->userIdFixture()),
+            RelativePath::fromString(
+                '/avatars/' . $this->userIdFixture() . '.' . $this->userAvatarFileFixture()->getExtension()
+            ),
             $this->storage
         );
     }

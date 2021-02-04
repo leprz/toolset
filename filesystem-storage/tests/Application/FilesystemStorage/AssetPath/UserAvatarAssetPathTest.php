@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace FilesystemStorage\Tests\Application\FilesystemStorage\AssetPath;
 
 use FilesystemStorage\Application\Exception\InvalidArgumentException;
-use FilesystemStorage\Application\FilesystemStorage\AssetPath\UserAvatarAssetPath;
-use FilesystemStorage\Application\FilesystemStorage\UserAvatarFilesystemStorageInterface;
+use FilesystemStorage\Application\FilesystemStorage\UserAvatar\UserAvatarAssetPath;
+use FilesystemStorage\Application\FilesystemStorage\UserAvatar\UserAvatarFilesystemStorageInterface;
 use FilesystemStorage\Application\ValueObject\RelativePath;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
 class UserAvatarAssetPathTest extends TestCase
 {
     /**
-     * @var \FilesystemStorage\Application\FilesystemStorage\UserAvatarFilesystemStorageInterface|\PHPUnit\Framework\MockObject\MockObject
+     * @var \FilesystemStorage\Application\FilesystemStorage\UserAvatar\UserAvatarFilesystemStorageInterface|\PHPUnit\Framework\MockObject\MockObject
      */
     private MockObject $storageMock;
 

@@ -24,7 +24,7 @@ class Json
 
     /**
      * @param array $data
-     * @return static
+     * @return self
      */
     public static function fromArray(array $data): self
     {
@@ -37,7 +37,7 @@ class Json
 
     /**
      * @param string $json
-     * @return static
+     * @return self
      */
     public static function fromString(string $json): self
     {

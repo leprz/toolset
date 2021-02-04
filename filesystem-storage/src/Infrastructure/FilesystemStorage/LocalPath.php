@@ -104,7 +104,7 @@ class LocalPath
 
     /**
      * @param string $path
-     * @return $this
+     * @return self
      * @throws \FilesystemStorage\Application\Exception\InvalidArgumentException
      */
     public function append(string $path): self

@@ -6,7 +6,10 @@ namespace FilesystemStorage\Application\ValueObject\Utils;
 
 class PathUtils
 {
-    protected static $directorySeparator = DIRECTORY_SEPARATOR;
+    /**
+     * @var string
+     */
+    protected static string $directorySeparator = DIRECTORY_SEPARATOR;
 
     public static function fixIncorrectDirectorySeparators(string $path): string
     {
@@ -110,7 +113,7 @@ class PathUtils
         return 1 === preg_match('/^[a-zA-Z]:[\\\\].+/', $path);
     }
 
-    private static function isValidUnixPath($path): bool
+    private static function isValidUnixPath(string $path): bool
     {
         return 1 === preg_match('/^(\/)?([^\/\0]+(\/)?)+$/', $path);
     }

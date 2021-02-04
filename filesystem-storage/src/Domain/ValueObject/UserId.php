@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace FilesystemStorage\Domain\ValueObject;
@@ -12,7 +13,7 @@ class UserId
 
     /**
      * @param string $id
-     * @return static
+     * @return self
      * @throws \FilesystemStorage\Domain\Exception\InvalidArgumentException
      */
     public static function fromString(string $id): self

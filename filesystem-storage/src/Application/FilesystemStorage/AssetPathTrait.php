@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace FilesystemStorage\Application\FilesystemStorage\AssetPath;
+namespace FilesystemStorage\Application\FilesystemStorage;
 
 use FilesystemStorage\Application\Exception\InvalidArgumentException;
-use FilesystemStorage\Application\FilesystemStorage\AssetExistsInterface;
+use FilesystemStorage\Application\FilesystemStorage\Exception\AssetNotExistException;
 use FilesystemStorage\Application\ValueObject\RelativePath;
 
-abstract class AssetPath
+trait AssetPathTrait
 {
     /**
      * @var \FilesystemStorage\Application\ValueObject\RelativePath
@@ -19,6 +19,7 @@ abstract class AssetPath
      * @param \FilesystemStorage\Application\ValueObject\RelativePath $relativePath
      * @param \FilesystemStorage\Application\FilesystemStorage\AssetExistsInterface $check
      * @throws \FilesystemStorage\Application\Exception\InvalidArgumentException
+     * @throws \FilesystemStorage\Application\FilesystemStorage\Exception\AssetNotExistException
      */
     protected function __construct(RelativePath $relativePath, AssetExistsInterface $check)
     {
@@ -29,10 +30,11 @@ abstract class AssetPath
      * @param \FilesystemStorage\Application\ValueObject\RelativePath $relativePath
      * @param \FilesystemStorage\Application\FilesystemStorage\AssetExistsInterface $check
      * @throws \FilesystemStorage\Application\Exception\InvalidArgumentException
+     * @throws \FilesystemStorage\Application\FilesystemStorage\Exception\AssetNotExistException
      */
     private function setRelativePath(RelativePath $relativePath, AssetExistsInterface $check): void
     {
-        self::assertBaseDirectory($relativePath);
+        self::assertIsInBaseDirectory($relativePath);
         self::assertFileExists($relativePath, $check);
         $this->relativePath = $relativePath;
     }
@@ -41,7 +43,7 @@ abstract class AssetPath
      * @param RelativePath $assetPath
      * @throws \FilesystemStorage\Application\Exception\InvalidArgumentException
      */
-    private static function assertBaseDirectory(RelativePath $assetPath): void
+    private static function assertIsInBaseDirectory(RelativePath $assetPath): void
     {
         if (!$assetPath->baseDirEquals(static::baseDirectory())) {
             throw new InvalidArgumentException(
@@ -62,11 +64,14 @@ abstract class AssetPath
     /**
      * @param \FilesystemStorage\Application\ValueObject\RelativePath $relativePath
      * @param \FilesystemStorage\Application\FilesystemStorage\AssetExistsInterface $storage
-     * @return bool
+     * @return void
+     * @throws \FilesystemStorage\Application\FilesystemStorage\Exception\AssetNotExistException
      */
-    private static function assertFileExists(RelativePath $relativePath, AssetExistsInterface $storage): bool
+    private static function assertFileExists(RelativePath $relativePath, AssetExistsInterface $storage): void
     {
-        return $storage->exists($relativePath);
+        if (!$storage->exists($relativePath)) {
+            throw AssetNotExistException::fromPath((string) $relativePath);
+        }
     }
 
     /**

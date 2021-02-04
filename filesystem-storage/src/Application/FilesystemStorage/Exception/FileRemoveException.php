@@ -10,7 +10,7 @@ class FileRemoveException extends Exception
 {
     /**
      * @param string $path
-     * @return static
+     * @return self
      */
     public static function fromPath(string $path): self
     {

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace FilesystemStorage\Infrastructure\Persistence;
@@ -9,14 +10,13 @@ use FilesystemStorage\Domain\ValueObject\UserId;
 
 class UserCardRepository implements UserCardRepositoryInterface
 {
+    /**
+     * @param \FilesystemStorage\Domain\ValueObject\UserId $id
+     * @return \FilesystemStorage\Domain\UserCard
+     */
     public function getById(UserId $id): UserCard
     {
         // This is just a fake repository not relevant in this example
-        return new class ($id) extends UserCard {
-            public function __construct(UserId $id)
-            {
-                $this->setId($id);
-            }
-        };
+        return new UserCard($id);
     }
 }

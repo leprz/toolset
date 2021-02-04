@@ -8,7 +8,7 @@ use FilesystemStorage\Application\Config\TenantConfig;
 use FilesystemStorage\Application\FilesystemStorage\Exception\FileReadException;
 use FilesystemStorage\Application\FilesystemStorage\Exception\FileRemoveException;
 use FilesystemStorage\Application\FilesystemStorage\Exception\FileWriteException;
-use FilesystemStorage\Application\FilesystemStorage\TenantConfigFilesystemStorageInterface;
+use FilesystemStorage\Application\FilesystemStorage\TenantConfig\TenantConfigFilesystemStorageInterface;
 use FilesystemStorage\Application\ValueObject\Json;
 use FilesystemStorage\Infrastructure\FilesystemStorage\LocalResourcePath;
 

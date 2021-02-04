@@ -10,7 +10,7 @@ class AssetNotExistException extends Exception
 {
     /**
      * @param string $relativePath
-     * @return static
+     * @return self
      */
     public static function fromPath(string $relativePath): self
     {

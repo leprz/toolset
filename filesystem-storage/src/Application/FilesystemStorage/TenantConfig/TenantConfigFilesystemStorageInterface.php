@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace FilesystemStorage\Application\FilesystemStorage;
+namespace FilesystemStorage\Application\FilesystemStorage\TenantConfig;
 
 use FilesystemStorage\Application\Config\TenantConfig;
 

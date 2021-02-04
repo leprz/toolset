@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace FilesystemStorage\Application\UseCase\UserChangeAvatar;
@@ -37,7 +38,6 @@ class UserChangeAvatarHandler
     public function __invoke(UserChangeAvatarCommand $command)
     {
         $userCard = $this->userCardRepository->getById($command->getUserId());
-
         try {
             $userCard->changeAvatar($command, $this->avatarService);
         } catch (AvatarCanNotBeSavedException $e) {

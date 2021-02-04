@@ -6,9 +6,13 @@ namespace FilesystemStorage\Application\ValueObject;
 
 use FilesystemStorage\Application\Exception\InvalidArgumentException;
 use FilesystemStorage\Application\ValueObject\Utils\PathUtils;
+use FilesystemStorage\Domain\ValueObject\RelativePathInterface;
 
-final class RelativePath
+class RelativePath implements RelativePathInterface
 {
+    /**
+     * @var string
+     */
     private string $path;
 
     /**
@@ -31,6 +35,10 @@ final class RelativePath
         $this->path = $path;
     }
 
+    /**
+     * @param string $path
+     * @return string
+     */
     private static function fixPath(string $path): string
     {
         return PathUtils::removeTrailingSlashes(
@@ -39,10 +47,10 @@ final class RelativePath
     }
 
     /**
-     * @param $path
+     * @param string $path
      * @throws \FilesystemStorage\Application\Exception\InvalidArgumentException
      */
-    private static function assertPathFormat($path): void
+    private static function assertPathFormat(string $path): void
     {
         self::assertHasLeadingSlash($path);
         self::assertNotEndsWithDot($path);
@@ -114,17 +122,17 @@ final class RelativePath
 
     /**
      * @param $path
-     * @return static
+     * @return self
      * @throws \FilesystemStorage\Application\Exception\InvalidArgumentException
      */
-    public static function fromString($path): self
+    public static function fromString(string $path): self
     {
         return new self($path);
     }
 
     /**
      * @param string $dir
-     * @return $this
+     * @return self
      * @throws \FilesystemStorage\Application\Exception\InvalidArgumentException
      */
     public function append(string $dir): self
@@ -134,7 +142,7 @@ final class RelativePath
 
     /**
      * @param string $path
-     * @return $this
+     * @return self
      * @throws \FilesystemStorage\Application\Exception\InvalidArgumentException
      */
     public function prependDir(string $path): self
@@ -147,6 +155,9 @@ final class RelativePath
         return strpos($this->path, $baseDir->path) === 0;
     }
 
+    /**
+     * @return string
+     */
     public function __toString(): string
     {
         return $this->path;

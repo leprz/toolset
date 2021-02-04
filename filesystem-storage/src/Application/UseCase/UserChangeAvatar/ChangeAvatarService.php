@@ -1,30 +1,30 @@
 <?php
+
 declare(strict_types=1);
 
 namespace FilesystemStorage\Application\UseCase\UserChangeAvatar;
 
 use FilesystemStorage\Application\Exception\InvalidArgumentException;
-use FilesystemStorage\Application\FilesystemStorage\AssetPath\UserAvatarAssetPath;
+use FilesystemStorage\Application\FilesystemStorage\Exception\AssetNotExistException;
 use FilesystemStorage\Application\FilesystemStorage\Exception\FileRemoveException;
 use FilesystemStorage\Application\FilesystemStorage\Exception\FileWriteException;
-use FilesystemStorage\Application\FilesystemStorage\UserAvatarFilesystemStorageInterface;
+use FilesystemStorage\Application\FilesystemStorage\UserAvatar\UserAvatarAssetPath;
+use FilesystemStorage\Application\FilesystemStorage\UserAvatar\UserAvatarFilesystemStorageInterface;
 use FilesystemStorage\Application\ValueObject\RelativePath;
 use FilesystemStorage\Domain\ChangeAvatarServiceInterface;
 use FilesystemStorage\Domain\Exception\AvatarCanNotBeSavedException;
-use FilesystemStorage\Domain\ValueObject\File;
-use FilesystemStorage\Domain\ValueObject\UserAvatarImage;
+use FilesystemStorage\Domain\ValueObject\FileInterface;
+use FilesystemStorage\Domain\ValueObject\RelativePathInterface;
+use FilesystemStorage\Domain\ValueObject\UserAvatarImageInterface;
 use FilesystemStorage\Domain\ValueObject\UserId;
 
 class ChangeAvatarService implements ChangeAvatarServiceInterface
 {
     /**
-     * @var \FilesystemStorage\Application\FilesystemStorage\UserAvatarFilesystemStorageInterface
+     * @var \FilesystemStorage\Application\FilesystemStorage\UserAvatar\UserAvatarFilesystemStorageInterface
      */
     private UserAvatarFilesystemStorageInterface $avatarStorage;
 
-    /**
-     * @param \FilesystemStorage\Application\FilesystemStorage\UserAvatarFilesystemStorageInterface $avatarStorage
-     */
     public function __construct(UserAvatarFilesystemStorageInterface $avatarStorage)
     {
         $this->avatarStorage = $avatarStorage;
@@ -33,7 +33,7 @@ class ChangeAvatarService implements ChangeAvatarServiceInterface
     /**
      * @inheritDoc
      */
-    public function removeAvatar(UserAvatarImage $avatar): void
+    public function removeAvatar(RelativePathInterface $avatar): void
     {
         try {
             $this->avatarStorage->remove(
@@ -42,8 +42,7 @@ class ChangeAvatarService implements ChangeAvatarServiceInterface
                     $this->avatarStorage
                 )
             );
-        } catch (InvalidArgumentException $e) {
-        } catch (FileRemoveException $e) {
+        } catch (FileRemoveException | InvalidArgumentException | AssetNotExistException $e) {
             // Log it somewhere
         }
     }
@@ -51,7 +50,7 @@ class ChangeAvatarService implements ChangeAvatarServiceInterface
     /**
      * @inheritDoc
      */
-    public function saveAvatar(UserId $userId, File $avatarImage): UserAvatarImage
+    public function saveAvatar(UserId $userId, FileInterface $avatarImage): UserAvatarImageInterface
     {
         try {
             return $this->avatarStorage->save($userId, $avatarImage);

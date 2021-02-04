@@ -10,7 +10,7 @@ class FileWriteException extends Exception
 {
     /**
      * @param string $destinationFilePath
-     * @return static
+     * @return self
      */
     public static function fromPath(string $destinationFilePath): self
     {

@@ -1,12 +1,13 @@
 <?php
+
 declare(strict_types=1);
 
 namespace FilesystemStorage\Tests\Application\UseCase\UserChangeAvatar;
 
-use FilesystemStorage\Domain\ValueObject\File;
+use FilesystemStorage\Domain\ValueObject\FileInterface;
 use FilesystemStorage\Infrastructure\FilesystemStorage\LocalPath;
 
-class FakeUserAvatarFile implements File
+class FakeUserAvatarFileInterface implements FileInterface
 {
     /** @noinspection PhpUnhandledExceptionInspection */
     public function getContents(): string

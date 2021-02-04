@@ -1,9 +1,10 @@
 <?php
+
 declare(strict_types=1);
 
 namespace FilesystemStorage\Domain\ValueObject;
 
-interface File
+interface FileInterface
 {
     /**
      * @return string
