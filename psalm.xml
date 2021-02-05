@@ -6,6 +6,7 @@
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
 >
     <projectFiles>
+        <directory name="filesystem-storage/src" />
         <directory name="value-object/src" />
         <directory name="persistence/src" />
         <ignoreFiles>

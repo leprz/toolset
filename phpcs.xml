@@ -8,6 +8,9 @@
     <file>persistence/src</file>
     <file>persistence/tests</file>
 
+    <file>filesystem-storage/src</file>
+    <file>filesystem-storage/tests</file>
+
 <!--    <exclude-pattern>*/src/Standards/*/Tests/*\.(inc|css|js)$</exclude-pattern>-->
 <!--    <exclude-pattern>*/tests/Core/*/*Test\.(inc|css|js)$</exclude-pattern>-->
 
