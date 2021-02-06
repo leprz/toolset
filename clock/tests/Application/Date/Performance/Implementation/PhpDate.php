@@ -3,33 +3,37 @@ declare(strict_types=1);
 
 namespace Clock\Tests\Application\Date\Performance\Implementation;
 
-use DateTimeImmutable;
+use Clock\Domain\ValueObject\Date;
+use Clock\Infrastructure\ValueObject\Implementation\NativeImmutableDateTrait;
 
-class PhpDate
+class PhpDate extends Date
 {
+    use NativeImmutableDateTrait {
+        NativeImmutableDateTrait::lessThanOrEqual as _lessThanOrEqual;
+        NativeImmutableDateTrait::addDays as _addDays;
+    }
+
     /**
-     * @var \DateTimeImmutable
+     * @param int $days
+     * @return \Clock\Domain\ValueObject\Date
      */
-    private DateTimeImmutable $date;
+    public function addDays(int $days): Date
+    {
+        return $this->_addDays($days);
+    }
 
     /**
-     * @param \DateTimeImmutable $date
+     * @param \Clock\Domain\ValueObject\Date $date
+     * @return bool
      */
-    public function __construct(DateTimeImmutable $date)
+    public function lessThanOrEqual(Date $date): bool
     {
-        $this->date = $date->setTime(0, 0, 0);
+        return $this->_lessThanOrEqual($date);
     }
 
-    public static function fromString(string $date): self
-    {
-        return new self(new DateTimeImmutable($date));
-    }
-
-    public function lessThanOrEqual(self $date): bool
-    {
-        return $this->date <= $date->date;
-    }
-
+    /**
+     * @return string
+     */
     public function __toString(): string
     {
         return $this->date->format('Y-m-d');

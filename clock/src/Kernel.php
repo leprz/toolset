@@ -16,23 +16,23 @@ class Kernel
     public function boot(): void
     {
         $date = new class() extends Date {
-            public function adapter(DateBuilderInterface $adapter): void
+            public static function setAdapter(DateBuilderInterface $adapter): void
             {
-                self::setAdapter($adapter);
+                parent::setAdapter($adapter);
             }
         };
 
-        $date->adapter(new DateBuilder());
+        $date::setAdapter(new DateBuilder());
         unset($date);
 
         $dateTime = new class() extends DateTime {
-            public function adapter(DateTimeBuilderInterface $adapter): void
+            public static function setAdapter(DateTimeBuilderInterface $adapter): void
             {
-                self::setAdapter($adapter);
+                parent::setAdapter($adapter);
             }
         };
 
-        $dateTime->adapter(new DateTimeBuilder());
+        $dateTime::setAdapter(new DateTimeBuilder());
         unset($dateTime);
     }
 }

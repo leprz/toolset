@@ -3,25 +3,23 @@ declare(strict_types=1);
 
 namespace Clock\Tests\Application\Date\Performance\Implementation;
 
-use Carbon\CarbonImmutable;
+use Clock\Domain\ValueObject\Date;
+use Clock\Infrastructure\ValueObject\Implementation\CarbonDateTrait;
 
-class CarbonDate
+class CarbonDate extends Date
 {
-    /**
-     * @var \Carbon\CarbonImmutable
-     */
-    private CarbonImmutable $date;
-
-    /**
-     * @param \Carbon\CarbonImmutable $date
-     */
-    public function __construct(CarbonImmutable $date)
-    {
-        $this->date = $date->setTime(0, 0, 0);
+    use CarbonDateTrait {
+        CarbonDateTrait::lessThanOrEqual as _lessThanOrEqual;
+        CarbonDateTrait::addDays as _addDays;
     }
 
-    public function lessThanOrEqual(self $date): bool
+    public function lessThanOrEqual(Date $date): bool
     {
-        return $this->date->lessThanOrEqualTo($date->date);
+        return $this->_lessThanOrEqual($date);
+    }
+
+    public function addDays(int $days): Date
+    {
+        return $this->_addDays($days);
     }
 }

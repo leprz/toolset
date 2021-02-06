@@ -20,9 +20,13 @@ trait CarbonDateTrait
         $this->date = $date->setTime(0, 0, 0);
     }
 
-    private function addDaysImpl(int $days): self
+    /**
+     * @param int $days
+     * @return static
+     */
+    private function addDays(int $days): self
     {
-        return new self(
+        return new static(
             $this->date->addDays($days)
         );
     }
@@ -31,9 +35,9 @@ trait CarbonDateTrait
      * @param mixed $date
      * @return bool
      */
-    private function lessThanOrEqualImpl($date): bool
+    private function lessThanOrEqual($date): bool
     {
-        return $this->date <= $date->getDate();
+        return $this->date->lessThanOrEqualTo($date->getDate());
     }
 
     /**

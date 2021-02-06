@@ -10,26 +10,16 @@ use Clock\Domain\ValueObject\Date as DomainDate;
 use Clock\Infrastructure\ValueObject\Implementation\CarbonDateTrait;
 use Exception;
 
-class Date extends DomainDate implements DateBuilderInterface
+class DateAdapter extends DomainDate implements DateBuilderInterface
 {
-    use CarbonDateTrait;
+    use CarbonDateTrait {
+        CarbonDateTrait::addDays as _addDays;
+        CarbonDateTrait::lessThanOrEqual as _lessThanOrEqual;
+    }
 
-//    /**
-//     * @param string $date
-//     * @return \Clock\Infrastructure\ValueObject\Date
-//     * @throws \Clock\Domain\Exception\InvalidArgumentException
-//     */
-//    public static function fromString(string $date): self
-//    {
-//        try {
-//            return new self(new DateTimeImmutable($date));
-//        } catch (Exception $e) {
-//            throw new InvalidArgumentException($e->getMessage());
-//        }
-//    }
     /**
      * @param string $date
-     * @return \Clock\Infrastructure\ValueObject\Date
+     * @return \Clock\Infrastructure\ValueObject\DateAdapter
      * @throws \Clock\Domain\Exception\InvalidArgumentException
      */
     public static function fromString(string $date): self
@@ -43,7 +33,7 @@ class Date extends DomainDate implements DateBuilderInterface
 
     public function addDays(int $days): self
     {
-        return $this->addDaysImpl($days);
+        return $this->_addDays($days);
     }
 
     /**
@@ -52,6 +42,6 @@ class Date extends DomainDate implements DateBuilderInterface
      */
     public function lessThanOrEqual(DomainDate $date): bool
     {
-        return $this->lessThanOrEqualImpl($date);
+        return $this->_lessThanOrEqual($date);
     }
 }

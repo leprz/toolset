@@ -21,10 +21,15 @@ trait NativeImmutableDateTrait
         $this->date = $date->setTime(0, 0, 0);
     }
 
-    /** @noinspection PhpUnhandledExceptionInspection */
-    private function addDaysImpl(int $days): self
+    /**
+     * @param int $days
+     * @return static
+     * @noinspection PhpUnhandledExceptionInspection
+     * @noinspection PhpDocMissingThrowsInspection
+     */
+    private function addDays(int $days): self
     {
-        return new self(
+        return new static(
             $this->date->add(
                 new DateInterval(
                     sprintf('P%sD', $days)
@@ -37,7 +42,7 @@ trait NativeImmutableDateTrait
      * @param mixed $date
      * @return bool
      */
-    private function lessThanOrEqualImpl($date): bool
+    private function lessThanOrEqual($date): bool
     {
         return $this->date <= $date->getDate();
     }

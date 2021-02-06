@@ -5,6 +5,7 @@ namespace Clock\Infrastructure\Date;
 
 use Clock\Application\Date\Builder\DateTimeBuilderInterface;
 use Clock\Domain\ValueObject\DateTime;
+use Clock\Infrastructure\ValueObject\DateTimeAdapter;
 
 class DateTimeBuilder implements DateTimeBuilderInterface
 {
@@ -15,6 +16,6 @@ class DateTimeBuilder implements DateTimeBuilderInterface
      */
     public static function fromString(string $date): DateTime
     {
-        return \Clock\Infrastructure\ValueObject\DateTime::fromString($date);
+        return DateTimeAdapter::fromString($date);
     }
 }

@@ -5,6 +5,7 @@ namespace Clock\Application\Date;
 
 use Clock\Application\Date\Builder\AdapterNotInitializedException;
 use Clock\Application\Date\Builder\DateTimeBuilderInterface;
+use Clock\Application\Exception\InvalidArgumentException;
 
 class DateTime
 {
@@ -16,26 +17,42 @@ class DateTime
     /**
      * @param string $date
      * @return \Clock\Domain\ValueObject\DateTime
-     * @noinspection PhpUnhandledExceptionInspection
-     * @noinspection PhpDocMissingThrowsInspection
+     * @throws \Clock\Application\Exception\InvalidArgumentException
      */
     public static function fromString(string $date): \Clock\Domain\ValueObject\DateTime
     {
-        // TODO if now throw exception with message to use system clock instead
+        self::assertHasNoDynamicDates($date);
 
-        if (!self::$adapter) {
-            self::throwAdapterNotInitializedException();
-        }
-
-        return self::$adapter::fromString($date);
+        return self::adapter()::fromString($date);
     }
 
     /**
-     * @throws \Clock\Application\Date\Builder\AdapterNotInitializedException
+     * @param string $date
+     * @throws \Clock\Application\Exception\InvalidArgumentException
      */
-    private static function throwAdapterNotInitializedException(): void
+    private static function assertHasNoDynamicDates(string $date): void
     {
-        throw AdapterNotInitializedException::fromClassName(self::class);
+        if ($date === 'now') {
+            throw new InvalidArgumentException(
+                sprintf(
+                    'Can not use dynamically created date. Please use %s instead of [%s]',
+                    ClockInterface::class,
+                    $date
+                )
+            );
+        }
+    }
+
+    /**
+     * @return \Clock\Application\Date\Builder\DateTimeBuilderInterface
+     */
+    private static function adapter(): DateTimeBuilderInterface
+    {
+        if (self::$adapter === null) {
+            throw AdapterNotInitializedException::fromClassName(self::class);
+        }
+
+        return self::$adapter;
     }
 
     /**

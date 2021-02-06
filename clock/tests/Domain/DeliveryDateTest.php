@@ -5,14 +5,14 @@ namespace Clock\Tests\Domain;
 
 use Clock\Domain\ValueObject\ActualDeliveryDate;
 use Clock\Domain\ValueObject\EstimatedDeliveryDate;
-use Clock\Infrastructure\ValueObject\Date;
+use Clock\Infrastructure\ValueObject\DateAdapter;
 use PHPUnit\Framework\TestCase;
 
 class DeliveryDateTest extends TestCase
 {
     public function testEstimatedDeliveryTime(): void
     {
-        $orderDate = Date::fromString('01-01-2020');
+        $orderDate = DateAdapter::fromString('01-01-2020');
 
         $estimatedDelivery = EstimatedDeliveryDate::at(
             $orderDate->addDays(5)

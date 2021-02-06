@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace Clock\Application\Date\Builder;
 
-use Exception;
+use RuntimeException;
 
-final class AdapterNotInitializedException extends Exception
+final class AdapterNotInitializedException extends RuntimeException
 {
     /**
      * @param string $className

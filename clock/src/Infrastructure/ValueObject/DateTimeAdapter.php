@@ -8,7 +8,7 @@ use Clock\Domain\ValueObject\DateTime as DateTimeDomain;
 use DateTimeImmutable;
 use Exception;
 
-class DateTime extends DateTimeDomain
+class DateTimeAdapter extends DateTimeDomain
 {
     /**
      * @var \DateTimeImmutable
@@ -25,7 +25,7 @@ class DateTime extends DateTimeDomain
 
     /**
      * @param string $date
-     * @return \Clock\Infrastructure\ValueObject\DateTime
+     * @return \Clock\Infrastructure\ValueObject\DateTimeAdapter
      * @throws \Clock\Domain\Exception\InvalidArgumentException
      */
     public static function fromString(string $date): self

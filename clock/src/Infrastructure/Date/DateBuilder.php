@@ -4,7 +4,8 @@ declare(strict_types=1);
 namespace Clock\Infrastructure\Date;
 
 use Clock\Application\Date\Builder\DateBuilderInterface;
-use Clock\Infrastructure\ValueObject\Date;
+use Clock\Domain\ValueObject\Date;
+use Clock\Infrastructure\ValueObject\DateAdapter;
 
 class DateBuilder implements DateBuilderInterface
 {
@@ -13,8 +14,8 @@ class DateBuilder implements DateBuilderInterface
      * @return \Clock\Domain\ValueObject\Date
      * @throws \Clock\Domain\Exception\InvalidArgumentException
      */
-    public static function fromString(string $date): \Clock\Domain\ValueObject\Date
+    public static function fromString(string $date): Date
     {
-        return Date::fromString($date);
+        return DateAdapter::fromString($date);
     }
 }
