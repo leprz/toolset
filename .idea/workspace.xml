@@ -23,33 +23,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33cb54ac-aa4e-4592-a03f-f693a187fb12" name="Default Changelist" comment="tmp4">
-      <change afterPath="$PROJECT_DIR$/filesystem-storage/src/Domain/ValueObject/UserAvatarImageInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/.env.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/bin/phpunit" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/config/packages/doctrine.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/config/packages/doctrine_migrations.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/config/packages/prod/doctrine.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/config/routes/annotations.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/src/Application/Exception/InvalidArgumentException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/src/Application/Exception/NotFoundException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/src/Application/Persistence/Customer/CustomerPersistenceInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/src/Application/Persistence/Customer/CustomerRepositoryInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/src/Application/ValueObject/CustomerId.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/src/Domain/Collection/CategoryCollection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/src/Domain/Collection/ImmutableCollection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/src/Domain/Customer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/src/Domain/Traits/CustomerIdTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/src/Domain/ValueObject/Category.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/src/Domain/ValueObject/CustomerIdInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/src/Infrastructure/Controller/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/src/Infrastructure/Controller/CustomerController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/src/Infrastructure/Entity/Category.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/src/Infrastructure/Entity/Customer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/src/Infrastructure/Repository/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/src/Infrastructure/Repository/Customer/CustomerDoctrineRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/src/Infrastructure/Repository/Customer/CustomerProxy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/src/Infrastructure/Repository/Exception/EntityNotFoundException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/tests/Application/Persistence/Customer/CustomerRepositoryTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model-mapping/tests/bootstrap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ThingsThatIUse.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ThingsThatIUse.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystem-storage/src/Application/FilesystemStorage/Exception/AssetNotExistException.php" beforeDir="false" afterPath="$PROJECT_DIR$/filesystem-storage/src/Application/FilesystemStorage/Exception/AssetNotExistException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystem-storage/src/Application/FilesystemStorage/Exception/FileReadException.php" beforeDir="false" afterPath="$PROJECT_DIR$/filesystem-storage/src/Application/FilesystemStorage/Exception/FileReadException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystem-storage/src/Application/FilesystemStorage/Exception/FileRemoveException.php" beforeDir="false" afterPath="$PROJECT_DIR$/filesystem-storage/src/Application/FilesystemStorage/Exception/FileRemoveException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystem-storage/src/Application/FilesystemStorage/Exception/FileWriteException.php" beforeDir="false" afterPath="$PROJECT_DIR$/filesystem-storage/src/Application/FilesystemStorage/Exception/FileWriteException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystem-storage/src/Application/FilesystemStorage/UserAvatar/UserAvatarAssetPath.php" beforeDir="false" afterPath="$PROJECT_DIR$/filesystem-storage/src/Application/FilesystemStorage/UserAvatar/UserAvatarAssetPath.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystem-storage/src/Application/FilesystemStorage/UserAvatar/UserAvatarFilesystemStorageInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/filesystem-storage/src/Application/FilesystemStorage/UserAvatar/UserAvatarFilesystemStorageInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystem-storage/src/Application/UseCase/UserChangeAvatar/ChangeAvatarService.php" beforeDir="false" afterPath="$PROJECT_DIR$/filesystem-storage/src/Application/UseCase/UserChangeAvatar/ChangeAvatarService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystem-storage/src/Application/UseCase/UserChangeAvatar/UserChangeAvatarCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/filesystem-storage/src/Application/UseCase/UserChangeAvatar/UserChangeAvatarCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystem-storage/src/Application/ValueObject/Json.php" beforeDir="false" afterPath="$PROJECT_DIR$/filesystem-storage/src/Application/ValueObject/Json.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystem-storage/src/Application/ValueObject/RelativePath.php" beforeDir="false" afterPath="$PROJECT_DIR$/filesystem-storage/src/Application/ValueObject/RelativePath.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystem-storage/src/Application/ValueObject/Utils/PathUtils.php" beforeDir="false" afterPath="$PROJECT_DIR$/filesystem-storage/src/Application/ValueObject/Utils/PathUtils.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystem-storage/src/Domain/ChangeAvatarDataInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/filesystem-storage/src/Domain/ChangeAvatarDataInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystem-storage/src/Domain/ChangeAvatarServiceInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/filesystem-storage/src/Domain/ChangeAvatarServiceInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystem-storage/src/Domain/UserCard.php" beforeDir="false" afterPath="$PROJECT_DIR$/filesystem-storage/src/Domain/UserCard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystem-storage/src/Domain/ValueObject/File.php" beforeDir="false" afterPath="$PROJECT_DIR$/filesystem-storage/src/Domain/ValueObject/FileInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystem-storage/src/Domain/ValueObject/UserAvatarImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/filesystem-storage/src/Domain/ValueObject/RelativePathInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystem-storage/src/Domain/ValueObject/UserId.php" beforeDir="false" afterPath="$PROJECT_DIR$/filesystem-storage/src/Domain/ValueObject/UserId.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystem-storage/src/Infrastructure/FilesystemStorage/LocalPath.php" beforeDir="false" afterPath="$PROJECT_DIR$/filesystem-storage/src/Infrastructure/FilesystemStorage/LocalPath.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystem-storage/src/Infrastructure/FilesystemStorage/LocalResourcePath.php" beforeDir="false" afterPath="$PROJECT_DIR$/filesystem-storage/src/Infrastructure/FilesystemStorage/LocalResourcePath.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystem-storage/src/Infrastructure/FilesystemStorage/UserAvatar/UserAvatarLocalFilesystemStorage.php" beforeDir="false" afterPath="$PROJECT_DIR$/filesystem-storage/src/Infrastructure/FilesystemStorage/UserAvatar/UserAvatarLocalFilesystemStorage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystem-storage/src/Infrastructure/Persistence/UserCardRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/filesystem-storage/src/Infrastructure/Persistence/UserCardRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystem-storage/tests/Application/FilesystemStorage/UserAvatarFilesystemStorageTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/filesystem-storage/tests/Application/FilesystemStorage/UserAvatarFilesystemStorageTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystem-storage/tests/Application/UseCase/UserChangeAvatar/FakeUserAvatarFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/filesystem-storage/tests/Application/UseCase/UserChangeAvatar/FakeUserAvatarFileInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filesystem-storage/tests/Application/UseCase/UserChangeAvatar/UserChangeAvatarTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/filesystem-storage/tests/Application/UseCase/UserChangeAvatar/UserChangeAvatarTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model-mapping/.env" beforeDir="false" afterPath="$PROJECT_DIR$/model-mapping/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model-mapping/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/model-mapping/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model-mapping/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/model-mapping/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model-mapping/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/model-mapping/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model-mapping/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/model-mapping/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model-mapping/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/model-mapping/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model-mapping/src/Controller/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/model-mapping/migrations/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model-mapping/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/model-mapping/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/psalm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/psalm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared-kernel/src/Domain/ValueObject/UuidV4Trait.php" beforeDir="false" afterPath="$PROJECT_DIR$/shared-kernel/src/Domain/ValueObject/UuidV4Trait.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,13 +94,26 @@
         <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/model-mapping" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="NamedScopeManager">
+    <scope name="model-mapping" pattern="file[ThingsThatIUse]:model-mapping/*||file[ThingsThatIUse]:shared-kernel/*||file[ThingsThatIUse]:model-mapping//*||file[ThingsThatIUse]:shared-kernel//*||file:psalm.xml||file:phpcs.xml" />
   </component>
   <component name="PHPCodeSnifferBlackList">
     <option name="filePaths">
       <option value="$PROJECT_DIR$/filesystem-storage/src/Infrastructure/FilesystemStorage/TenantConfig/TenantConfigLocalFilesystemStorage.php" />
     </option>
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="PhpWebServerValidation" path_to_validation_script="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\model-mapping\public" selected_validation_type="LOCAL" web_path_to_validation_script="http://127.0.0.1:8000/" />
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="Default">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
@@ -99,7 +131,6 @@
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/vendor/webmozart/path-util" />
-      <path value="$PROJECT_DIR$/vendor/webmozart/glob" />
       <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
@@ -141,12 +172,10 @@
       <path value="$PROJECT_DIR$/vendor/phar-io/version" />
       <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/vendor/pimple/pimple" />
-      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
-      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
-      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
     </include_path>
   </component>
   <component name="ProjectId" id="1lxHuqGnlhAQk181VQEWyMApqrW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -156,66 +185,49 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/filesystem-storage/resources/tests/avatars/.gitkeep&#10;C:/Users/Przemek/PhpstormProjects/ThingsThatIUse/filesystem-storage/resources/tests/avatars/testavatar.png" />
     <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/filesystem-storage" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/model-mapping" />
     <property name="nodejs_interpreter_path" value="$PROJECT_DIR$/../../../../Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.webOptions" />
+    <property name="settings.editor.selected.configurable" value="settings.php.quality.tools" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\filesystem-storage\src\Application\FilesystemStorage" />
-      <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\filesystem-storage\src\Application\FilesystemStorage\TenantConfig" />
-      <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\filesystem-storage\src\Application\FilesystemStorage\UserAvatar" />
-      <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\filesystem-storage\src\Application\Persistence" />
-      <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\filesystem-storage\tests\Application\UseCase\UserChangeAvatar" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\model-mapping\src\Application" />
       <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\filesystem-storage" />
       <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\filesystem-storage\tests\Application\UseCase\UserChangeAvatar\assets" />
       <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\filesystem-storage\tests\Infrastructure\FilesystemStorage\LocalPath" />
       <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\filesystem-storage\tests\Application\FilesystemStorage\assets" />
-      <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\filesystem-storage\tests" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\model-mapping\tests\Application\Persistence\Customer" />
+      <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\model-mapping\tests\Application\Persistence\Customer\Performance" />
+      <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\model-mapping\tests" />
+      <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\model-mapping\src\Domain\Collection" />
+      <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\model-mapping\src\Infrastructure\Repository" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.filesystem-storage">
-    <configuration name="UserAvatarFilesystemStorageTest.testRemove" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="FilesystemStorage\Tests\Application\FilesystemStorage\UserAvatarFilesystemStorageTest" file="$PROJECT_DIR$/filesystem-storage/tests/Application/FilesystemStorage/UserAvatarFilesystemStorageTest.php" method="testRemove" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="UserAvatarFilesystemStorageTest.testSave" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="FilesystemStorage\Tests\Application\FilesystemStorage\UserAvatarFilesystemStorageTest" file="$PROJECT_DIR$/filesystem-storage/tests/Application/FilesystemStorage/UserAvatarFilesystemStorageTest.php" method="testSave" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="filesystem-storage" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner directory="$PROJECT_DIR$/filesystem-storage" />
+  <component name="RunManager" selected="PHPUnit.tests (1)">
+    <configuration name="Application" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner directory="$PROJECT_DIR$/model-mapping/tests/Application" />
       <method v="2" />
     </configuration>
     <configuration name="tests (1)" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner directory="$PROJECT_DIR$/persistence/tests" />
-      <method v="2" />
-    </configuration>
-    <configuration name="tests" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner directory="$PROJECT_DIR$/filesystem-storage/tests" />
+      <TestRunner configuration_file="$PROJECT_DIR$/model-mapping/phpunit.xml" directory="$PROJECT_DIR$/model-mapping/tests" use_alternative_configuration_file="true" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="PHPUnit.filesystem-storage" />
       <item itemvalue="PHPUnit.tests" />
+      <item itemvalue="PHPUnit.Application" />
       <item itemvalue="PHPUnit.tests (1)" />
-      <item itemvalue="PHPUnit.UserAvatarFilesystemStorageTest.testRemove" />
-      <item itemvalue="PHPUnit.UserAvatarFilesystemStorageTest.testSave" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.filesystem-storage" />
-        <item itemvalue="PHPUnit.tests" />
-        <item itemvalue="PHPUnit.UserAvatarFilesystemStorageTest.testRemove" />
-        <item itemvalue="PHPUnit.UserAvatarFilesystemStorageTest.testSave" />
         <item itemvalue="PHPUnit.tests (1)" />
+        <item itemvalue="PHPUnit.tests" />
       </list>
     </recent_temporary>
   </component>
@@ -240,6 +252,8 @@
       <workItem from="1612290026312" duration="2784000" />
       <workItem from="1612417040651" duration="4133000" />
       <workItem from="1612549145856" duration="3050000" />
+      <workItem from="1612676135199" duration="1123000" />
+      <workItem from="1612679112884" duration="12574000" />
     </task>
     <task id="LOCAL-00001" summary="pattern(persistence): add persistence with example test cases">
       <created>1611347580870</created>
@@ -346,192 +360,6 @@
     <MESSAGE value="tmp4" />
     <option name="LAST_COMMIT_MESSAGE" value="tmp4" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="395" y="91" key="#Inspections" timestamp="1610693400549">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="395" y="91" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1610693400549" />
-    <state x="361" y="71" width="814" height="728" key="#Intentions" timestamp="1611347549548">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="361" y="71" width="814" height="728" key="#Intentions/0.0.1536.824@0.0.1536.824" timestamp="1611347549548" />
-    <state x="318" y="317" width="566" height="189" key="#PHP_CS_Fixer_Ignored_Files" timestamp="1611490578120">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="318" y="317" width="566" height="189" key="#PHP_CS_Fixer_Ignored_Files/0.0.1536.824@0.0.1536.824" timestamp="1611490578120" />
-    <state x="346" y="317" width="547" height="189" key="#PHP_CodeSniffer_Ignored_Files" timestamp="1611490535198">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="346" y="317" width="547" height="189" key="#PHP_CodeSniffer_Ignored_Files/0.0.1536.824@0.0.1536.824" timestamp="1611490535198" />
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608532575936">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1608532575936" />
-    <state x="93" y="93" width="1350" height="638" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1611642506746">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="93" y="93" width="1350" height="638" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1536.824@0.0.1536.824" timestamp="1611642506746" />
-    <state x="520" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1611399518663">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="520" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1611399518663" />
-    <state x="574" y="94" key="#com.intellij.ide.util.MemberChooser" timestamp="1612552093928">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="574" y="94" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1612552093928" />
-    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1612549162383">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1612549162383" />
-    <state x="410" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1612550250168">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="410" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1612550250168" />
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1612290252967">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1612290252967" />
-    <state x="586" y="170" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1612292426646">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="586" y="170" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0/0.0.1536.824@0.0.1536.824" timestamp="1612292426646" />
-    <state x="482" y="287" key="#com.jetbrains.php.refactoring.move.namespace.PhpMoveNamespaceDialog#" timestamp="1612110554533">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="482" y="287" key="#com.jetbrains.php.refactoring.move.namespace.PhpMoveNamespaceDialog#/0.0.1536.824@0.0.1536.824" timestamp="1612110554533" />
-    <state x="399" y="37" key="#com.jetbrains.php.refactoring.move.namespace.PhpMoveRelatedNamespacesDialog" timestamp="1612108497669">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="399" y="37" key="#com.jetbrains.php.refactoring.move.namespace.PhpMoveRelatedNamespacesDialog/0.0.1536.824@0.0.1536.824" timestamp="1612108497669" />
-    <state x="524" y="115" key="#xdebugger.evaluate" timestamp="1611470801594">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="524" y="115" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1611470801594" />
-    <state x="528" y="282" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1612421586358">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="528" y="282" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1612421586358" />
-    <state x="47" y="0" width="1095" height="824" key="CommitChangelistDialog2" timestamp="1612552206089">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="47" y="0" width="1095" height="824" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1612552206089" />
-    <state x="545" y="325" key="ComposerInitDialogKey" timestamp="1608532657553">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="545" y="325" key="ComposerInitDialogKey/0.0.1536.824@0.0.1536.824" timestamp="1608532657553" />
-    <state width="822" height="466" key="DebuggerActiveHint" timestamp="1612253334117">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="822" height="466" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1612253334117" />
-    <state x="737" y="30" key="FileChooserDialogImpl" timestamp="1612110646709">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="737" y="30" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1612110646709" />
-    <state width="1493" height="203" key="GridCell.Tab.0.bottom" timestamp="1612552206151">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1612552206151" />
-    <state width="1493" height="203" key="GridCell.Tab.0.center" timestamp="1612552206151">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1612552206151" />
-    <state width="1493" height="203" key="GridCell.Tab.0.left" timestamp="1612552206151">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1612552206151" />
-    <state width="1493" height="203" key="GridCell.Tab.0.right" timestamp="1612552206151">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1612552206151" />
-    <state width="1493" height="308" key="GridCell.Tab.1.bottom" timestamp="1612253402918">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="308" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1612253402918" />
-    <state width="1493" height="308" key="GridCell.Tab.1.center" timestamp="1612253402918">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="308" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1612253402918" />
-    <state width="1493" height="308" key="GridCell.Tab.1.left" timestamp="1612253402918">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="308" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1612253402918" />
-    <state width="1493" height="308" key="GridCell.Tab.1.right" timestamp="1612253402918">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="308" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1612253402918" />
-    <state x="147" y="65" key="MergeDialog" timestamp="1610693121673">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1610693121673" />
-    <state x="407" y="174" key="MultipleFileMergeDialog" timestamp="1610693123186">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="407" y="174" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1610693123186" />
-    <state x="501" y="135" key="NewPhpClassDialog" timestamp="1612549349593">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="501" y="135" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1612549349593" />
-    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1611380447654">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1611380447654" />
-    <state x="584" y="346" key="ReplaceDuplicatesPrompt" timestamp="1608535793305">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="584" y="346" key="ReplaceDuplicatesPrompt/0.0.1536.824@0.0.1536.824" timestamp="1608535793305" />
-    <state x="508" y="115" key="RollbackChangesDialog" timestamp="1612551721821">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="508" y="115" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1612551721821" />
-    <state x="277" y="57" key="SettingsEditor" timestamp="1611490565281">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1611490565281" />
-    <state x="490" y="154" width="540" height="524" key="StructurePopup" timestamp="1612549572602">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="490" y="154" width="540" height="524" key="StructurePopup/0.0.1536.824@0.0.1536.824" timestamp="1612549572602" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1611344957156">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1611344957156" />
-    <state x="361" y="132" key="Vcs.Push.Dialog.v2" timestamp="1612422527321">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="361" y="132" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1612422527321" />
-    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1612111198467">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1612111198467" />
-    <state x="404" y="27" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1612108843325">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="404" y="27" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1612108843325" />
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1611393367751">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1611393367751" />
-    <state x="398" y="220" width="1138" height="580" key="com.jetbrains.php.test.PhpNewTestDialog" timestamp="1612251321176">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="398" y="220" width="1138" height="580" key="com.jetbrains.php.test.PhpNewTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1612251321176" />
-    <state x="93" y="93" width="1350" height="638" key="dock-window-1" timestamp="1611468223927">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="93" y="93" width="1350" height="638" key="dock-window-1/0.0.1536.824@0.0.1536.824" timestamp="1611468223927" />
-    <state x="455" y="184" width="847" height="640" key="find.popup" timestamp="1612550677318">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="455" y="184" width="847" height="640" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1612550677318" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1612253122442">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1612253122442" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1612552118285">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1612552118285" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -565,6 +393,11 @@
           <line>57</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/model-mapping/src/Infrastructure/Repository/Customer/CustomerProxy.php</url>
+          <line>39</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/filesystem-storage/tests/Application/UseCase/UserChangeAvatar/FakeUserAvatarFileInterface.php</url>
           <line>11</line>
@@ -576,6 +409,10 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ThingsThatIUse@tests.xml" NAME="tests Coverage Results" MODIFIED="1611486982434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
