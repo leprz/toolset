@@ -46,6 +46,15 @@ trait UuidV4Trait
     }
 
     /**
+     * @param mixed $uuid
+     * @return bool
+     */
+    private function equals($uuid): bool
+    {
+        return $this->uuid === $uuid->uuid;
+    }
+
+    /**
      * @param string $uuid
      * @return bool
      */

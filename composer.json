@@ -34,7 +34,7 @@
     "ext-json": "*"
   },
   "require-dev": {
-    "vimeo/psalm": "^3.0@dev",
+    "vimeo/psalm": "^4.0@dev",
     "squizlabs/php_codesniffer": "3.*@dev",
     "phpunit/phpunit": "^9",
     "roave/security-advisories": "dev-master"
