@@ -1,0 +1,5 @@
+services:
+  App\Application\Persistence\CartLineItem\CartLineItemPersistenceInterface:
+    public: true
+  App\UseCase\CartPlaceProduct\Application\CartPlaceProductUseCase:
+    public: true
