@@ -35,6 +35,17 @@ class OrderEntity
      * @ORM\Column(type="decimal", scale=2)
      */
     protected float $totalPrice = 0;
+    /**
+     * @var \App\Domain\ValueObject\CustomerId
+     */
+    private CustomerId $customerId;
+
+    public function __construct(OrderId $id, CustomerEntity $customer, Money $totalPrice)
+    {
+        $this->setId($id);
+        $this->customer = $customer;
+        $this->setTotalPrice($totalPrice);
+    }
 
     public function setId(OrderId $id): void
     {

@@ -9,6 +9,15 @@ use ReflectionMethod;
 
 trait EntityMapperTrait
 {
+    private function createNewInstanceWithoutConstructor(string $class): mixed
+    {
+        try {
+            return (new \ReflectionClass($class))->newInstanceWithoutConstructor();
+        } catch (\ReflectionException $e) {
+            throw new \RuntimeException($e->getMessage());
+        }
+    }
+
     private function mapProperties($model, $entity, ?EntityManagerInterface $entityManager = null): mixed
     {
         $reflectionClass = new \ReflectionClass($model);

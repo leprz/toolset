@@ -11,9 +11,9 @@ use App\Domain\ValueObject\CartId;
 use App\Domain\ValueObject\LineItemId;
 use App\Domain\ValueObject\Money;
 use App\Domain\ValueObject\Sku;
+use App\Infrastructure\DataFixture\ReferenceFixture;
 use App\UseCase\ProductPlaceInCart\Application\ProductPlaceInCartCommand;
 use App\UseCase\ProductPlaceInCart\Application\ProductPlaceInCartUseCase;
-use App\UseCase\ProductPlaceInCart\Infrastructure\ProductPlaceInCartDataFixtures;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class ProductPlaceInCartUseCaseTest extends KernelTestCase
@@ -44,7 +44,7 @@ class ProductPlaceInCartUseCaseTest extends KernelTestCase
     {
         return new ProductPlaceInCartCommand(
             lineItemId: self::cartLineItemIdFixture(),
-            cartId: CartId::fromString(ProductPlaceInCartDataFixtures::CART_ID),
+            cartId: CartId::fromString(ReferenceFixture::CART_ID),
             product: Product::fromExisting(Sku::fromString('PL-22'), new Money(2.99), 'Mobile Phone'),
         );
     }

@@ -38,6 +38,14 @@ class OrderLineItemEntity
      */
     protected float $price;
 
+    public function __construct(LineItemId $id, OrderEntity $order, string $name, Money $price)
+    {
+        $this->setId($id);
+        $this->order = $order;
+        $this->setName($name);
+        $this->setPrice($price);
+    }
+
     public function setId(LineItemId $id): void
     {
         $this->id = (string)$id;

@@ -15,7 +15,7 @@ use App\Infrastructure\Persistence\Order\OrderEntityMapper;
 use App\Infrastructure\Persistence\Order\OrderProxy;
 use App\UseCase\OrderPlace\Application\OrderPlaceCommand;
 use App\UseCase\OrderPlace\Application\OrderPlaceUseCase;
-use App\UseCase\ProductPlaceInCart\Infrastructure\ProductPlaceInCartDataFixtures;
+use App\Infrastructure\DataFixture\ReferenceFixture;
 use PHPUnit\Framework\MockObject\MockObject;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
@@ -55,7 +55,7 @@ class OrderPlaceUseCaseTest extends KernelTestCase
     private function placeOrderCommandFixture(): OrderPlaceCommand
     {
         return new OrderPlaceCommand(
-            CartId::fromString(ProductPlaceInCartDataFixtures::CART_ID),
+            CartId::fromString(ReferenceFixture::CART_ID),
             $this->orderIdFixture(),
         );
     }

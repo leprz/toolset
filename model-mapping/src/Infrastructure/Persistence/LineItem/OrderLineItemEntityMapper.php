@@ -19,7 +19,10 @@ class OrderLineItemEntityMapper
 
     public function mapToNewEntity(OrderLineItem $model): OrderLineItemEntity
     {
-        return $this->mapToExistingEntity(new OrderLineItemEntity(), $model);
+        return $this->mapToExistingEntity(
+            $this->createNewInstanceWithoutConstructor(OrderLineItemEntity::class),
+            $model
+        );
     }
 
     public function mapToExistingEntity(OrderLineItemEntity $entity, OrderLineItem $model): OrderLineItemEntity

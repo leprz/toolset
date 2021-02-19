@@ -7,6 +7,7 @@ namespace App\UseCase\ProductPlaceInCart\Infrastructure;
 use App\Domain\ValueObject\CartId;
 use App\Domain\ValueObject\LineItemId;
 use App\Domain\ValueObject\Money;
+use App\Infrastructure\DataFixture\ReferenceFixture;
 use App\Infrastructure\Entity\CartEntity;
 use App\Infrastructure\Entity\CartLineItemEntity;
 use App\Infrastructure\Entity\CustomerEntity;
@@ -15,18 +16,16 @@ use Doctrine\Persistence\ObjectManager;
 
 class ProductPlaceInCartDataFixtures extends Fixture
 {
-    public const CART_ID = '55CD3A1C-4B9C-4262-8D12-1EBF4838231D';
-
     public function load(ObjectManager $manager)
     {
         /** @var \App\Infrastructure\Entity\CustomerEntity $customer */
-        $customer = $this->getReference('3ABB36F4-0F2A-4E61-87A7-34A5E0118342');
+        $customer = $this->getReference(ReferenceFixture::CUSTOMER_ID);
 
-        $cart = $this->createCart(self::CART_ID, $customer);
+        $cart = $this->createCart(ReferenceFixture::CART_ID, $customer);
 
         $manager->persist(
             $this->createCartLineItem(
-                id: 'EF87A7D4-20C6-432A-A15B-5D5AC060F8E2',
+                id: ReferenceFixture::CART_LINE_ITEM_ID,
                 name: 'Bag full of snacks',
                 price: 1.99,
                 cart: $cart

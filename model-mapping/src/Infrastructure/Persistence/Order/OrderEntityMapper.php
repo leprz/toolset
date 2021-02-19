@@ -19,7 +19,10 @@ class OrderEntityMapper
 
     public function mapToNewEntity(Order $order): OrderEntity
     {
-        return $this->mapToExistingEntity(new OrderEntity(), $order);
+        return $this->mapToExistingEntity(
+            $this->createNewInstanceWithoutConstructor(OrderEntity::class),
+            $order
+        );
     }
 
     public function mapToExistingEntity(OrderEntity $entity, Order $order): OrderEntity

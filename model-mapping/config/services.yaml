@@ -32,9 +32,10 @@ services:
     App\Infrastructure\Repository\Customer\CustomerDoctrineRepository: ~
     App\Application\Persistence\CustomerRepositoryInterface: '@App\Infrastructure\Repository\Customer\CustomerDoctrineRepository'
 
-    App\Infrastructure\Persistence\CartLineItem\CartLineItemEntityRepository: ~
-    App\Application\Persistence\CartLineItem\CartLineItemPersistenceInterface:
+    App\Infrastructure\Persistence\CartLineItem\CartLineItemEntityRepository:
+        alias: 'App\Application\Persistence\CartLineItem\CartLineItemPersistenceInterface'
         public: true
+#    App\Application\Persistence\CartLineItem\CartLineItemPersistenceInterface: '@App\Infrastructure\Persistence\CartLineItem\CartLineItemEntityRepository'
 
     # for testing until
     App\UseCase\ProductPlaceInCart\Application\ProductPlaceInCartUseCase:
@@ -42,4 +43,6 @@ services:
     App\UseCase\OrderPlace\Application\OrderPlaceUseCase:
         public: true
     App\Application\Persistence\Cart\CartPersistenceInterface:
+        public: true
+    App\Infrastructure\Persistence\CartLineItem\CartLineItemEntityMapper:
         public: true
