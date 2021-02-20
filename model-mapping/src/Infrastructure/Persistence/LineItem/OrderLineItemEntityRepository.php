@@ -49,9 +49,8 @@ class OrderLineItemEntityRepository implements OrderLineItemPersistenceInterface
 
     public function add(OrderLineItem $lineItem): void
     {
-            $entity = $this->mapper->mapToNewEntity($lineItem);
         $this->entityManager->persist(
-            $entity
+            $this->mapper->mapToNewEntity($lineItem)
         );
     }
 }

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domain;
 
-use App\Domain\Data\CreateOrderData as this;
+use App\Domain\Data\CreateOrderData as Data;
 use App\Domain\Data\CreateOrderDataInterface;
 use App\Domain\Exception\EmptyOrderException;
 use App\Domain\ValueObject\CustomerId;
@@ -18,7 +18,8 @@ class Order
     private CustomerId $customerId;
     private Money $totalPrice;
 
-    protected function __construct(CreateOrderDataInterface $data) {
+    protected function __construct(CreateOrderDataInterface $data)
+    {
         $this->id = $data->getId();
         $this->customerId = $data->getCustomerId();
         $this->totalPrice = $data->getTotalPrice();
@@ -40,11 +41,11 @@ class Order
     ): self {
         self::assertOrderIsNotEmpty($lineItems, $id, $customerId);
 
-        $totalPrice = new Money(OrderLineItem::getTotalPrice($lineItems));
-
         $action->addLineItemsToOrder($id, $lineItems);
 
-        return new self(new this(id: $id, customerId: $customerId, totalPrice: $totalPrice));
+        return new Order(
+            new Data(id: $id, customerId: $customerId, totalPrice: OrderLineItem::getTotalPrice($lineItems))
+        );
     }
 
     /**

@@ -29,7 +29,7 @@ trait EntityMapperTrait
             throw new RuntimeException($e->getMessage());
         }
 
-        $modelProperties = $reflectionClass->getParentClass()->getProperties();
+        $modelProperties = $this->extractModelProperties($reflectionClass);
 
         foreach ($modelProperties as $property) {
             $propertyName = $property->getName();
@@ -50,25 +50,28 @@ trait EntityMapperTrait
         return $entity;
     }
 
-    private static function generateMethodBodyStub(string $propName, string $propClassName): string
+    /**
+     * @param \ReflectionClass $reflectionClass
+     * @return \ReflectionProperty[]
+     */
+    private function extractModelProperties(ReflectionClass $reflectionClass): array
     {
-        return sprintf(
-            'public function %s(\%s $%s): void {}',
-            self::propNameToSetter($propName),
-            $propClassName,
-            $propName,
-        );
-    }
+        $parent = $reflectionClass->getParentClass();
 
-    private function isEntityMangerRequiredInSetter(object $entity, string $methodName): bool
-    {
-        try {
-            $reflectionMethod = new ReflectionMethod($entity, $methodName);
-        } catch (ReflectionException $e) {
-            throw new RuntimeException($e->getMessage());
+        if ($parent !== false && self::isProxyClass($reflectionClass)) {
+            return  $parent->getProperties();
         }
 
-        return count($reflectionMethod->getParameters()) > 1;
+        return $reflectionClass->getProperties();
+    }
+
+    /**
+     * @param \ReflectionClass $reflectionClass
+     * @return bool
+     */
+    private static function isProxyClass(ReflectionClass $reflectionClass): bool
+    {
+        return str_contains($reflectionClass->getName(), 'Proxy');
     }
 
     private static function propNameToSetter(string $propName): string
@@ -94,5 +97,26 @@ trait EntityMapperTrait
                 )
             );
         }
+    }
+
+    private static function generateMethodBodyStub(string $propName, string $propClassName): string
+    {
+        return sprintf(
+            'public function %s(\%s $%s): void {}',
+            self::propNameToSetter($propName),
+            $propClassName,
+            $propName,
+        );
+    }
+
+    private function isEntityMangerRequiredInSetter(object $entity, string $methodName): bool
+    {
+        try {
+            $reflectionMethod = new ReflectionMethod($entity, $methodName);
+        } catch (ReflectionException $e) {
+            throw new RuntimeException($e->getMessage());
+        }
+
+        return count($reflectionMethod->getParameters()) > 1;
     }
 }

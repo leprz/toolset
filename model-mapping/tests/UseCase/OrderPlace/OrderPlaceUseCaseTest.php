@@ -16,40 +16,24 @@ use App\Infrastructure\Persistence\Order\OrderProxy;
 use App\UseCase\OrderPlace\Application\OrderPlaceCommand;
 use App\UseCase\OrderPlace\Application\OrderPlaceUseCase;
 use App\Infrastructure\DataFixture\ReferenceFixture;
+use phpDocumentor\Reflection\Types\Self_;
 use PHPUnit\Framework\MockObject\MockObject;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class OrderPlaceUseCaseTest extends KernelTestCase
 {
     private OrderPlaceUseCase $useCase;
-    private OrderRepositoryInterface $orderRepository;
-    private OrderEntityMapper $orderMapper;
-    private OrderPersistenceInterface $orderPersistence;
-    private OrderLineItemPersistenceInterface $orderLineItemPersistence;
+    private MockObject|OrderPersistenceInterface $orderPersistenceMock;
     private MockObject|CartPersistenceInterface $cartPersistenceMock;
     private MockObject|CartLineItemPersistenceInterface $cartLineItemPersistence;
-
-    /** @var \App\Infrastructure\Entity\OrderEntity[] */
-    private array $addedOrders;
 
     public function testOrderPlace(): void
     {
         $this->assertCartHasBeenCleared();
         $this->assertCartHasBeenRemoved();
-
-        ($this->useCase)($this->placeOrderCommandFixture());
-
         $this->assertOrderHasBeenPlaced();
 
-        $this->cleanUp();
-    }
-
-    private function cleanUp(): void
-    {
-        foreach ($this->addedOrders as $order) {
-            $this->orderLineItemPersistence->removeForOrderId($order->getId());
-            $this->orderPersistence->removeById($order->getId());
-        }
+        ($this->useCase)($this->placeOrderCommandFixture());
     }
 
     private function placeOrderCommandFixture(): OrderPlaceCommand
@@ -67,13 +51,7 @@ class OrderPlaceUseCaseTest extends KernelTestCase
 
     private function assertOrderHasBeenPlaced(): void
     {
-        $order = $this->orderRepository->getForId($this->orderIdFixture());
-
-        if ($order instanceof OrderProxy) {
-            $orderEntity = $order->getEntity($this->orderMapper);
-            $this->addedOrders[] = $orderEntity;
-            self::assertTrue($orderEntity->getId()->equals($this->orderIdFixture()));
-        }
+        $this->orderPersistenceMock->expects(self::once())->method('add');
     }
 
     private function assertCartHasBeenCleared(): void
@@ -101,14 +79,16 @@ class OrderPlaceUseCaseTest extends KernelTestCase
 
         $this->cartLineItemPersistence = $this->createMock(CartLineItemPersistenceInterface::class);
         self::$container->set(
-            CartLineItemPersistenceInterface::class,
+            'test.'.CartLineItemPersistenceInterface::class,
             $this->cartLineItemPersistence
         );
 
+        $this->orderPersistenceMock = $this->createMock(OrderPersistenceInterface::class);
+        self::$container->set(
+            OrderPersistenceInterface::class,
+            $this->orderPersistenceMock
+        );
+
         $this->useCase = self::$container->get(OrderPlaceUseCase::class);
-        $this->orderLineItemPersistence = self::$container->get(OrderLineItemPersistenceInterface::class);
-        $this->orderRepository = self::$container->get(OrderRepositoryInterface::class);
-        $this->orderMapper = self::$container->get(OrderEntityMapper::class);
-        $this->orderPersistence = self::$container->get(OrderPersistenceInterface::class);
     }
 }

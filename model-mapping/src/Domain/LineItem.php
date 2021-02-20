@@ -18,16 +18,18 @@ abstract class LineItem
 
     /**
      * @param \App\Domain\LineItem[] $lineItems
-     * @return float
+     * @return \App\Domain\ValueObject\Money
      */
-    public static function getTotalPrice(array $lineItems): float
+    public static function getTotalPrice(array $lineItems): Money
     {
-        return array_reduce(
-            $lineItems,
-            static function (float $total, LineItem $lineItem): float {
-                return $total + $lineItem->price->toFloat();
-            },
-            0
+        return new Money(
+            array_reduce(
+                $lineItems,
+                static function (float $total, LineItem $lineItem): float {
+                    return $total + $lineItem->price->toFloat();
+                },
+                0
+            )
         );
     }
 }
