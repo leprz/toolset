@@ -66,19 +66,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/config" />
       <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
-      <path value="$PROJECT_DIR$/vendor/symfony/expression-language" />
-      <path value="$PROJECT_DIR$/vendor/symplify/autowire-array-parameter" />
-      <path value="$PROJECT_DIR$/vendor/symplify/composer-json-manipulator" />
-      <path value="$PROJECT_DIR$/vendor/symplify/config-transformer" />
-      <path value="$PROJECT_DIR$/vendor/symplify/console-package-builder" />
-      <path value="$PROJECT_DIR$/vendor/symplify/easy-testing" />
-      <path value="$PROJECT_DIR$/vendor/symplify/package-builder" />
-      <path value="$PROJECT_DIR$/vendor/symplify/php-config-printer" />
-      <path value="$PROJECT_DIR$/vendor/symplify/smart-file-system" />
-      <path value="$PROJECT_DIR$/vendor/symplify/symplify-kernel" />
-      <path value="$PROJECT_DIR$/vendor/nette/neon" />
-      <path value="$PROJECT_DIR$/vendor/nette/utils" />
-      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />

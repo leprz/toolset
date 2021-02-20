@@ -79,7 +79,7 @@ class OrderPlaceUseCaseTest extends KernelTestCase
 
         $this->cartLineItemPersistence = $this->createMock(CartLineItemPersistenceInterface::class);
         self::$container->set(
-            'test.'.CartLineItemPersistenceInterface::class,
+            CartLineItemPersistenceInterface::class,
             $this->cartLineItemPersistence
         );
 

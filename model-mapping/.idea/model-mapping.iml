@@ -69,19 +69,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/config" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/inflector" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/expression-language" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symplify/autowire-array-parameter" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symplify/composer-json-manipulator" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symplify/config-transformer" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symplify/console-package-builder" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symplify/easy-testing" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symplify/package-builder" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symplify/php-config-printer" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symplify/smart-file-system" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symplify/symplify-kernel" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/nette/neon" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/nette/utils" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/nikic/php-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/fzaninotto/faker" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

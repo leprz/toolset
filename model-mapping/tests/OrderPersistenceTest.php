@@ -27,14 +27,17 @@ class OrderPersistenceTest extends KernelTestCase
      */
     public function test(): void
     {
-        self::assertTrue(true);
-        return;
+//        self::assertTrue(true);
+//        return;
         $reflection = new \ReflectionClass(ReferenceFixture::class);
         $props = $reflection->getProperties();
 
         for ($i = 0; $i < 500; $i++) {
+            ReferenceFixture::$SEED = $i;
             foreach ($props as $prop) {
-                ReferenceFixture::${$prop->getName()} = (string)Uuid::uuid4();
+                if ((string)$prop->getType() === 'string') {
+                    ReferenceFixture::${$prop->getName()} = (string)Uuid::uuid4();
+                }
             }
 
             $application = new Application(self::$kernel);

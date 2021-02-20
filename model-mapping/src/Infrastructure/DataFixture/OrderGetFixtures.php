@@ -13,33 +13,46 @@ use App\UseCase\OrderPlace\Infrastructure\OrderPlaceFixtures;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
+use Faker\Generator;
 
 class OrderGetFixtures extends Fixture implements DependentFixtureInterface
 {
+    private Generator $faker;
+
+    public function __construct(Faker $faker)
+    {
+        $this->faker = $faker->build();
+    }
+
     public function load(ObjectManager $manager): void
     {
+        $price1 = $this->faker->randomFloat(2, 1, 4);
+        $price2 = $this->faker->randomFloat(2, 1, 4);
+
+        $total = $price1 + $price2;
+
         $this->createOrder(
             ReferenceFixture::$ORDER_ID,
             ReferenceFixture::$CUSTOMER_ID,
-            4.00,
+            $total,
             $manager,
         );
 
         $this->createOrderLineItem(
-            ReferenceFixture::$ORDER_LINE_ITEM_ID,
+            ReferenceFixture::$ORDER_LINE_ITEM_1_ID,
             ReferenceFixture::$ORDER_ID,
-            'Magic crystal ball',
-            2.00,
+            $this->faker->sentence(3),
+            $price1,
             $manager
         );
 
-//        $this->createOrderLineItem(
-//            'FB29CF2D-CFD1-4EDB-AD97-E7A75590DC27',
-//            ReferenceFixture::$ORDER_ID,
-//            'Golden fish',
-//            2.00,
-//            $manager
-//        );
+        $this->createOrderLineItem(
+            ReferenceFixture::$ORDER_LINE_ITEM_2_ID,
+            ReferenceFixture::$ORDER_ID,
+            $this->faker->sentence(3),
+            $price2,
+            $manager
+        );
 
         $manager->flush();
     }
