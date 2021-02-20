@@ -37,7 +37,7 @@ class CartLineItemPersistenceTest extends KernelTestCase
 
     private function cartLineItemFixture(): LineItemId
     {
-        return LineItemId::fromString(ReferenceFixture::CART_LINE_ITEM_ID);
+        return LineItemId::fromString(ReferenceFixture::$CART_LINE_ITEM_ID);
     }
 
     protected function setUp(): void

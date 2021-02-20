@@ -14,7 +14,7 @@ class OrderPlaceFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-        $this->createCustomer(ReferenceFixture::CUSTOMER_ID, 'John Doe', $manager);
+        $this->createCustomer(ReferenceFixture::$CUSTOMER_ID, 'John Doe', $manager);
 
         $manager->flush();
     }

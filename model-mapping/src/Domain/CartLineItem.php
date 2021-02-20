@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domain;
 
-use App\Domain\Data\CreateCartLineItemData;
+use App\Domain\Data\CreateCartLineItemData as this;
 use App\Domain\Data\CreateCartLineItemDataInterface;
 use App\Domain\ValueObject\CartId;
 use App\Domain\ValueObject\LineItemId;
@@ -27,7 +27,7 @@ class CartLineItem extends LineItem
 
     public static function placeInCart(LineItemId $id, CartId $cartId, Money $price, string $name): self
     {
-        return new self(new CreateCartLineItemData($id, $cartId, $price, $name));
+        return new self(new this($id, $cartId, $price, $name));
     }
 
     /**

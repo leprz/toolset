@@ -34,7 +34,7 @@ class CartPersistenceTest extends KernelTestCase
 
     private function cartIdFixture(): CartId
     {
-        return CartId::fromString(ReferenceFixture::CART_ID);
+        return CartId::fromString(ReferenceFixture::$CART_ID);
     }
 
     protected function setUp(): void

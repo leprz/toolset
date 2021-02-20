@@ -12,6 +12,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\ORMException;
 
 /**
  * @package App\Infrastructure\Entity
@@ -43,9 +44,14 @@ class CartEntity
 
     public function setCustomerId(CustomerId $customerId, EntityManagerInterface $entityManager): void
     {
-        $this->setCustomer(
-            $entityManager->getReference(CustomerEntity::class, (string)$customerId)
-        );
+        try {
+            /** @noinspection PhpParamsInspection */
+            $this->setCustomer(
+                $entityManager->getReference(CustomerEntity::class, (string)$customerId)
+            );
+        } catch (ORMException $e) {
+            throw new \RuntimeException($e->getMessage());
+        }
     }
 
     private function setCustomer(CustomerEntity $customer): void

@@ -55,7 +55,7 @@ class OrderPlaceUseCaseTest extends KernelTestCase
     private function placeOrderCommandFixture(): OrderPlaceCommand
     {
         return new OrderPlaceCommand(
-            CartId::fromString(ReferenceFixture::CART_ID),
+            CartId::fromString(ReferenceFixture::$CART_ID),
             $this->orderIdFixture(),
         );
     }

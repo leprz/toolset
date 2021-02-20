@@ -44,7 +44,7 @@ class ProductPlaceInCartUseCaseTest extends KernelTestCase
     {
         return new ProductPlaceInCartCommand(
             lineItemId: self::cartLineItemIdFixture(),
-            cartId: CartId::fromString(ReferenceFixture::CART_ID),
+            cartId: CartId::fromString(ReferenceFixture::$CART_ID),
             product: Product::fromExisting(Sku::fromString('PL-22'), new Money(2.99), 'Mobile Phone'),
         );
     }

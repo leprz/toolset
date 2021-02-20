@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Entity;
 
+use App\Domain\Data\CreateOrderDataInterface;
 use App\Domain\ValueObject\CustomerId;
 use App\Domain\ValueObject\Money;
 use App\Domain\ValueObject\OrderId;
@@ -13,13 +14,14 @@ use DateTimeImmutable;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\ORMException;
 
 /**
  * @package App\Infrastructure\Entity
  * @ORM\Entity()
  * @ORM\Table(name="customer__order")
  */
-class OrderEntity
+class OrderEntity implements CreateOrderDataInterface
 {
     use EntityUuidTrait;
 
@@ -53,9 +55,13 @@ class OrderEntity
     }
 
     /** @noinspection PhpFieldAssignmentTypeMismatchInspection */
-    public function setBuyerId(CustomerId $id, EntityManagerInterface $entityManager): void
+    public function setCustomerId(CustomerId $id, EntityManagerInterface $entityManager): void
     {
-        $this->customer = $entityManager->getReference(CustomerEntity::class, (string)$id);
+        try {
+            $this->customer = $entityManager->getReference(CustomerEntity::class, (string)$id);
+        } catch (ORMException $e) {
+            throw new \RuntimeException($e->getMessage());
+        }
     }
 
     public function setTotalPrice(Money $total): void

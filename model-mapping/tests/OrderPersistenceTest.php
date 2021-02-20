@@ -10,12 +10,47 @@ use App\Domain\ValueObject\OrderId;
 use App\Infrastructure\DataFixture\ReferenceFixture;
 use App\Infrastructure\Persistence\Order\OrderEntityMapper;
 use App\Infrastructure\Persistence\Order\OrderProxy;
+use Ramsey\Uuid\Uuid;
+use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+use Symfony\Component\Console\Input\ArrayInput;
+use Symfony\Component\Console\Output\BufferedOutput;
 
 class OrderPersistenceTest extends KernelTestCase
 {
     private OrderRepositoryInterface $repository;
     private OrderEntityMapper $mapper;
+
+
+    public function test(): void
+    {
+        $reflection = new \ReflectionClass(ReferenceFixture::class);
+        $props = $reflection->getProperties();
+
+        for ($i = 0; $i < 500; $i++) {
+            foreach ($props as $prop) {
+                ReferenceFixture::${$prop->getName()} = (string)Uuid::uuid4();
+            }
+
+            $application = new Application(self::$kernel);
+            $application->setAutoExit(false);
+
+            $output = new BufferedOutput();
+
+            $application->run(
+                new ArrayInput(
+                    [
+                        'command' => 'doctrine:fixtures:load',
+                        '--append' => true,
+                    ]
+                ),
+                $output
+            );
+        }
+
+        // return the output, don't use if you used NullOutput()
+        echo $output->fetch();
+    }
 
     public function testGetForId(): void
     {
@@ -26,7 +61,7 @@ class OrderPersistenceTest extends KernelTestCase
 
     private function orderIdFixture(): OrderId
     {
-        return OrderId::fromString(ReferenceFixture::ORDER_ID);
+        return OrderId::fromString(ReferenceFixture::$ORDER_ID);
     }
 
     private function assertOrderProxyHasBeenFetched(Order $order): void

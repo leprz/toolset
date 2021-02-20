@@ -19,27 +19,27 @@ class ProductPlaceInCartDataFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         /** @var \App\Infrastructure\Entity\CustomerEntity $customer */
-        $customer = $this->getReference(ReferenceFixture::CUSTOMER_ID);
+        $customer = $this->getReference(ReferenceFixture::$CUSTOMER_ID);
 
-        $cart = $this->createCart(ReferenceFixture::CART_ID, $customer);
+        $cart = $this->createCart(ReferenceFixture::$CART_ID, $customer);
 
         $manager->persist(
             $this->createCartLineItem(
-                id: ReferenceFixture::CART_LINE_ITEM_ID,
+                id: ReferenceFixture::$CART_LINE_ITEM_ID,
                 name: 'Bag full of snacks',
                 price: 1.99,
                 cart: $cart
             )
         );
 
-        $manager->persist(
-            $this->createCartLineItem(
-                id: '78C683F7-5A55-4620-A633-9F8FD791044A',
-                name: 'Magic cristal ball',
-                price: 3.99,
-                cart: $cart
-            )
-        );
+//        $manager->persist(
+//            $this->createCartLineItem(
+//                id: '78C683F7-5A55-4620-A633-9F8FD791044A',
+//                name: 'Magic cristal ball',
+//                price: 3.99,
+//                cart: $cart
+//            )
+//        );
 
         $manager->persist($cart);
 

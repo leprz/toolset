@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Domain;
 
+use App\Domain\Data\CreateOrderData as this;
+use App\Domain\Data\CreateOrderDataInterface;
 use App\Domain\Exception\EmptyOrderException;
 use App\Domain\ValueObject\CustomerId;
 use App\Domain\ValueObject\Money;
@@ -12,21 +14,19 @@ use App\UseCase\OrderPlace\Domain\OrderPlaceActionInterface;
 
 class Order
 {
-    /**
-     * @param \App\Domain\ValueObject\OrderId $id
-     * @param \App\Domain\ValueObject\CustomerId $buyerId
-     * @param \App\Domain\ValueObject\Money $totalPrice
-     */
-    protected function __construct(
-        private OrderId $id,
-        private CustomerId $buyerId,
-        private Money $totalPrice,
-    ) {
+    private OrderId $id;
+    private CustomerId $customerId;
+    private Money $totalPrice;
+
+    protected function __construct(CreateOrderDataInterface $data) {
+        $this->id = $data->getId();
+        $this->customerId = $data->getCustomerId();
+        $this->totalPrice = $data->getTotalPrice();
     }
 
     /**
      * @param \App\Domain\ValueObject\OrderId $id
-     * @param \App\Domain\ValueObject\CustomerId $buyerId
+     * @param \App\Domain\ValueObject\CustomerId $customerId
      * @param array $lineItems
      * @param \App\UseCase\OrderPlace\Domain\OrderPlaceActionInterface $action
      * @return static
@@ -34,17 +34,17 @@ class Order
      */
     public static function place(
         OrderId $id,
-        CustomerId $buyerId,
+        CustomerId $customerId,
         array $lineItems,
         OrderPlaceActionInterface $action
     ): self {
-        self::assertOrderIsNotEmpty($lineItems, $id, $buyerId);
+        self::assertOrderIsNotEmpty($lineItems, $id, $customerId);
 
         $totalPrice = new Money(OrderLineItem::getTotalPrice($lineItems));
 
         $action->addLineItemsToOrder($id, $lineItems);
 
-        return new self(id: $id, buyerId: $buyerId, totalPrice: $totalPrice);
+        return new self(new this(id: $id, customerId: $customerId, totalPrice: $totalPrice));
     }
 
     /**

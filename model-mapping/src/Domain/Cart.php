@@ -25,7 +25,7 @@ class Cart
     {
         $order = Order::place(
             id: $orderId,
-            buyerId: $this->customerId,
+            customerId: $this->customerId,
             lineItems: CartLineItem::orderAll($action->getLineItemsForCart($this->id), $orderId),
             action: $action,
         );

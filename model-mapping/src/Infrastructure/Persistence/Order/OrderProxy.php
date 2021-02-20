@@ -11,11 +11,7 @@ class OrderProxy extends Order
 {
     public function __construct(private OrderEntity $entity)
     {
-        parent::__construct(
-          $this->entity->getId(),
-          $this->entity->getCustomerId(),
-          $this->entity->getTotalPrice()
-        );
+        parent::__construct($this->entity);
     }
 
     public function getEntity(OrderEntityMapper $mapper): OrderEntity
