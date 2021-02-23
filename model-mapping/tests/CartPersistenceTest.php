@@ -8,12 +8,14 @@ use App\Application\Persistence\Cart\CartRepositoryInterface;
 use App\Domain\Cart;
 use App\Domain\ValueObject\CartId;
 use App\Infrastructure\DataFixture\ReferenceFixture;
+use App\Infrastructure\Persistence\Cart\CartEntityMapper;
 use App\Infrastructure\Persistence\Cart\CartProxy;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class CartPersistenceTest extends KernelTestCase
 {
     private CartRepositoryInterface $repository;
+    private CartEntityMapper $mapper;
 
     public function testGetById(): void
     {
@@ -27,7 +29,7 @@ class CartPersistenceTest extends KernelTestCase
         self::assertInstanceOf(CartProxy::class, $cart);
 
         if ($cart instanceof CartProxy) {
-            $entity = $cart->getEntity();
+            $entity = $cart->getEntity($this->mapper);
             self::assertEquals($this->cartIdFixture(), $entity->getId());
         }
     }
@@ -42,5 +44,6 @@ class CartPersistenceTest extends KernelTestCase
         self::bootKernel();
 
         $this->repository = self::$container->get(CartRepositoryInterface::class);
+        $this->mapper = self::$container->get(CartEntityMapper::class);
     }
 }

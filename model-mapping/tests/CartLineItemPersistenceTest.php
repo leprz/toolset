@@ -17,7 +17,6 @@ class CartLineItemPersistenceTest extends KernelTestCase
 {
     private CartLineItemRepositoryInterface $repository;
     private CartLineItemEntityMapper $mapper;
-    private EntityManagerInterface $entityManger;
 
     public function test(): void
     {
@@ -30,14 +29,14 @@ class CartLineItemPersistenceTest extends KernelTestCase
         self::assertInstanceOf(CartLineItemProxy::class, $lineItem);
 
         if ($lineItem instanceof CartLineItemProxy) {
-            $entity = $lineItem->getEntity($this->mapper, $this->entityManger);
+            $entity = $lineItem->getEntity($this->mapper);
             self::assertEquals($this->cartLineItemFixture(), $entity->getId());
         }
     }
 
     private function cartLineItemFixture(): LineItemId
     {
-        return LineItemId::fromString(ReferenceFixture::$CART_LINE_ITEM_ID);
+        return LineItemId::fromString(ReferenceFixture::$CART_LINE_ITEM_1_ID);
     }
 
     protected function setUp(): void
@@ -45,7 +44,6 @@ class CartLineItemPersistenceTest extends KernelTestCase
         self::bootKernel();
 
         $this->mapper = self::$container->get(CartLineItemEntityMapper::class);
-        $this->entityManger = self::$container->get(EntityManagerInterface::class);
         $this->repository = self::$container->get(CartLineItemRepositoryInterface::class);
     }
 }

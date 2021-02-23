@@ -39,6 +39,14 @@ class CartLineItemEntity implements CreateCartLineItemDataInterface
      */
     protected float $price;
 
+    public function __construct(LineItemId $id, CartEntity $cart, string $name, Money $price)
+    {
+        $this->setId($id);
+        $this->setCart($cart);
+        $this->setName($name);
+        $this->setPrice($price);
+    }
+
     /**
      * @param \App\Domain\ValueObject\LineItemId $id
      */

@@ -14,7 +14,7 @@ use Doctrine\ORM\QueryBuilder;
 
 class CartEntityRepository implements CartRepositoryInterface, CartPersistenceInterface
 {
-    public function __construct(private EntityManagerInterface $entityManager)
+    public function __construct(private EntityManagerInterface $entityManager, private CartEntityMapper $mapper)
     {
     }
 
@@ -50,5 +50,17 @@ class CartEntityRepository implements CartRepositoryInterface, CartPersistenceIn
                 'id' => $id
             ]
         );
+    }
+
+    public function add(Cart $cart): void
+    {
+        $entity = $this->mapper->mapToNewEntity($cart);
+
+        $this->entityManager->persist($entity);
+    }
+
+    public function flush(): void
+    {
+        $this->entityManager->flush();
     }
 }

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Entity;
 
+use App\Domain\Data\CreateCartDataInterface;
 use App\Domain\ValueObject\CartId;
 use App\Domain\ValueObject\CustomerId;
 use App\Infrastructure\Entity\Trait\EntityUuidTrait;
@@ -13,13 +14,14 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\ORMException;
+use RuntimeException;
 
 /**
  * @package App\Infrastructure\Entity
  * @ORM\Entity()
  * @ORM\Table(name="customer__cart")
  */
-class CartEntity
+class CartEntity implements CreateCartDataInterface
 {
     use EntityUuidTrait;
 
@@ -50,7 +52,7 @@ class CartEntity
                 $entityManager->getReference(CustomerEntity::class, (string)$customerId)
             );
         } catch (ORMException $e) {
-            throw new \RuntimeException($e->getMessage());
+            throw new RuntimeException($e->getMessage());
         }
     }
 

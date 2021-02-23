@@ -3,12 +3,11 @@
 declare(strict_types=1);
 
 use App\Application\Persistence\Cart\CartPersistenceInterface;
-use App\Application\Persistence\Cart\CartRepositoryInterface;
 use App\Application\Persistence\CartLineItem\CartLineItemPersistenceInterface;
 use App\Application\Persistence\CartLineItem\CartLineItemRepositoryInterface;
 use App\Application\Persistence\Order\OrderPersistenceInterface;
 use App\Application\Persistence\Order\OrderRepositoryInterface;
-use App\Infrastructure\Persistence\CartLineItem\CartLineItemEntityMapper;
+use App\Infrastructure\Persistence\Cart\CartEntityRepository;
 use App\Infrastructure\Persistence\CartLineItem\CartLineItemEntityRepository;
 use App\Infrastructure\Persistence\Order\OrderEntityRepository;
 use App\UseCase\OrderPlace\Application\OrderPlaceUseCase;
@@ -35,6 +34,10 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ->tag('controller.service_arguments');
 
     $services
+        ->set(CartPersistenceInterface::class, CartEntityRepository::class)
+        ->public();
+
+    $services
         ->set(CartLineItemPersistenceInterface::class, CartLineItemEntityRepository::class)
         ->public();
 
@@ -56,9 +59,5 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     $services
         ->set(OrderPlaceUseCase::class)
-        ->public();
-
-    $services
-        ->set(CartPersistenceInterface::class)
         ->public();
 };

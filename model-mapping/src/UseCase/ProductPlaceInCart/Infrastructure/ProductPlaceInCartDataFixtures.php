@@ -7,62 +7,76 @@ namespace App\UseCase\ProductPlaceInCart\Infrastructure;
 use App\Domain\ValueObject\CartId;
 use App\Domain\ValueObject\LineItemId;
 use App\Domain\ValueObject\Money;
+use App\Infrastructure\DataFixture\Faker;
 use App\Infrastructure\DataFixture\ReferenceFixture;
 use App\Infrastructure\Entity\CartEntity;
 use App\Infrastructure\Entity\CartLineItemEntity;
-use App\Infrastructure\Entity\CustomerEntity;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Faker\Generator;
 
 class ProductPlaceInCartDataFixtures extends Fixture
 {
+    private Generator $faker;
+
+    public function __construct(Faker $faker)
+    {
+        $this->faker = $faker->build();
+    }
+
     public function load(ObjectManager $manager)
     {
-        /** @var \App\Infrastructure\Entity\CustomerEntity $customer */
-        $customer = $this->getReference(ReferenceFixture::$CUSTOMER_ID);
+        $this->createCart(ReferenceFixture::$CART_ID, ReferenceFixture::$CUSTOMER_ID, $manager);
 
-        $cart = $this->createCart(ReferenceFixture::$CART_ID, $customer);
-
-        $manager->persist(
-            $this->createCartLineItem(
-                id: ReferenceFixture::$CART_LINE_ITEM_ID,
-                name: 'Bag full of snacks',
-                price: 1.99,
-                cart: $cart
-            )
+        $this->createCartLineItem(
+            id: ReferenceFixture::$CART_LINE_ITEM_1_ID,
+            name: $this->faker->word,
+            price: 1.99,
+            cartId: ReferenceFixture::$CART_ID,
+            manager: $manager
         );
 
-//        $manager->persist(
-//            $this->createCartLineItem(
-//                id: '78C683F7-5A55-4620-A633-9F8FD791044A',
-//                name: 'Magic cristal ball',
-//                price: 3.99,
-//                cart: $cart
-//            )
-//        );
-
-        $manager->persist($cart);
+        $this->createCartLineItem(
+            id: ReferenceFixture::$CART_LINE_ITEM_2_ID,
+            name: $this->faker->word,
+            price: 2.99,
+            cartId: ReferenceFixture::$CART_ID,
+            manager: $manager
+        );
 
         $manager->flush();
     }
 
-    private function createCart(string $cartId, CustomerEntity $customer): CartEntity
+    /** @noinspection PhpParamsInspection */
+    private function createCart(string $cartId, string $customerId, ObjectManager $manager): void
     {
-        return new CartEntity(
+        $cart = new CartEntity(
             CartId::fromString($cartId),
-            $customer
+            $this->getReference($customerId)
         );
+
+        $manager->persist($cart);
+
+        $this->setReference($cartId, $cart);
     }
 
-    private function createCartLineItem(string $id, string $name, float $price, CartEntity $cart): CartLineItemEntity
-    {
-        $lineItem = new CartLineItemEntity();
+    private function createCartLineItem(
+        string $id,
+        string $name,
+        float $price,
+        string $cartId,
+        ObjectManager $manager
+    ): void {
+        /** @noinspection PhpParamsInspection */
+        $lineItem = new CartLineItemEntity(
+            LineItemId::fromString($id),
+            $this->getReference($cartId),
+            $name,
+            new Money($price)
+        );
 
-        $lineItem->setId(LineItemId::fromString($id));
-        $lineItem->setCart($cart);
-        $lineItem->setPrice(new Money($price));
-        $lineItem->setName($name);
+        $manager->persist($lineItem);
 
-        return $lineItem;
+        $this->setReference($id, $lineItem);
     }
 }

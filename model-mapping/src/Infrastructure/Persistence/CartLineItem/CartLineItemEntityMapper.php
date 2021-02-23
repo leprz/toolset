@@ -13,16 +13,22 @@ class CartLineItemEntityMapper
 {
     use EntityMapperTrait;
 
-    public function mapToNewEntity(CartLineItem $lineItem, EntityManagerInterface $entityManager): CartLineItemEntity
+    public function __construct(private EntityManagerInterface $entityManager)
     {
-        return $this->mapToExistingEntity(new CartLineItemEntity(), $lineItem, $entityManager);
+    }
+
+    public function mapToNewEntity(CartLineItem $lineItem): CartLineItemEntity
+    {
+        return $this->mapToExistingEntity(
+            $this->createNewInstanceWithoutConstructor(CartLineItemEntity::class),
+            $lineItem
+        );
     }
 
     public function mapToExistingEntity(
         CartLineItemEntity $entity,
         CartLineItem $lineItem,
-        EntityManagerInterface $entityManager,
     ): CartLineItemEntity {
-        return $this->mapProperties($lineItem, $entity, $entityManager);
+        return $this->mapProperties($lineItem, $entity, $this->entityManager);
     }
 }

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Domain;
 
+use App\Domain\Data\CreateCartData as this;
+use App\Domain\Data\CreateCartDataInterface;
 use App\Domain\ValueObject\CartId;
 use App\Domain\ValueObject\CustomerId;
 use App\Domain\ValueObject\OrderId;
@@ -11,8 +13,18 @@ use App\UseCase\OrderPlace\Domain\OrderPlaceActionInterface;
 
 class Cart
 {
-    private function __construct(protected CartId $id, protected CustomerId $customerId)
+    protected CartId $id;
+    protected CustomerId $customerId;
+
+    protected function __construct(CreateCartDataInterface $data)
     {
+        $this->id = $data->getId();
+        $this->customerId = $data->getCustomerId();
+    }
+
+    public static function initialize(CartId $id, CustomerId $customerId): self
+    {
+        return new self(new this($id, $customerId));
     }
 
     /**

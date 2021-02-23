@@ -109,7 +109,7 @@ class CartLineItemEntityRepository implements CartLineItemRepositoryInterface, C
     public function add(CartLineItem $lineItem): void
     {
         $this->entityManager->persist(
-            $this->mapper->mapToNewEntity($lineItem, $this->entityManager)
+            $this->mapper->mapToNewEntity($lineItem)
         );
     }
 
@@ -120,7 +120,7 @@ class CartLineItemEntityRepository implements CartLineItemRepositoryInterface, C
         }
 
         $this->entityManager->persist(
-            $lineItem->getEntity($this->mapper, $this->entityManager)
+            $lineItem->getEntity($this->mapper)
         );
     }
 

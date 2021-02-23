@@ -6,7 +6,6 @@ namespace App\Infrastructure\Persistence\CartLineItem;
 
 use App\Domain\CartLineItem;
 use App\Infrastructure\Entity\CartLineItemEntity;
-use Doctrine\ORM\EntityManagerInterface;
 
 class CartLineItemProxy extends CartLineItem
 {
@@ -18,9 +17,8 @@ class CartLineItemProxy extends CartLineItem
     }
 
     public function getEntity(
-        CartLineItemEntityMapper $mapper,
-        EntityManagerInterface $entityManager
+        CartLineItemEntityMapper $mapper
     ): CartLineItemEntity {
-        return $mapper->mapToExistingEntity($this->entity, $this, $entityManager);
+        return $mapper->mapToExistingEntity($this->entity, $this);
     }
 }
