@@ -9,7 +9,6 @@
         <directory name="filesystem-storage/src" />
         <directory name="value-object/src" />
         <directory name="persistence/src" />
-        <directory name="model-mapping/src" />
         <directory name="shared-kernel/src" />
         <ignoreFiles>
             <directory name="*/vendor" />

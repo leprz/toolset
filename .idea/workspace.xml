@@ -22,53 +22,42 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33cb54ac-aa4e-4592-a03f-f693a187fb12" name="Default Changelist" comment="tmp4">
-      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/.env.test" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/bin/phpunit" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/config/packages/doctrine.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/config/packages/doctrine_migrations.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/config/packages/prod/doctrine.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/config/routes/annotations.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/src/Application/Exception/InvalidArgumentException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/src/Application/Exception/NotFoundException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/src/Application/Persistence/Customer/CustomerPersistenceInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/src/Application/Persistence/Customer/CustomerRepositoryInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/src/Application/ValueObject/CustomerId.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/src/Domain/Collection/CategoryCollection.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/src/Domain/Collection/ImmutableCollection.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/src/Domain/Customer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/src/Domain/Traits/CustomerIdTrait.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/src/Domain/ValueObject/Category.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/src/Domain/ValueObject/CustomerIdInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/src/Infrastructure/Controller/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/src/Infrastructure/Controller/CustomerController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/src/Infrastructure/Entity/Category.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/src/Infrastructure/Entity/Customer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/src/Infrastructure/Repository/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/src/Infrastructure/Repository/Customer/CustomerDoctrineRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/src/Infrastructure/Repository/Customer/CustomerProxy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/src/Infrastructure/Repository/Exception/EntityNotFoundException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/tests/Application/Persistence/Customer/CustomerRepositoryTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model-mapping/tests/bootstrap.php" afterDir="false" />
+    <list default="true" id="33cb54ac-aa4e-4592-a03f-f693a187fb12" name="Default Changelist" comment="tmp">
+      <change afterPath="$PROJECT_DIR$/printer/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printer/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printer/public/html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printer/resources/page.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printer/resources/price/price.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printer/resources/product/product-list.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printer/resources/product/product.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printer/resources/rating/rating.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printer/resources/style.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printer/src/Price/View/PriceHtmlPrinter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printer/src/Price/View/PriceJsonPrinter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printer/src/Price/View/PricePrinterInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printer/src/Price/View/PriceView.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printer/src/Product/View/ProductHtmlPrinter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printer/src/Product/View/ProductJsonPrinter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printer/src/Product/View/ProductPrinterInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printer/src/Product/View/ProductView.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printer/src/Rating/View/RatingHtmlPrinter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printer/src/Rating/View/RatingJsonPrinter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printer/src/Rating/View/RatingPrinterInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printer/src/Rating/View/RatingView.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printer/src/ValueObject/Currency.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printer/src/ValueObject/Money.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printer/src/ValueObject/Price.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printer/src/ValueObject/Rating.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/printer/src/ValueObject/Url.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared-kernel/src/Application/ValueObject/RelativePathTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared-kernel/src/Application/ValueObject/RelativePathUtils.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/ThingsThatIUse.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ThingsThatIUse.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model-mapping/.env" beforeDir="false" afterPath="$PROJECT_DIR$/model-mapping/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model-mapping/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/model-mapping/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model-mapping/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/model-mapping/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model-mapping/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/model-mapping/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model-mapping/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/model-mapping/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model-mapping/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/model-mapping/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model-mapping/src/Controller/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/model-mapping/migrations/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model-mapping/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/model-mapping/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/psalm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/psalm.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared-kernel/src/Domain/ValueObject/UuidV4Trait.php" beforeDir="false" afterPath="$PROJECT_DIR$/shared-kernel/src/Domain/ValueObject/UuidV4Trait.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +74,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="composer.json" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -94,7 +84,7 @@
         <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/model-mapping" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -172,6 +162,11 @@
       <path value="$PROJECT_DIR$/vendor/phar-io/version" />
       <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/vendor/pimple/pimple" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/glob" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/twig/twig" />
     </include_path>
   </component>
   <component name="ProjectId" id="1lxHuqGnlhAQk181VQEWyMApqrW" />
@@ -185,14 +180,18 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/filesystem-storage/resources/tests/avatars/.gitkeep&#10;C:/Users/Przemek/PhpstormProjects/ThingsThatIUse/filesystem-storage/resources/tests/avatars/testavatar.png" />
     <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/model-mapping" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/printer/tmp/cache" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="$PROJECT_DIR$/../../../../Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
-    <property name="settings.editor.selected.configurable" value="settings.php.quality.tools" />
+    <property name="settings.editor.selected.configurable" value="Configurable.PHP.Twig" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="PsalmProjectConfiguration">
+    <option name="selectedConfigurationId" value="DEFAULT_INTERPRETER" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -203,31 +202,47 @@
       <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\filesystem-storage\tests\Application\FilesystemStorage\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\printer\public" />
+      <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\printer" />
+      <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\printer\src" />
       <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\model-mapping\tests\Application\Persistence\Customer" />
       <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\model-mapping\tests\Application\Persistence\Customer\Performance" />
-      <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\model-mapping\tests" />
-      <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\model-mapping\src\Domain\Collection" />
-      <recent name="C:\Users\Przemek\PhpstormProjects\ThingsThatIUse\model-mapping\src\Infrastructure\Repository" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.tests (1)">
-    <configuration name="Application" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner directory="$PROJECT_DIR$/model-mapping/tests/Application" />
+  <component name="RunManager" selected="PHP Script.index.php">
+    <configuration name="UserAvatarFilesystemStorageTest.testRemove" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="FilesystemStorage\Tests\Application\FilesystemStorage\UserAvatarFilesystemStorageTest" file="$PROJECT_DIR$/filesystem-storage/tests/Application/FilesystemStorage/UserAvatarFilesystemStorageTest.php" method="testRemove" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UserAvatarFilesystemStorageTest.testSave" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="FilesystemStorage\Tests\Application\FilesystemStorage\UserAvatarFilesystemStorageTest" file="$PROJECT_DIR$/filesystem-storage/tests/Application/FilesystemStorage/UserAvatarFilesystemStorageTest.php" method="testSave" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="filesystem-storage" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner directory="$PROJECT_DIR$/filesystem-storage" />
       <method v="2" />
     </configuration>
     <configuration name="tests (1)" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner configuration_file="$PROJECT_DIR$/model-mapping/phpunit.xml" directory="$PROJECT_DIR$/model-mapping/tests" use_alternative_configuration_file="true" />
+      <TestRunner directory="$PROJECT_DIR$/persistence/tests" />
+      <method v="2" />
+    </configuration>
+    <configuration name="index.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/printer/index.php">
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="PHPUnit.tests" />
-      <item itemvalue="PHPUnit.Application" />
       <item itemvalue="PHPUnit.tests (1)" />
+      <item itemvalue="PHPUnit.filesystem-storage" />
+      <item itemvalue="PHPUnit.UserAvatarFilesystemStorageTest.testRemove" />
+      <item itemvalue="PHPUnit.UserAvatarFilesystemStorageTest.testSave" />
+      <item itemvalue="PHP Script.index.php" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHP Script.index.php" />
+        <item itemvalue="PHPUnit.filesystem-storage" />
+        <item itemvalue="PHPUnit.UserAvatarFilesystemStorageTest.testSave" />
+        <item itemvalue="PHPUnit.UserAvatarFilesystemStorageTest.testRemove" />
         <item itemvalue="PHPUnit.tests (1)" />
-        <item itemvalue="PHPUnit.tests" />
       </list>
     </recent_temporary>
   </component>
@@ -374,11 +389,6 @@
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/persistence/src/Infrastructure/Persistence/Customer/CustomerInMemoryRepository.php</url>
-          <line>6</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/persistence/tests/Application/UseCase/CustomerChangeEmail/CustomerChangeEmailE2ETest.php</url>
           <line>6</line>
           <option name="timeStamp" value="11" />
@@ -392,11 +402,6 @@
           <url>file://$PROJECT_DIR$/filesystem-storage/src/Application/UseCase/UserChangeAvatar/ChangeAvatarService.php</url>
           <line>57</line>
           <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/model-mapping/src/Infrastructure/Repository/Customer/CustomerProxy.php</url>
-          <line>39</line>
-          <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php-line-method">
           <url>file://$PROJECT_DIR$/filesystem-storage/tests/Application/UseCase/UserChangeAvatar/FakeUserAvatarFileInterface.php</url>

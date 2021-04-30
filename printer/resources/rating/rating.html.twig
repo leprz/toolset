@@ -1,0 +1,5 @@
+{% for i in 1..5 %}
+    {% set starIsFilled = (value >= i ? "text-yellow-500 fas" : "far") %}
+    <i class="h-4 w-4 {{ starIsFilled }} fa-star"></i>
+{% endfor %}
+<span class="ml-2">{{ reviewCount }} Opinions</span>

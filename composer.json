@@ -18,7 +18,8 @@
       "ValueObject\\": "value-object/src/",
       "Persistence\\": "persistence/src/",
       "FilesystemStorage\\": "filesystem-storage/src/",
-      "SharedKernel\\": "shared-kernel/src/"
+      "SharedKernel\\": "shared-kernel/src/",
+      "Printer\\": "printer/src/"
     }
   },
   "autoload-dev": {
@@ -30,13 +31,15 @@
     }
   },
   "require": {
+    "ext-json": "*",
     "pimple/pimple": "^3.0",
-    "ext-json": "*"
+    "twig/twig": "^3.0"
   },
   "require-dev": {
     "vimeo/psalm": "^4.0@dev",
     "squizlabs/php_codesniffer": "3.*@dev",
     "phpunit/phpunit": "^9",
     "roave/security-advisories": "dev-master"
-  }
+  },
+  "name": "leprz/toolset"
 }

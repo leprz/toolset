@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Webpage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.0.1/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="antialiased bg-gray-200 text-gray-900 font-sans p-6">
+<div class="container mx-auto">
+    <div class="flex flex-wrap -mx-4">
+        {% block content %}{% endblock %}
+    </div>
+</div>
+</body>
+</html>
